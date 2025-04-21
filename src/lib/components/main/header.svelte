@@ -49,7 +49,7 @@
 				<div class="flex flex-col items-center md:flex-row md:items-center md:space-x-6">
 					<!-- Logo -->
 					<div class="flex items-center">
-						<a href="/" on:click={scrollToTop}>
+						<a href="/">
 							<img
 								src="/images/pwrirl_logo.svg"
 								alt="PowerIRL Logo"
@@ -98,7 +98,12 @@
 			</div>
 			<!-- Avatar on the far right -->
 			<div class="flex items-center {isMobileMenuOpen ? 'hidden md:flex' : 'flex'}">
-				<a href="/dashboard" class="transition-opacity hover:opacity-80">
+				<a
+					href="https://client.pwrirl.com"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="transition-opacity hover:opacity-80"
+				>
 					<Icon icon="carbon:user-avatar-filled" width="38" height="38" color="#e20074" />
 				</a>
 			</div>

@@ -79,17 +79,23 @@
 			streaming from your desktop or on the go, PowerIRL keeps you live with zero drops, full
 			customization, and enterprise-grade reliability.
 		</p>
-		<div class="flex justify-center gap-4">
-			<a
-				href="/learn-more"
-				class="rounded-md bg-[#e20074] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3 sm:text-base"
-				>Start Streaming</a
+		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<button
+				on:click={() => scrollToSection('pricing')}
+				class="flex w-full items-center justify-center gap-2 rounded-md bg-[#e20074] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#c70067] sm:w-auto sm:px-6 sm:py-3 sm:text-base"
 			>
+				<Icon icon="mdi:rocket-launch" width="20" height="20" />
+				<span>Get Started</span>
+			</button>
 			<a
-				href="/sign-up"
-				class="rounded-md border-2 border-white px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 sm:px-6 sm:py-3 sm:text-base"
-				>Book a Demo</a
+				href="https://discord.gg/KtfrPhdEvx"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex w-full items-center justify-center gap-2 rounded-md border-2 border-white px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-6 sm:py-3 sm:text-base"
 			>
+				<Icon icon="ic:baseline-discord" width="20" height="20" />
+				<span>Join our Discord</span>
+			</a>
 		</div>
 	</div>
 </div>
@@ -167,7 +173,7 @@
 		<div class="grid grid-cols-1 gap-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
 			<!-- Basic Plan -->
 			<div
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-[#121212] hover:shadow-lg hover:shadow-[#e20074]/20 sm:p-8 md:order-1 md:col-span-1 lg:order-1 lg:col-span-1"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-[#121212] hover:shadow-lg hover:shadow-[#e20074]/20 sm:p-8"
 			>
 				<div
 					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -222,9 +228,9 @@
 				</div>
 			</div>
 
-			<!-- Pro Plan -->
+			<!-- Premium Plan -->
 			<div
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-[#121212] hover:shadow-lg hover:shadow-[#e20074]/20 sm:p-8 md:order-2 md:col-span-1 lg:order-3 lg:col-span-1"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-[#121212] hover:shadow-lg hover:shadow-[#e20074]/20 sm:p-8"
 			>
 				<div
 					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -283,9 +289,9 @@
 				</div>
 			</div>
 
-			<!-- Enterprise Plan (Advanced) -->
+			<!-- Advanced Plan -->
 			<div
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-[#121212] hover:shadow-lg hover:shadow-[#e20074]/20 sm:p-8 md:order-3 md:col-span-2 lg:order-2 lg:col-span-1"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-[#121212] hover:shadow-lg hover:shadow-[#e20074]/20 sm:p-8 md:col-span-2 lg:col-span-1"
 			>
 				<div
 					class="absolute -top-1 -right-1 -bottom-1 -left-1 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] opacity-20 blur"
@@ -349,6 +355,143 @@
 						<li class="flex items-center">
 							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
 							<span>Custom Alerts & Notifications</span>
+						</li>
+					</ul>
+				</div>
+				<div class="relative">
+					<button
+						class="w-full rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
+					>
+						Order Now
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section
+	id="endpoints"
+	class="bg-[#e20074] py-12 text-center text-2xl font-bold text-white md:text-4xl"
+>
+	<h2>Endpoints</h2>
+</section>
+
+<section class="relative overflow-hidden bg-[#222] py-20 text-white">
+	<!-- Background pattern -->
+	<div class="absolute inset-0">
+		<!-- Diagonal lines pattern -->
+		<div
+			class="absolute inset-0 bg-[linear-gradient(45deg,#e20074_1px,transparent_1px),linear-gradient(-45deg,#e20074_1px,transparent_1px)] bg-[size:20px_20px] opacity-[0.03]"
+		></div>
+		<!-- Gradient overlay -->
+		<div
+			class="absolute inset-0 bg-gradient-to-b from-transparent via-[#e20074]/5 to-transparent"
+		></div>
+	</div>
+
+	<div class="relative container mx-auto px-5">
+		<div class="grid gap-8 md:grid-cols-2">
+			<!-- SRT/SRTLA Endpoint -->
+			<div
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-[#121212] hover:shadow-lg hover:shadow-[#e20074]/20 sm:p-8"
+			>
+				<div
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+				></div>
+				<div class="flex-grow">
+					<div class="mb-4 flex items-center justify-center">
+						<div
+							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
+						>
+							<Icon icon="mdi:cellphone-wireless" width="32" height="32" color="#e20074" />
+						</div>
+					</div>
+					<h3 class="mb-4 text-center text-xl font-bold sm:text-2xl">SRT/SRTLA</h3>
+					<div class="mb-6">
+						<span class="text-3xl font-bold sm:text-4xl">$9.99</span>
+						<span class="text-gray-400">/month</span>
+					</div>
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Secure Reliable Transport for mobile streaming</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Optimized for Android & iOS devices</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Low latency streaming with error correction</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>AES encryption for secure transmission</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Jitter compensation for unstable networks</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Bandwidth optimization for mobile data</span>
+						</li>
+					</ul>
+				</div>
+				<div class="relative">
+					<button
+						class="w-full rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
+					>
+						Order Now
+					</button>
+				</div>
+			</div>
+
+			<!-- RTMP Endpoint -->
+			<div
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-[#121212] hover:shadow-lg hover:shadow-[#e20074]/20 sm:p-8"
+			>
+				<div
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+				></div>
+				<div class="flex-grow">
+					<div class="mb-4 flex items-center justify-center">
+						<div
+							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
+						>
+							<Icon icon="mdi:desktop-classic" width="32" height="32" color="#e20074" />
+						</div>
+					</div>
+					<h3 class="mb-4 text-center text-xl font-bold sm:text-2xl">RTMP</h3>
+					<div class="mb-6">
+						<span class="text-3xl font-bold sm:text-4xl">$9.99</span>
+						<span class="text-gray-400">/month</span>
+					</div>
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Industry-standard streaming protocol</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Compatible with all major streaming platforms</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>High-quality video delivery</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Stable and reliable streaming</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Perfect for desktop streaming</span>
+						</li>
+						<li class="flex items-center">
+							<Icon icon="mdi:check" class="mr-2 text-white" width="24" height="24" />
+							<span>Wide range of encoder support</span>
 						</li>
 					</ul>
 				</div>

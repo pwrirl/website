@@ -1,17 +1,17 @@
 export const socials = [
 	{
 		name: 'Twitch',
-		url: 'https://twitter.com/yourprofile',
+		url: 'https://twitch.tv/pwrirl',
 		icon: 'mdi:twitch'
 	},
 	{
 		name: 'Kick',
-		url: 'https://github.com/yourprofile',
+		url: 'https://kick.com/pwrirl',
 		icon: 'tabler:brand-kick-filled'
 	},
 	{
 		name: 'youtube',
-		url: 'https://youtube.com/pwrirl.com',
+		url: 'https://youtube.com/pwrirl',
 		icon: 'ri:youtube-fill'
 	},
 	{

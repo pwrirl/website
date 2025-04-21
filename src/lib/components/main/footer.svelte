@@ -1,5 +1,6 @@
 <script>
 	import Icon from '@iconify/svelte';
+	import { socials } from '$lib/data/socialicons';
 </script>
 
 <footer class="relative overflow-hidden bg-[#1a1a1a] py-20 text-white">
@@ -16,85 +17,27 @@
 	</div>
 
 	<div class="relative container mx-auto px-5">
-		<div class="grid gap-12 md:grid-cols-4">
+		<div class="flex flex-col items-center text-center">
 			<!-- Company Info -->
-			<div class="space-y-4">
-				<img src="/images/pwrirl_logo.svg" alt="PowerIRL Logo" class="h-10 w-auto" />
+			<div class="max-w-md space-y-4">
+				<img src="/images/pwrirl_logo.svg" alt="PowerIRL Logo" class="mx-auto h-10 w-auto" />
 				<p class="text-sm text-gray-400">
 					The future of cloud-based streaming. Professional-grade tools for content creators.
 				</p>
 				<!-- Social Icons -->
-				<div class="flex space-x-4">
-					<a href="#" class="text-gray-400 transition-colors hover:text-[#e20074]">
-						<Icon icon="mdi:twitter" width="24" height="24" />
-					</a>
-					<a href="#" class="text-gray-400 transition-colors hover:text-[#e20074]">
-						<Icon icon="mdi:instagram" width="24" height="24" />
-					</a>
-					<a href="#" class="text-gray-400 transition-colors hover:text-[#e20074]">
-						<Icon icon="mdi:youtube" width="24" height="24" />
-					</a>
-					<a href="#" class="text-gray-400 transition-colors hover:text-[#e20074]">
-						<Icon icon="mdi:discord" width="24" height="24" />
-					</a>
-				</div>
-			</div>
-
-			<!-- Quick Links -->
-			<div>
-				<h3 class="mb-4 text-lg font-bold">Quick Links</h3>
-				<ul class="space-y-2">
-					<li><a href="/" class="text-gray-400 transition-colors hover:text-white">Home</a></li>
-					<li>
-						<a href="/features" class="text-gray-400 transition-colors hover:text-white">Features</a
-						>
-					</li>
-					<li>
-						<a href="/pricing" class="text-gray-400 transition-colors hover:text-white">Pricing</a>
-					</li>
-					<li>
-						<a href="/support" class="text-gray-400 transition-colors hover:text-white">Support</a>
-					</li>
-				</ul>
-			</div>
-
-			<!-- Resources -->
-			<div>
-				<h3 class="mb-4 text-lg font-bold">Resources</h3>
-				<ul class="space-y-2">
-					<li><a href="/blog" class="text-gray-400 transition-colors hover:text-white">Blog</a></li>
-					<li>
-						<a href="/docs" class="text-gray-400 transition-colors hover:text-white"
-							>Documentation</a
-						>
-					</li>
-					<li>
-						<a href="/tutorials" class="text-gray-400 transition-colors hover:text-white"
-							>Tutorials</a
-						>
-					</li>
-					<li>
-						<a href="/status" class="text-gray-400 transition-colors hover:text-white">Status</a>
-					</li>
-				</ul>
-			</div>
-
-			<!-- Contact -->
-			<div>
-				<h3 class="mb-4 text-lg font-bold">Contact</h3>
-				<ul class="space-y-2">
-					<li class="flex items-center">
-						<Icon icon="mdi:email" class="mr-2 text-[#e20074]" width="20" height="20" />
+				<div class="flex justify-center space-x-4">
+					{#each socials as social}
 						<a
-							href="mailto:support@powerirl.com"
-							class="text-gray-400 transition-colors hover:text-white">support@powerirl.com</a
+							href={social.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-gray-400 transition-colors hover:text-[#e20074]"
+							title={social.name}
 						>
-					</li>
-					<li class="flex items-center">
-						<Icon icon="mdi:discord" class="mr-2 text-[#e20074]" width="20" height="20" />
-						<a href="#" class="text-gray-400 transition-colors hover:text-white">Join Discord</a>
-					</li>
-				</ul>
+							<Icon icon={social.icon} width="24" height="24" />
+						</a>
+					{/each}
+				</div>
 			</div>
 		</div>
 

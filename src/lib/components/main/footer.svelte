@@ -1,6 +1,6 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import { socials } from '$lib/data/socialicons';
+	import { socials } from '$lib/data/socialIcons';
 </script>
 
 <footer class="relative overflow-hidden bg-[#1a1a1a] py-20 text-white">

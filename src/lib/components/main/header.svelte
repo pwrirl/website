@@ -41,15 +41,15 @@
 
 <svelte:window bind:scrollY />
 
-<header class={headerClasses}>
+<header class={headerClasses} role="banner">
 	<div class="container mx-auto px-5">
-		<nav class="flex items-center md:items-center">
+		<nav class="flex items-center md:items-center" role="navigation" aria-label="Main navigation">
 			<!-- Left side on tablet/desktop, centered on mobile -->
 			<div class="flex flex-1 justify-center sm:justify-start">
 				<div class="flex flex-col items-center md:flex-row md:items-center md:space-x-6">
 					<!-- Logo -->
 					<div class="flex items-center">
-						<a href="/">
+						<a href="/" aria-label="PowerIRL Home">
 							<img
 								src="/images/pwrirl_logo.svg"
 								alt="PowerIRL Logo"
@@ -58,39 +58,75 @@
 						</a>
 					</div>
 					<!-- Desktop Menu (hidden on tablet and below) -->
-					<ul class="hidden space-x-6 md:flex">
-						<li>
+					<ul class="hidden space-x-6 md:flex" role="menubar">
+						<li role="none">
 							<button
 								on:click={scrollToTop}
 								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								role="menuitem"
+								aria-label="Go to top of page"
 							>
-								<Icon icon="mdi:home" width="20" height="20" class="text-[#e20074]" />
+								<Icon
+									icon="mdi:home"
+									width="20"
+									height="20"
+									class="text-[#e20074]"
+									aria-hidden="true"
+								/>
 								<span>Home</span>
 							</button>
 						</li>
-						<li>
+						<li role="none">
 							<button
 								on:click={() => scrollToSection('features')}
 								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								role="menuitem"
+								aria-label="Scroll to features section"
 							>
-								<Icon icon="mdi:star" width="20" height="20" class="text-[#e20074]" />
+								<Icon
+									icon="mdi:star"
+									width="20"
+									height="20"
+									class="text-[#e20074]"
+									aria-hidden="true"
+								/>
 								<span>Features</span>
 							</button>
 						</li>
-						<li>
+						<li role="none">
 							<button
 								on:click={() => scrollToSection('pricing')}
 								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								role="menuitem"
+								aria-label="Scroll to pricing section"
 							>
-								<Icon icon="mdi:tag" width="20" height="20" class="text-[#e20074]" />
+								<Icon
+									icon="mdi:tag"
+									width="20"
+									height="20"
+									class="text-[#e20074]"
+									aria-hidden="true"
+								/>
 								<span>Pricing</span>
 							</button>
 						</li>
 					</ul>
 					<!-- Hamburger Menu Icon (visible on tablet and below, below logo) -->
 					<div class="mt-2 flex justify-center md:hidden">
-						<button class="cursor-pointer hover:opacity-80" on:click={toggleMobileMenu}>
-							<Icon icon="game-icons:hamburger-menu" width="32" height="32" color="#e20074" />
+						<button
+							class="cursor-pointer hover:opacity-80"
+							on:click={toggleMobileMenu}
+							aria-label="Toggle mobile menu"
+							aria-expanded={isMobileMenuOpen}
+							aria-controls="mobile-menu"
+						>
+							<Icon
+								icon="game-icons:hamburger-menu"
+								width="32"
+								height="32"
+								color="#e20074"
+								aria-hidden="true"
+							/>
 						</button>
 					</div>
 				</div>
@@ -102,8 +138,15 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					class="transition-opacity hover:opacity-80"
+					aria-label="Go to client dashboard (opens in new tab)"
 				>
-					<Icon icon="carbon:user-avatar-filled" width="38" height="38" color="#e20074" />
+					<Icon
+						icon="carbon:user-avatar-filled"
+						width="38"
+						height="38"
+						color="#e20074"
+						aria-hidden="true"
+					/>
 				</a>
 			</div>
 		</nav>
@@ -116,6 +159,8 @@
 				role="dialog"
 				aria-modal="true"
 				aria-label="Mobile menu"
+				aria-hidden={!isMobileMenuOpen}
+				id="mobile-menu"
 				tabindex="0"
 				in:fade={{ duration: 200 }}
 				out:fade={{ duration: 200 }}
@@ -126,7 +171,7 @@
 					out:scale={{ duration: 200, start: 1 }}
 				>
 					<!-- Background pattern -->
-					<div class="absolute inset-0">
+					<div class="absolute inset-0" aria-hidden="true">
 						<div
 							class="absolute inset-0 bg-[linear-gradient(45deg,#ffffff_1px,transparent_1px),linear-gradient(-45deg,#ffffff_1px,transparent_1px)] bg-[size:20px_20px] opacity-[0.02]"
 						></div>
@@ -141,51 +186,61 @@
 						<button
 							class="absolute top-3 right-2 cursor-pointer rounded-full p-2 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
 							on:click={toggleMobileMenu}
+							aria-label="Close mobile menu"
 						>
-							<Icon icon="mdi:close" width="24" height="24" />
+							<Icon icon="mdi:close" width="24" height="24" aria-hidden="true" />
 						</button>
 
 						<!-- Menu items -->
 						<div class="p-6">
-							<ul class="space-y-2">
-								<li>
+							<ul class="space-y-2" role="menu">
+								<li role="none">
 									<button
 										class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
 										on:click={scrollToTop}
+										role="menuitem"
+										aria-label="Go to top of page"
 									>
 										<Icon
 											icon="mdi:home"
 											width="24"
 											height="24"
 											class="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+											aria-hidden="true"
 										/>
 										<span class="font-medium">Home</span>
 									</button>
 								</li>
-								<li>
+								<li role="none">
 									<button
 										class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
 										on:click={() => scrollToSection('features')}
+										role="menuitem"
+										aria-label="Scroll to features section"
 									>
 										<Icon
 											icon="mdi:star"
 											width="24"
 											height="24"
 											class="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+											aria-hidden="true"
 										/>
 										<span class="font-medium">Features</span>
 									</button>
 								</li>
-								<li>
+								<li role="none">
 									<button
 										class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
 										on:click={() => scrollToSection('pricing')}
+										role="menuitem"
+										aria-label="Scroll to pricing section"
 									>
 										<Icon
 											icon="mdi:tag"
 											width="24"
 											height="24"
 											class="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+											aria-hidden="true"
 										/>
 										<span class="font-medium">Pricing</span>
 									</button>
@@ -197,8 +252,9 @@
 								<a
 									href="/dashboard"
 									class="flex w-full items-center justify-center gap-2 rounded-lg bg-[#e20074] px-4 py-3 font-medium text-white transition-colors hover:bg-[#c70067]"
+									aria-label="Go to dashboard"
 								>
-									<Icon icon="mdi:account" width="20" height="20" />
+									<Icon icon="mdi:account" width="20" height="20" aria-hidden="true" />
 									<span>Go to Dashboard</span>
 								</a>
 							</div>
@@ -209,3 +265,29 @@
 		{/if}
 	</div>
 </header>
+
+<style>
+	/* Focus styles for better keyboard navigation */
+	button:focus-visible,
+	a:focus-visible {
+		outline: 2px solid #e20074;
+		outline-offset: 2px;
+	}
+
+	/* Ensure proper color contrast */
+	.text-white {
+		color: #ffffff;
+	}
+
+	/* Ensure proper spacing for readability */
+	.space-y-2 > * + * {
+		margin-top: 0.5rem;
+	}
+
+	/* Ensure proper heading hierarchy */
+	h1,
+	h2,
+	h3 {
+		line-height: 1.2;
+	}
+</style>

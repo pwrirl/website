@@ -1,32 +1,17 @@
 export const socials = [
 	{
-		name: 'Twitch',
-		url: 'https://twitch.tv/pwrirl',
-		icon: 'mdi:twitch'
-	},
-	{
-		name: 'Kick',
-		url: 'https://kick.com/pwrirl',
-		icon: 'tabler:brand-kick-filled'
-	},
-	{
-		name: 'youtube',
-		url: 'https://youtube.com/pwrirl',
-		icon: 'ri:youtube-fill'
-	},
-	{
-		name: 'Rumble',
-		url: 'https://rumble.com/c/pwrirl',
-		icon: 'simple-icons:rumble'
-	},
-	{
 		name: 'Discord',
-		url: 'https://discord.gg/KtfrPhdEvx',
-		icon: 'ic:baseline-discord'
+		icon: 'ic:baseline-discord',
+		url: 'https://discord.gg/KtfrPhdEvx'
+	},
+	{
+		name: 'Twitter',
+		icon: 'mdi:twitter',
+		url: 'https://twitter.com/powerirl'
 	},
 	{
 		name: 'GitHub',
-		url: 'https://github.com/pwrirl',
-		icon: 'mdi:github'
+		icon: 'mdi:github',
+		url: 'https://github.com/pwrirl'
 	}
 ];

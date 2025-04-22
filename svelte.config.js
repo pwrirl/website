@@ -4,7 +4,7 @@ import adapter from '@sveltejs/adapter-vercel';
 const config = {
 	kit: {
 		adapter: adapter({
-			runtime: 'node22.x',
+			runtime: 'nodejs22.x',
 			split: false
 		})
 	}

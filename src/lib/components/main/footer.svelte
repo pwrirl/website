@@ -25,25 +25,52 @@
 					The future of cloud-based streaming. Professional-grade tools for content creators.
 				</p>
 				<!-- Social Icons -->
-				<div class="flex justify-center space-x-4">
+				<div class="mt-8 flex justify-center space-x-6">
 					{#each socials as social}
 						<a
 							href={social.url}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="text-gray-400 transition-colors hover:text-[#e20074]"
-							title={social.name}
+							aria-label={social.name}
 						>
 							<Icon icon={social.icon} width="24" height="24" />
 						</a>
 					{/each}
 				</div>
 			</div>
-		</div>
 
-		<!-- Bottom Bar -->
-		<div class="mt-12 border-t border-white/10 pt-8 text-center text-sm text-gray-400">
-			<p>© 2025 PowerIRL an SDS Nexus, LLC Company. All rights reserved.</p>
+			<!-- Bottom Bar -->
+			<div class="mt-12 border-t border-white/10 pt-8 text-center text-sm text-gray-400">
+				<!-- Legal Links -->
+				<div class="mb-4 flex flex-wrap justify-center gap-6">
+					<a
+						href="/legal"
+						class="text-sm font-medium text-gray-400 transition-colors hover:text-[#e20074]"
+					>
+						Legal
+					</a>
+					<a
+						href="/legal/tos"
+						class="text-sm font-medium text-gray-400 transition-colors hover:text-[#e20074]"
+					>
+						Terms of Service
+					</a>
+					<a
+						href="/legal/disclaimer"
+						class="text-sm font-medium text-gray-400 transition-colors hover:text-[#e20074]"
+					>
+						Disclaimer
+					</a>
+					<a
+						href="/legal/privacy"
+						class="text-sm font-medium text-gray-400 transition-colors hover:text-[#e20074]"
+					>
+						Privacy Policy
+					</a>
+				</div>
+				<p>© 2025 PowerIRL an SDS Nexus, LLC Company. All rights reserved.</p>
+			</div>
 		</div>
 	</div>
 </footer>

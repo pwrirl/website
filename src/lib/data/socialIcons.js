@@ -1,5 +1,15 @@
 export const socials = [
 	{
+		name: 'Twitch',
+		icon: 'mdi:twitch',
+		url: 'https://twitch.tv/pwrirl'
+	},
+	{
+		name: 'Kick',
+		icon: 'simple-icons:kick',
+		url: 'https://kick.com/pwrirl'
+	},
+	{
 		name: 'Discord',
 		icon: 'ic:baseline-discord',
 		url: 'https://discord.gg/KtfrPhdEvx'
@@ -7,7 +17,7 @@ export const socials = [
 	{
 		name: 'Twitter',
 		icon: 'mdi:twitter',
-		url: 'https://twitter.com/powerirl'
+		url: 'https://twitter.com/powerirl_'
 	},
 	{
 		name: 'GitHub',

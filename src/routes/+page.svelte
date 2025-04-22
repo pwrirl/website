@@ -33,7 +33,7 @@
 {#if showBackToTop}
 	<button
 		on:click={scrollToTop}
-		class="fixed right-8 bottom-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#e20074] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#c70067] hover:shadow-xl"
+		class="fixed right-8 bottom-8 z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[#e20074] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#c70067] hover:shadow-xl"
 		style="opacity: {Math.min((y - 500) / 250, 1)}; transform: scale({Math.min(
 			(y - 500) / 250,
 			1
@@ -61,12 +61,8 @@
 	</video>
 	<div
 		class="absolute top-0 left-0 z-[2] h-full w-full bg-gradient-to-b from-[#e20074]/30 via-[#222]/80 to-[#222]/90"
-	/>
-	<div
-		class="dot-pattern animate-dots absolute top-0 left-0 z-[2] h-full w-full"
-		style="background-image: radial-gradient(circle at center, rgba(255,255,255,0.1) 1px, transparent 1px); 
-		background-size: 16px 16px;"
-	/>
+	></div>
+	<div class="dot-pattern animate-dots absolute top-0 left-0 z-[2] h-full w-full"></div>
 	<div
 		class="relative z-[3] max-w-[90%] p-8 text-center text-white"
 		style="transform: translateY({y * -0.1}px)"
@@ -82,7 +78,7 @@
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
 			<button
 				on:click={() => scrollToSection('pricing')}
-				class="flex w-full items-center justify-center gap-2 rounded-md bg-[#e20074] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#c70067] sm:w-auto sm:px-6 sm:py-3 sm:text-base"
+				class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-[#e20074] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#c70067] sm:w-auto sm:px-6 sm:py-3 sm:text-base"
 			>
 				<Icon icon="mdi:rocket-launch" width="20" height="20" />
 				<span>Get Started</span>
@@ -221,7 +217,7 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
+						class="w-full cursor-pointer rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
 					>
 						Order Now
 					</button>
@@ -282,7 +278,7 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
+						class="w-full cursor-pointer rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
 					>
 						Order Now
 					</button>
@@ -360,7 +356,7 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
+						class="w-full cursor-pointer rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
 					>
 						Order Now
 					</button>
@@ -441,7 +437,7 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
+						class="w-full cursor-pointer rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
 					>
 						Order Now
 					</button>
@@ -497,7 +493,7 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
+						class="w-full cursor-pointer rounded-md bg-[#e20074] px-4 py-2 font-medium text-white transition-colors hover:bg-[#c70067] sm:px-6 sm:py-3"
 					>
 						Order Now
 					</button>
@@ -517,28 +513,20 @@
 		}
 	}
 
-	@keyframes gradient-x {
-		0% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-		100% {
-			background-position: 0% 50%;
-		}
-	}
-
-	.animate-gradient-x {
-		background-size: 200% 200%;
-		animation: gradient-x 15s ease infinite;
-	}
-
 	.animate-dots {
 		animation: moveBackground 8s linear infinite;
 	}
 
 	/* Add a second layer of dots for more depth */
+	.dot-pattern {
+		background-image: radial-gradient(
+			circle at center,
+			rgba(255, 255, 255, 0.1) 1px,
+			transparent 1px
+		);
+		background-size: 16px 16px;
+	}
+
 	.dot-pattern::after {
 		content: '';
 		position: absolute;
@@ -554,15 +542,5 @@
 		background-size: 24px 24px;
 		animation: moveBackground 12s linear infinite reverse;
 		pointer-events: none;
-	}
-
-	/* Custom radial gradient utility */
-	.bg-gradient-radial {
-		background-image: radial-gradient(
-			circle at center,
-			var(--tw-gradient-from) 0%,
-			var(--tw-gradient-via) 65%,
-			var(--tw-gradient-to) 100%
-		);
 	}
 </style>

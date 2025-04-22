@@ -6,6 +6,10 @@
 	let scrollY;
 	let isScrolled = false;
 
+	$: headerClasses = `sticky top-0 z-50 bg-[#222] text-lg text-white shadow-md transition-all duration-300 ease-in-out ${
+		isScrolled ? 'py-4 shadow-lg shadow-black/25' : 'py-4 shadow-black/10 md:py-8'
+	}`;
+
 	function toggleMobileMenu() {
 		isMobileMenuOpen = !isMobileMenuOpen;
 	}
@@ -37,11 +41,7 @@
 
 <svelte:window bind:scrollY />
 
-<header
-	class="sticky top-0 z-50 bg-[#222] text-lg text-white shadow-md transition-all duration-300 ease-in-out {isScrolled
-		? 'py-4 shadow-lg shadow-black/25'
-		: 'py-4 shadow-black/10 md:py-8'}"
->
+<header class={headerClasses}>
 	<div class="container mx-auto px-5">
 		<nav class="flex items-center md:items-center">
 			<!-- Left side on tablet/desktop, centered on mobile -->
@@ -60,19 +60,18 @@
 					<!-- Desktop Menu (hidden on tablet and below) -->
 					<ul class="hidden space-x-6 md:flex">
 						<li>
-							<a
-								href="/"
+							<button
 								on:click={scrollToTop}
-								class="flex items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
 							>
 								<Icon icon="mdi:home" width="20" height="20" class="text-[#e20074]" />
 								<span>Home</span>
-							</a>
+							</button>
 						</li>
 						<li>
 							<button
 								on:click={() => scrollToSection('features')}
-								class="flex items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
 							>
 								<Icon icon="mdi:star" width="20" height="20" class="text-[#e20074]" />
 								<span>Features</span>
@@ -81,7 +80,7 @@
 						<li>
 							<button
 								on:click={() => scrollToSection('pricing')}
-								class="flex items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
 							>
 								<Icon icon="mdi:tag" width="20" height="20" class="text-[#e20074]" />
 								<span>Pricing</span>
@@ -111,13 +110,18 @@
 		<!-- Mobile Menu (visible when toggled on tablet and below) -->
 		{#if isMobileMenuOpen}
 			<div
-				class="fixed inset-0 z-40 flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden"
+				class="fixed inset-0 z-40 flex cursor-pointer items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden"
 				on:click|self={toggleMobileMenu}
+				on:keydown={(e) => e.key === 'Escape' && toggleMobileMenu()}
+				role="dialog"
+				aria-modal="true"
+				aria-label="Mobile menu"
+				tabindex="0"
 				in:fade={{ duration: 200 }}
 				out:fade={{ duration: 200 }}
 			>
 				<div
-					class="relative mx-4 w-full max-w-md overflow-hidden rounded-xl bg-gradient-to-b from-[#1a1a1a] to-[#121212] shadow-2xl"
+					class="relative mx-4 w-full max-w-md cursor-pointer overflow-hidden rounded-xl bg-gradient-to-b from-[#1a1a1a] to-[#121212] shadow-2xl"
 					in:scale={{ duration: 300, start: 0.95 }}
 					out:scale={{ duration: 200, start: 1 }}
 				>
@@ -132,10 +136,10 @@
 					</div>
 
 					<!-- Menu content -->
-					<div class="relative">
+					<div class="relative pt-12">
 						<!-- Close button -->
 						<button
-							class="absolute top-4 right-4 rounded-full p-2 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+							class="absolute top-3 right-2 cursor-pointer rounded-full p-2 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
 							on:click={toggleMobileMenu}
 						>
 							<Icon icon="mdi:close" width="24" height="24" />
@@ -145,9 +149,8 @@
 						<div class="p-6">
 							<ul class="space-y-2">
 								<li>
-									<a
-										href="/"
-										class="group flex items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
+									<button
+										class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
 										on:click={scrollToTop}
 									>
 										<Icon
@@ -157,11 +160,11 @@
 											class="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
 										/>
 										<span class="font-medium">Home</span>
-									</a>
+									</button>
 								</li>
 								<li>
 									<button
-										class="group flex w-full items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
+										class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
 										on:click={() => scrollToSection('features')}
 									>
 										<Icon
@@ -175,7 +178,7 @@
 								</li>
 								<li>
 									<button
-										class="group flex w-full items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
+										class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
 										on:click={() => scrollToSection('pricing')}
 									>
 										<Icon

@@ -1,5 +1,15 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 
-const config = { kit: { adapter: adapter() } };
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	kit: {
+		adapter: adapter({
+			pages: 'public',
+			assets: 'public',
+			fallback: 'index.php',
+			precompress: false
+		})
+	}
+};
 
 export default config;

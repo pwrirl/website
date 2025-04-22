@@ -139,8 +139,6 @@
 
 <div
 	class="relative flex h-[75vh] w-full items-center justify-center overflow-hidden sm:h-[50vh] md:h-[75vh]"
-	role="banner"
-	aria-label="Hero section"
 >
 	<video
 		autoplay
@@ -151,19 +149,14 @@
 		class="absolute top-0 left-0 z-[1] h-full w-full transform object-cover"
 		style="transform: scale(1.1) translateY({y * 0.2}px)"
 		on:error={() => console.log('Video failed to load, showing poster image')}
-		aria-label="Background video showing streaming platform features"
 	>
 		<source src={videoSrc} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
 	<div
 		class="absolute top-0 left-0 z-[2] h-full w-full bg-gradient-to-b from-[#e20074]/30 via-[#222]/80 to-[#222]/90"
-		aria-hidden="true"
 	></div>
-	<div
-		class="dot-pattern animate-dots absolute top-0 left-0 z-[2] h-full w-full"
-		aria-hidden="true"
-	></div>
+	<div class="dot-pattern animate-dots absolute top-0 left-0 z-[2] h-full w-full"></div>
 	<div
 		class="relative z-[3] max-w-[90%] p-8 text-center text-white"
 		style="transform: translateY({y * -0.1}px)"
@@ -180,9 +173,8 @@
 			<button
 				on:click={() => scrollToSection('pricing')}
 				class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-[#e20074] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#c70067] sm:w-auto sm:px-6 sm:py-3 sm:text-base"
-				aria-label="Navigate to pricing section"
 			>
-				<Icon icon="mdi:rocket-launch" width="20" height="20" aria-hidden="true" />
+				<Icon icon="mdi:rocket-launch" width="20" height="20" />
 				<span>Get Started</span>
 			</button>
 			<a
@@ -190,9 +182,8 @@
 				target="_blank"
 				rel="noopener noreferrer"
 				class="flex w-full items-center justify-center gap-2 rounded-md border-2 border-white px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-6 sm:py-3 sm:text-base"
-				aria-label="Join our Discord community (opens in new tab)"
 			>
-				<Icon icon="ic:baseline-discord" width="20" height="20" aria-hidden="true" />
+				<Icon icon="ic:baseline-discord" width="20" height="20" />
 				<span>Join our Discord</span>
 			</a>
 		</div>
@@ -202,19 +193,13 @@
 <section
 	id="features"
 	class="bg-[#e20074] py-16 text-center text-2xl font-bold text-white md:text-4xl"
-	role="region"
-	aria-label="Features section"
 >
 	<h2>Features</h2>
 </section>
 
-<section
-	class="relative overflow-hidden bg-[#222] py-20 text-white"
-	role="region"
-	aria-label="Features list"
->
+<section class="relative overflow-hidden bg-[#222] py-20 text-white">
 	<!-- Background pattern -->
-	<div class="absolute inset-0" aria-hidden="true">
+	<div class="absolute inset-0">
 		<!-- Square grid pattern -->
 		<div
 			class="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_1px,transparent_1px),linear-gradient(0deg,#ffffff_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.02]"
@@ -222,21 +207,15 @@
 	</div>
 
 	<div class="relative container mx-auto px-5">
-		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" role="list">
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 			{#each features as feature}
 				<div
 					bind:this={featureBoxes[featureBoxes.length]}
-					class="group relative flex min-h-[320px] flex-col items-center rounded-lg bg-[#121212]/80 p-8 text-center backdrop-blur-sm transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#121212] hover:shadow-lg sm:p-10"
-					style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);"
-					role="listitem"
+					class="group relative flex min-h-[320px] flex-col items-center rounded-lg bg-[#121212]/80 p-8 text-center backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-10"
+					style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 				>
 					<div
-						class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-						aria-hidden="true"
-					></div>
-					<div
 						class="mb-6 rounded-full bg-[#e20074]/10 p-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
-						aria-hidden="true"
 					>
 						<Icon icon={feature.icon} width="40" height="40" color="#e20074" />
 					</div>
@@ -251,19 +230,13 @@
 <section
 	id="pricing"
 	class="bg-[#e20074] py-16 text-center text-2xl font-bold text-white md:text-4xl"
-	role="region"
-	aria-label="Pricing section"
 >
 	<h2>PowerOBS Plans</h2>
 </section>
 
-<section
-	class="relative overflow-hidden bg-[#222] py-20 text-white"
-	role="region"
-	aria-label="Pricing plans"
->
+<section class="relative overflow-hidden bg-[#222] py-20 text-white">
 	<!-- Background pattern -->
-	<div class="absolute inset-0" aria-hidden="true">
+	<div class="absolute inset-0">
 		<!-- Diagonal lines pattern -->
 		<div
 			class="absolute inset-0 bg-[linear-gradient(45deg,#e20074_1px,transparent_1px),linear-gradient(-45deg,#e20074_1px,transparent_1px)] bg-[size:20px_20px] opacity-[0.03]"
@@ -275,7 +248,7 @@
 	</div>
 
 	<!-- Decorative shapes behind cards -->
-	<div class="absolute inset-0" aria-hidden="true">
+	<div class="absolute inset-0">
 		<!-- Large circle -->
 		<div class="absolute top-1/4 -left-40 h-80 w-80 rounded-full bg-[#e20074]/5 blur-3xl"></div>
 		<!-- Triangle -->
@@ -285,17 +258,15 @@
 	</div>
 
 	<div class="relative container mx-auto px-5">
-		<div class="grid grid-cols-1 gap-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8" role="list">
+		<div class="grid grid-cols-1 gap-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
 			<!-- Basic Plan -->
 			<div
 				bind:this={basicPlan}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);"
-				role="listitem"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-					aria-hidden="true"
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
 				<div class="flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Basic</h3>
@@ -303,21 +274,60 @@
 						<span class="text-3xl font-bold sm:text-4xl">$59.99</span>
 						<span class="text-gray-400">/month</span>
 					</div>
-					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base" role="list">
-						{#each basicFeatures as feature}
-							<li class="flex items-center">
-								<div class="checkmark-icon" aria-hidden="true">
-									<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-								</div>
-								<span class="ml-2">{feature}</span>
-							</li>
-						{/each}
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Free Setup</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">White Glove Service</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">24/7 Support via Discord</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">1080p/60FPS Streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Basic Stream Overlays</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Mobile Streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Cloud OBS Access</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Basic Analytics</span>
+						</li>
 					</ul>
 				</div>
 				<div class="relative">
 					<button
 						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-						aria-label="Order PowerOBS Basic plan"
 					>
 						Order Now
 					</button>
@@ -327,12 +337,11 @@
 			<!-- Premium Plan -->
 			<div
 				bind:this={premiumPlan}
-				class="group relative flex flex-col overflow-hidden rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateY(-20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);"
-				role="listitem"
+				class="group relative flex flex-col overflow-hidden rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateY(-20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<!-- Corner Ribbon -->
-				<div class="absolute top-[22px] right-[-58px] z-10 rotate-45" aria-hidden="true">
+				<div class="absolute top-[22px] right-[-58px] z-10 rotate-45">
 					<div class="relative w-[200px]">
 						<div
 							class="bg-gradient-to-r from-[#e20074] to-[#ff00a0] py-2 text-center text-sm font-bold text-white shadow-lg"
@@ -345,8 +354,7 @@
 					</div>
 				</div>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-					aria-hidden="true"
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
 				<div class="flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Premium</h3>
@@ -354,26 +362,70 @@
 						<span class="text-3xl font-bold sm:text-4xl">$119.99</span>
 						<span class="text-gray-400">/month</span>
 					</div>
-					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base" role="list">
-						{#each premiumFeatures as feature}
-							<li class="flex items-center">
-								<div class="checkmark-icon" aria-hidden="true">
-									<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-								</div>
-								<span class="ml-2">{feature}</span>
-							</li>
-						{/each}
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Everything in Basic</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Remote Desktop Control</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Custom Overlays & Alerts</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">1080p/60FPS Streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Cloud Recording</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Advanced Stream Settings</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Scene Collections</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Priority Support</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Stream Analytics</span>
+						</li>
 					</ul>
 				</div>
 				<div class="relative">
 					<button
 						class="relative w-full cursor-pointer overflow-hidden rounded-md bg-gradient-to-r from-[#e20074] to-[#ff00a0] px-8 py-3 text-lg font-medium text-white transition-all duration-300 hover:scale-105 sm:px-12 sm:py-4"
-						aria-label="Order PowerOBS Premium plan"
 					>
 						<div class="relative z-10">Order Now</div>
 						<div
 							class="animate-shimmer absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-							aria-hidden="true"
 						></div>
 					</button>
 				</div>
@@ -382,13 +434,11 @@
 			<!-- Advanced Plan -->
 			<div
 				bind:this={advancedPlan}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#121212] hover:shadow-lg sm:p-8 md:col-span-2 lg:col-span-1"
-				style="opacity: 0; transform: translateX(50px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);"
-				role="listitem"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8 md:col-span-2 lg:col-span-1"
+				style="opacity: 0; transform: translateX(50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-					aria-hidden="true"
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
 				<div class="flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Advanced</h3>
@@ -396,21 +446,72 @@
 						<span class="text-3xl font-bold sm:text-4xl">$169.99</span>
 						<span class="text-gray-400">/month</span>
 					</div>
-					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base" role="list">
-						{#each advancedFeatures as feature}
-							<li class="flex items-center">
-								<div class="checkmark-icon" aria-hidden="true">
-									<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-								</div>
-								<span class="ml-2">{feature}</span>
-							</li>
-						{/each}
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Everything in Basic</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Priority Support</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Delivered in 24 Hours</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Remote Desktop Access</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Unmetered Bandwidth</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Custom Stream Overlays</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Multi-Platform Streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Advanced Analytics</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Stream Scheduling</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Custom Alerts & Notifications</span>
+						</li>
 					</ul>
 				</div>
 				<div class="relative">
 					<button
 						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-						aria-label="Order PowerOBS Advanced plan"
 					>
 						Order Now
 					</button>
@@ -423,19 +524,13 @@
 <section
 	id="endpoints"
 	class="bg-[#e20074] py-16 text-center text-2xl font-bold text-white md:text-4xl"
-	role="region"
-	aria-label="Endpoints and PowerStreaming section"
 >
 	<h2>Endpoints & PowerStreaming</h2>
 </section>
 
-<section
-	class="relative overflow-hidden bg-[#222] py-20 text-white"
-	role="region"
-	aria-label="Endpoints and PowerStreaming plans"
->
+<section class="relative overflow-hidden bg-[#222] py-20 text-white">
 	<!-- Background pattern -->
-	<div class="absolute inset-0" aria-hidden="true">
+	<div class="absolute inset-0">
 		<!-- Diagonal lines pattern -->
 		<div
 			class="absolute inset-0 bg-[linear-gradient(45deg,#e20074_1px,transparent_1px),linear-gradient(-45deg,#e20074_1px,transparent_1px)] bg-[size:20px_20px] opacity-[0.03]"
@@ -447,23 +542,20 @@
 	</div>
 
 	<div class="relative container mx-auto px-5">
-		<div class="grid gap-8 md:grid-cols-2" role="list">
+		<div class="grid gap-8 md:grid-cols-2">
 			<!-- SRT/SRTLA Endpoint -->
 			<div
 				bind:this={srtPlan}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);"
-				role="listitem"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-					aria-hidden="true"
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
 				<div class="flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
 							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
-							aria-hidden="true"
 						>
 							<Icon icon="mdi:cellphone-wireless" width="32" height="32" color="#e20074" />
 						</div>
@@ -473,21 +565,48 @@
 						<span class="text-3xl font-bold sm:text-4xl">$9.99</span>
 						<span class="text-gray-400">/month</span>
 					</div>
-					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base" role="list">
-						{#each srtFeatures as feature}
-							<li class="flex items-center">
-								<div class="checkmark-icon" aria-hidden="true">
-									<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-								</div>
-								<span class="ml-2">{feature}</span>
-							</li>
-						{/each}
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Secure Reliable Transport for mobile streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Optimized for Android & iOS devices</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Low latency streaming with error correction</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">AES encryption for secure transmission</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Jitter compensation for unstable networks</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Bandwidth optimization for mobile data</span>
+						</li>
 					</ul>
 				</div>
 				<div class="relative">
 					<button
 						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-						aria-label="Order SRT/SRTLA plan"
 					>
 						Order Now
 					</button>
@@ -497,19 +616,16 @@
 			<!-- RTMP Endpoint -->
 			<div
 				bind:this={rtmpPlan}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateX(50px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);"
-				role="listitem"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateX(50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-					aria-hidden="true"
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
 				<div class="flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
 							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
-							aria-hidden="true"
 						>
 							<Icon icon="mdi:desktop-classic" width="32" height="32" color="#e20074" />
 						</div>
@@ -519,21 +635,48 @@
 						<span class="text-3xl font-bold sm:text-4xl">$9.99</span>
 						<span class="text-gray-400">/month</span>
 					</div>
-					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base" role="list">
-						{#each rtmpFeatures as feature}
-							<li class="flex items-center">
-								<div class="checkmark-icon" aria-hidden="true">
-									<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-								</div>
-								<span class="ml-2">{feature}</span>
-							</li>
-						{/each}
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Industry-standard streaming protocol</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Compatible with all major streaming platforms</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">High-quality video delivery</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Stable and reliable streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Perfect for desktop streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Wide range of encoder support</span>
+						</li>
 					</ul>
 				</div>
 				<div class="relative">
 					<button
 						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-						aria-label="Order RTMP plan"
 					>
 						Order Now
 					</button>
@@ -542,23 +685,20 @@
 		</div>
 
 		<!-- PowerStreaming Plans -->
-		<div class="mt-16 grid gap-8 md:grid-cols-1" role="list">
+		<div class="mt-16 grid gap-8 md:grid-cols-1">
 			<!-- PowerStreaming Basic -->
 			<div
 				bind:this={powerStreamingBasic}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);"
-				role="listitem"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-					aria-hidden="true"
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
 				<div class="flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
 							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
-							aria-hidden="true"
 						>
 							<Icon icon="mdi:chart-timeline-variant" width="32" height="32" color="#e20074" />
 						</div>
@@ -571,9 +711,9 @@
 						<span class="text-3xl font-bold sm:text-4xl">$4.99</span>
 						<span class="text-gray-400">/month</span>
 					</div>
-					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base" role="list">
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
 						<li class="flex items-center">
-							<div class="checkmark-icon" aria-hidden="true">
+							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
 							<span class="ml-2">Stream to 5 different platforms simultaneously</span>
@@ -583,7 +723,6 @@
 				<div class="relative">
 					<button
 						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-						aria-label="Get started with PowerStreaming Basic"
 					>
 						Get Started
 					</button>
@@ -593,19 +732,16 @@
 			<!-- PowerStreaming Pro -->
 			<div
 				bind:this={powerStreamingPro}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);"
-				role="listitem"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-					aria-hidden="true"
+					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
 				<div class="flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
 							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
-							aria-hidden="true"
 						>
 							<Icon icon="mdi:chart-timeline-variant" width="32" height="32" color="#e20074" />
 						</div>
@@ -619,9 +755,9 @@
 						<span class="text-3xl font-bold sm:text-4xl">$9.99</span>
 						<span class="text-gray-400">/month</span>
 					</div>
-					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base" role="list">
+					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
 						<li class="flex items-center">
-							<div class="checkmark-icon" aria-hidden="true">
+							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
 							<span class="ml-2">Stream to 10 different platforms simultaneously</span>
@@ -631,7 +767,6 @@
 				<div class="relative">
 					<button
 						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-						aria-label="Get started with PowerStreaming Pro"
 					>
 						Get Started
 					</button>
@@ -703,29 +838,5 @@
 
 	.animate-shimmer {
 		animation: shimmer 2.5s infinite;
-	}
-
-	/* Focus styles for better keyboard navigation */
-	button:focus-visible,
-	a:focus-visible {
-		outline: 2px solid #e20074;
-		outline-offset: 2px;
-	}
-
-	/* Ensure sufficient color contrast */
-	.text-gray-300 {
-		color: #d1d5db;
-	}
-
-	/* Ensure proper heading hierarchy */
-	h1,
-	h2,
-	h3 {
-		line-height: 1.2;
-	}
-
-	/* Ensure proper spacing for readability */
-	p {
-		line-height: 1.6;
 	}
 </style>

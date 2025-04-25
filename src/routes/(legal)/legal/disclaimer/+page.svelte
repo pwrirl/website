@@ -1,122 +1,102 @@
-<div class="prose prose-invert mx-auto max-w-3xl">
-	<h1>Disclaimer</h1>
-	<p><strong>Last updated: April 1, 2025</strong></p>
+<script>
+	import { page } from '$app/stores';
+	import Icon from '@iconify/svelte';
+</script>
 
-	<h2>Interpretation</h2>
-	<p>
-		The words with initial capital letters have meanings defined under the following conditions.
-		These definitions shall apply regardless of whether they appear in singular or plural form.
-	</p>
+<div class="container mx-auto px-5 py-8">
+	<div class="mx-auto max-w-4xl">
+		<h1 class="mb-8 text-center text-3xl font-bold text-white sm:text-4xl">Disclaimer</h1>
 
-	<h2>Definitions</h2>
-	<p>For the purposes of this Disclaimer:</p>
-	<ul>
-		<li>
-			<strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Disclaimer)
-			refers to PowerIRL, 30 N Gould St Ste R, Sheridan, WY, 82801, USA.
-		</li>
-		<li><strong>Service</strong> refers to the Website.</li>
-		<li>
-			<strong>You</strong> means the individual accessing the Service, or the company, or other legal
-			entity on behalf of which such individual is accessing or using the Service, as applicable.
-		</li>
-		<li>
-			<strong>Website</strong> refers to PowerIRL, accessible from
-			<a href="https://pwrirl.com">https://pwrirl.com</a>
-		</li>
-	</ul>
+		<div class="rounded-lg bg-[#121212]/80 p-8 backdrop-blur-sm">
+			<div class="mb-8 flex flex-col items-center justify-center">
+				<div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#e20074]/10">
+					<Icon icon="mdi:alert-circle" class="h-8 w-8 text-[#e20074]" />
+				</div>
+				<p class="text-center text-gray-300">
+					<strong>Last updated: April 1, 2025</strong>
+				</p>
+			</div>
 
-	<h2>Disclaimer</h2>
-	<p>The information contained on the Service is for general information purposes only.</p>
-	<p>
-		The Company assumes no responsibility for errors or omissions in the contents of the Service.
-	</p>
-	<p>
-		In no event shall the Company be liable for any special, direct, indirect, consequential, or
-		incidental damages or any damages whatsoever, whether in an action of contract, negligence or
-		other, arising out of or in connection with the use of the Service or the contents of the
-		Service. The Company reserves the right to make additions, deletions, or modifications to the
-		contents on the Service at any time without prior notice.
-	</p>
-	<p>
-		The Company does not warrant that the Service is free of viruses or other harmful components.
-	</p>
+			<div class="prose prose-invert max-w-none">
+				<section class="mb-8">
+					<h2 class="mb-4 text-2xl font-bold text-white">1. General Disclaimer</h2>
+					<p class="mb-6">
+						The information provided by PowerIRL ("we," "us," or "our") on pwrirl.com (the "Site")
+						is for general informational purposes only. All information on the Site is provided in
+						good faith, however we make no representation or warranty of any kind, express or
+						implied, regarding the accuracy, adequacy, validity, reliability, availability, or
+						completeness of any information on the Site.
+					</p>
+				</section>
 
-	<h2>External Links Disclaimer</h2>
-	<p>
-		The Service may contain links to external websites that are not provided or maintained by or in
-		any way affiliated with the Company.
-	</p>
-	<p>
-		Please note that the Company does not guarantee the accuracy, relevance, timeliness, or
-		completeness of any information on these external websites.
-	</p>
+				<section class="mb-8">
+					<h2 class="mb-4 text-2xl font-bold text-white">2. Professional Disclaimer</h2>
+					<p class="mb-6">
+						The Site cannot and does not contain legal, financial, or professional advice. The
+						legal, financial, or professional information is provided for general informational and
+						educational purposes only and is not a substitute for professional advice. Accordingly,
+						before taking any actions based upon such information, we encourage you to consult with
+						the appropriate professionals.
+					</p>
+				</section>
 
-	<h2>Errors and Omissions Disclaimer</h2>
-	<p>
-		The information given by the Service is for general guidance on matters of interest only. Even
-		if the Company takes every precaution to ensure that the content of the Service is both current
-		and accurate, errors can occur. Additionally, due to the changing nature of laws, rules, and
-		regulations, there may be delays, omissions, or inaccuracies in the information contained on the
-		Service.
-	</p>
-	<p>
-		The Company is not responsible for any errors or omissions, or for the results obtained from the
-		use of this information.
-	</p>
+				<section class="mb-8">
+					<h2 class="mb-4 text-2xl font-bold text-white">3. External Links Disclaimer</h2>
+					<p class="mb-6">
+						The Site may contain links to external websites that are not provided or maintained by
+						or in any way affiliated with us. Please note that we do not guarantee the accuracy,
+						relevance, timeliness, or completeness of any information on these external websites.
+					</p>
+				</section>
 
-	<h2>Fair Use Disclaimer</h2>
-	<p>
-		The Company may use copyrighted material which has not always been specifically authorized by
-		the copyright owner. The Company is making such material available for criticism, comment, news
-		reporting, teaching, scholarship, or research.
-	</p>
-	<p>
-		The Company believes this constitutes a "fair use" of any such copyrighted material as provided
-		for in section 107 of the United States Copyright Law.
-	</p>
-	<p>
-		If You wish to use copyrighted material from the Service for your own purposes that go beyond
-		fair use, You must obtain permission from the copyright owner.
-	</p>
+				<section class="mb-8">
+					<h2 class="mb-4 text-2xl font-bold text-white">4. Streaming Service Disclaimer</h2>
+					<p class="mb-6">
+						Our streaming services are provided "as is" and "as available" without any warranties of
+						any kind, either express or implied. We do not guarantee uninterrupted, timely, secure,
+						or error-free operation of our services. We are not responsible for any loss of data,
+						content, or other materials that may result from the use of our services.
+					</p>
+				</section>
 
-	<h2>Views Expressed Disclaimer</h2>
-	<p>
-		The Service may contain views and opinions which are those of the authors and do not necessarily
-		reflect the official policy or position of any other author, agency, organization, employer, or
-		company, including the Company.
-	</p>
-	<p>
-		Comments published by users are their sole responsibility and users will take full
-		responsibility, liability, and blame for any libel or litigation that results from something
-		written in or as a direct result of something written in a comment. The Company is not liable
-		for any comment published by users and reserves the right to delete any comment for any reason
-		whatsoever.
-	</p>
+				<section class="mb-8">
+					<h2 class="mb-4 text-2xl font-bold text-white">5. Content Disclaimer</h2>
+					<p class="mb-6">
+						We do not endorse, support, represent, or guarantee the completeness, truthfulness,
+						accuracy, or reliability of any content or communications posted via our services. You
+						understand that by using our services, you may be exposed to content that might be
+						offensive, harmful, inaccurate, or otherwise inappropriate.
+					</p>
+				</section>
 
-	<h2>No Responsibility Disclaimer</h2>
-	<p>
-		The information on the Service is provided with the understanding that the Company is not herein
-		engaged in rendering legal, accounting, tax, or other professional advice or services. As such,
-		it should not be used as a substitute for consultation with professional accounting, tax, legal,
-		or other competent advisers.
-	</p>
-	<p>
-		In no event shall the Company or its suppliers be liable for any special, incidental, indirect,
-		or consequential damages whatsoever arising out of or in connection with your access or use or
-		inability to access or use the Service.
-	</p>
+				<section class="mb-8">
+					<h2 class="mb-4 text-2xl font-bold text-white">6. No Liability</h2>
+					<p class="mb-6">
+						Under no circumstance shall we have any liability to you for any loss or damage of any
+						kind incurred as a result of the use of the Site or reliance on any information provided
+						on the Site. Your use of the Site and your reliance on any information on the Site is
+						solely at your own risk.
+					</p>
+				</section>
 
-	<h2>"Use at Your Own Risk" Disclaimer</h2>
-	<p>
-		All information in the Service is provided "as is", with no guarantee of completeness, accuracy,
-		timeliness or of the results obtained from the use of this information, and without warranty of
-		any kind, express or implied, including, but not limited to warranties of performance,
-		merchantability, and fitness for a particular purpose.
-	</p>
-	<p>
-		The Company will not be liable to You or anyone else for any decision made or action taken in
-		reliance on the information given by the Service or for any consequential, special, or similar
-		damages, even if advised of the possibility of such damages.
-	</p>
+				<section class="mb-8">
+					<h2 class="mb-4 text-2xl font-bold text-white">7. Changes to This Disclaimer</h2>
+					<p class="mb-6">
+						We reserve the right to make changes to this disclaimer at any time. We will notify you
+						of any changes by posting the new disclaimer on this page and updating the "Last
+						updated" date.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="mb-4 text-2xl font-bold text-white">8. Contact Us</h2>
+					<p class="mb-6">If you have any questions about this Disclaimer, please contact us at:</p>
+					<p class="mb-6">
+						Email: legal@powerirl.com<br />
+						Address: SDS Nexus, LLC, 123 Business Ave, Suite 100, City, State 12345
+					</p>
+				</section>
+			</div>
+		</div>
+	</div>
 </div>

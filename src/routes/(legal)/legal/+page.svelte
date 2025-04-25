@@ -1,22 +1,27 @@
 <script>
+	import Icon from '@iconify/svelte';
+
 	const legalDocs = [
 		{
 			title: 'Terms of Service',
 			description:
 				'Our terms and conditions for using PowerIRL services. Includes information about user obligations, payment terms, and service availability.',
-			path: '/legal/tos'
+			path: '/legal/tos',
+			icon: 'mdi:file-document'
 		},
 		{
 			title: 'Privacy Policy',
 			description:
 				'Learn how we collect, use, and protect your personal information. Details about data security, retention, and your privacy rights.',
-			path: '/legal/privacy'
+			path: '/legal/privacy',
+			icon: 'mdi:shield-lock'
 		},
 		{
 			title: 'Disclaimer',
 			description:
 				'Important information about service limitations, liability, and your responsibilities when using PowerIRL.',
-			path: '/legal/disclaimer'
+			path: '/legal/disclaimer',
+			icon: 'mdi:alert-circle'
 		}
 	];
 </script>
@@ -34,6 +39,11 @@
 				></div>
 				<div class="flex-grow">
 					<h2 class="mb-4 text-2xl font-bold text-white">{doc.title}</h2>
+					<div class="mb-4 flex justify-center">
+						<div class="flex h-16 w-16 items-center justify-center rounded-full bg-[#e20074]/10">
+							<Icon icon={doc.icon} class="h-8 w-8 text-[#e20074]" />
+						</div>
+					</div>
 					<p class="mb-8 text-base leading-relaxed text-gray-300">
 						{doc.description}
 					</p>

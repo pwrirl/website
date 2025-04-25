@@ -15,6 +15,7 @@
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
 		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/adapter-vercel": "^5.7.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
@@ -33,6 +34,8 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
+		"@iconify-icons/game-icons": "^1.2.1",
+		"@iconify-icons/mdi": "^1.2.48",
 		"@iconify/svelte": "^4.2.0"
 	}
 }

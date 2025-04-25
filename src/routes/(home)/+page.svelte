@@ -199,7 +199,7 @@
 
 <section class="relative overflow-hidden bg-[#222] py-20 text-white">
 	<!-- Background pattern -->
-	<div class="absolute inset-0">
+	<div class="pointer-events-none absolute inset-0">
 		<!-- Square grid pattern -->
 		<div
 			class="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_1px,transparent_1px),linear-gradient(0deg,#ffffff_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.02]"
@@ -236,7 +236,7 @@
 
 <section class="relative overflow-hidden bg-[#222] py-20 text-white">
 	<!-- Background pattern -->
-	<div class="absolute inset-0">
+	<div class="pointer-events-none absolute inset-0">
 		<!-- Diagonal lines pattern -->
 		<div
 			class="absolute inset-0 bg-[linear-gradient(45deg,#e20074_1px,transparent_1px),linear-gradient(-45deg,#e20074_1px,transparent_1px)] bg-[size:20px_20px] opacity-[0.03]"
@@ -248,7 +248,7 @@
 	</div>
 
 	<!-- Decorative shapes behind cards -->
-	<div class="absolute inset-0">
+	<div class="pointer-events-none absolute inset-0">
 		<!-- Large circle -->
 		<div class="absolute top-1/4 -left-40 h-80 w-80 rounded-full bg-[#e20074]/5 blur-3xl"></div>
 		<!-- Triangle -->
@@ -262,13 +262,13 @@
 			<!-- Basic Plan -->
 			<div
 				bind:this={basicPlan}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
-				<div class="flex-grow">
+				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Basic</h3>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">$59.99</span>
@@ -337,7 +337,7 @@
 			<!-- Premium Plan -->
 			<div
 				bind:this={premiumPlan}
-				class="group relative flex flex-col overflow-hidden rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				class="pricing-panel group relative flex flex-col overflow-hidden rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateY(-20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<!-- Corner Ribbon -->
@@ -354,9 +354,9 @@
 					</div>
 				</div>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
-				<div class="flex-grow">
+				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Premium</h3>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">$119.99</span>
@@ -434,13 +434,13 @@
 			<!-- Advanced Plan -->
 			<div
 				bind:this={advancedPlan}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8 md:col-span-2 lg:col-span-1"
+				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8 md:col-span-2 lg:col-span-1"
 				style="opacity: 0; transform: translateX(50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
-				<div class="flex-grow">
+				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Advanced</h3>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">$169.99</span>
@@ -530,7 +530,7 @@
 
 <section class="relative overflow-hidden bg-[#222] py-20 text-white">
 	<!-- Background pattern -->
-	<div class="absolute inset-0">
+	<div class="pointer-events-none absolute inset-0">
 		<!-- Diagonal lines pattern -->
 		<div
 			class="absolute inset-0 bg-[linear-gradient(45deg,#e20074_1px,transparent_1px),linear-gradient(-45deg,#e20074_1px,transparent_1px)] bg-[size:20px_20px] opacity-[0.03]"
@@ -546,13 +546,13 @@
 			<!-- SRT/SRTLA Endpoint -->
 			<div
 				bind:this={srtPlan}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
-				<div class="flex-grow">
+				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
 							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
@@ -616,13 +616,13 @@
 			<!-- RTMP Endpoint -->
 			<div
 				bind:this={rtmpPlan}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateX(50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
-				<div class="flex-grow">
+				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
 							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
@@ -689,13 +689,13 @@
 			<!-- PowerStreaming Basic -->
 			<div
 				bind:this={powerStreamingBasic}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
-				<div class="flex-grow">
+				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
 							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
@@ -732,13 +732,13 @@
 			<!-- PowerStreaming Pro -->
 			<div
 				bind:this={powerStreamingPro}
-				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
 				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 				></div>
-				<div class="flex-grow">
+				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
 							class="rounded-full bg-[#e20074]/10 p-4 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
@@ -788,6 +788,7 @@
 
 	.animate-dots {
 		animation: moveBackground 8s linear infinite;
+		pointer-events: none;
 	}
 
 	/* Add a second layer of dots for more depth */
@@ -798,6 +799,7 @@
 			transparent 1px
 		);
 		background-size: 16px 16px;
+		pointer-events: none;
 	}
 
 	.dot-pattern::after {
@@ -825,6 +827,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		pointer-events: none;
 	}
 
 	@keyframes shimmer {
@@ -838,5 +841,6 @@
 
 	.animate-shimmer {
 		animation: shimmer 2.5s infinite;
+		pointer-events: none;
 	}
 </style>

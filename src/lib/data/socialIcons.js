@@ -17,7 +17,7 @@ export const socials = [
 	{
 		name: 'Twitter',
 		icon: 'mdi:twitter',
-		url: 'https://twitter.com/powerirl_'
+		url: 'https://twitter.com/pwrirl_'
 	},
 	{
 		name: 'GitHub',

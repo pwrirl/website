@@ -21,7 +21,7 @@
 			<!-- Company Info -->
 			<div class="max-w-md space-y-4">
 				<img src="/images/pwrirl_logo.svg" alt="PowerIRL Logo" class="mx-auto h-10 w-auto" />
-				<p class="text-sm text-gray-400">
+				<p class="text-sm text-gray-300">
 					The future of cloud-based streaming. Professional-grade tools for content creators.
 				</p>
 				<!-- Social Icons -->
@@ -31,40 +31,37 @@
 							href={social.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="text-gray-400 transition-colors hover:text-[#e20074]"
+							class="group rounded-full bg-[#2a2a2a] p-3 transition-colors hover:bg-[#e20074]"
 							aria-label={social.name}
 						>
-							<Icon icon={social.icon} width="24" height="24" />
+							<Icon
+								icon={social.icon}
+								class="h-5 w-5 text-gray-300 transition-colors group-hover:text-white"
+							/>
 						</a>
 					{/each}
 				</div>
 			</div>
 
 			<!-- Bottom Bar -->
-			<div class="mt-12 border-t border-white/10 pt-8 text-center text-sm text-gray-400">
+			<div class="mt-12 border-t border-white/10 pt-8 text-center text-sm text-gray-300">
 				<!-- Legal Links -->
 				<div class="mb-4 flex flex-wrap justify-center gap-6">
-					<a
-						href="/legal"
-						class="text-sm font-medium text-gray-400 transition-colors hover:text-[#e20074]"
-					>
+					<a href="/legal" class="text-sm font-medium transition-colors hover:text-[#e20074]">
 						Legal
 					</a>
-					<a
-						href="/legal/tos"
-						class="text-sm font-medium text-gray-400 transition-colors hover:text-[#e20074]"
-					>
+					<a href="/legal/tos" class="text-sm font-medium transition-colors hover:text-[#e20074]">
 						Terms of Service
 					</a>
 					<a
 						href="/legal/disclaimer"
-						class="text-sm font-medium text-gray-400 transition-colors hover:text-[#e20074]"
+						class="text-sm font-medium transition-colors hover:text-[#e20074]"
 					>
 						Disclaimer
 					</a>
 					<a
 						href="/legal/privacy"
-						class="text-sm font-medium text-gray-400 transition-colors hover:text-[#e20074]"
+						class="text-sm font-medium transition-colors hover:text-[#e20074]"
 					>
 						Privacy Policy
 					</a>

@@ -4,6 +4,7 @@
 	import Icon from '@iconify/svelte';
 	import { features } from '$lib/data/features';
 	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 	let y;
 	let featureBoxes = [];
 	let basicPlan;
@@ -13,6 +14,7 @@
 	let rtmpPlan;
 	let powerStreamingBasic;
 	let powerStreamingPro;
+	let isDedicated = false;
 
 	function scrollToSection(sectionId) {
 		const section = document.getElementById(sectionId);
@@ -258,6 +260,44 @@
 	</div>
 
 	<div class="relative container mx-auto px-5">
+		<!-- Toggle Switch -->
+		<div class="mb-12 flex items-center justify-center gap-4" in:fly={{ y: -50, duration: 500 }}>
+			<span
+				class="cursor-pointer text-lg font-semibold transition-colors duration-300"
+				style="color: {isDedicated ? '#a1a1aa' : '#fff'}"
+				on:click={() => {
+					if (isDedicated) isDedicated = false;
+				}}
+			>
+				VPS
+			</span>
+			<button
+				on:click={() => (isDedicated = !isDedicated)}
+				class="relative flex h-8 w-20 items-center rounded-full border-2 border-[#222] bg-[#222] px-1 transition-colors duration-300 focus:outline-none"
+				aria-label="Toggle VPS/Dedicated"
+			>
+				<div
+					class="absolute top-0 left-0 h-full w-full rounded-full transition-colors duration-300"
+					style="background: {isDedicated
+						? 'linear-gradient(90deg,#e20074 0%,#ff00a0 100%)'
+						: '#121212'};"
+				></div>
+				<div
+					class="relative z-10 h-6 w-6 rounded-full bg-white shadow-md transition-transform duration-300"
+					style="transform: translateX({isDedicated ? '48px' : '0'});"
+				></div>
+			</button>
+			<span
+				class="cursor-pointer text-lg font-semibold transition-colors duration-300"
+				style="color: {isDedicated ? '#fff' : '#a1a1aa'}"
+				on:click={() => {
+					if (!isDedicated) isDedicated = true;
+				}}
+			>
+				Dedicated
+			</span>
+		</div>
+
 		<div class="grid grid-cols-1 gap-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
 			<!-- Basic Plan -->
 			<div
@@ -265,13 +305,10 @@
 				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
-				<div
-					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-				></div>
 				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Basic</h3>
 					<div class="mb-6">
-						<span class="text-3xl font-bold sm:text-4xl">$59.99</span>
+						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '119.99' : '59.99'}</span>
 						<span class="text-gray-400">/month</span>
 					</div>
 					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
@@ -353,13 +390,10 @@
 						></div>
 					</div>
 				</div>
-				<div
-					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-				></div>
 				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Premium</h3>
 					<div class="mb-6">
-						<span class="text-3xl font-bold sm:text-4xl">$119.99</span>
+						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '239.99' : '119.99'}</span>
 						<span class="text-gray-400">/month</span>
 					</div>
 					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
@@ -437,13 +471,10 @@
 				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8 md:col-span-2 lg:col-span-1"
 				style="opacity: 0; transform: translateX(50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
-				<div
-					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-				></div>
 				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Advanced</h3>
 					<div class="mb-6">
-						<span class="text-3xl font-bold sm:text-4xl">$169.99</span>
+						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '339.99' : '169.99'}</span>
 						<span class="text-gray-400">/month</span>
 					</div>
 					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
@@ -549,9 +580,6 @@
 				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
-				<div
-					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-				></div>
 				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
@@ -619,9 +647,6 @@
 				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateX(50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
-				<div
-					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-				></div>
 				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
@@ -692,9 +717,6 @@
 				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
-				<div
-					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-				></div>
 				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div
@@ -735,9 +757,6 @@
 				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
 				style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
 			>
-				<div
-					class="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-				></div>
 				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
 						<div

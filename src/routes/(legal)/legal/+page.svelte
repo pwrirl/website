@@ -32,15 +32,14 @@
 	<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 		{#each legalDocs as doc}
 			<div
-				class="group relative flex min-h-[320px] flex-col rounded-lg bg-[#121212]/80 p-8 text-center backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-10"
+				class="pricing-panel group relative flex min-h-[320px] flex-col rounded-lg bg-[#121212]/80 p-8 text-center backdrop-blur-sm sm:p-10"
 			>
-				<div
-					class="absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-				></div>
 				<div class="flex-grow">
 					<h2 class="mb-4 text-2xl font-bold text-white">{doc.title}</h2>
 					<div class="mb-4 flex justify-center">
-						<div class="flex h-16 w-16 items-center justify-center rounded-full bg-[#e20074]/10">
+						<div
+							class="icon-container flex h-16 w-16 items-center justify-center rounded-full bg-[#e20074]/10"
+						>
 							<Icon icon={doc.icon} class="h-8 w-8 text-[#e20074]" />
 						</div>
 					</div>
@@ -60,3 +59,28 @@
 		{/each}
 	</div>
 </div>
+
+<style>
+	/* Add consistent hover effect for all blocks */
+	.pricing-panel {
+		transition: all 500ms ease;
+		min-height: 220px;
+	}
+
+	.pricing-panel:hover {
+		transform: scale(1.05);
+		background-color: rgb(18, 18, 18);
+		box-shadow:
+			0 10px 15px -3px rgb(0 0 0 / 0.1),
+			0 4px 6px -4px rgb(0 0 0 / 0.1);
+	}
+
+	.pricing-panel .icon-container {
+		transition: all 300ms ease;
+	}
+
+	.pricing-panel:hover .icon-container {
+		transform: scale(1.1);
+		background-color: rgba(226, 0, 116, 0.2);
+	}
+</style>

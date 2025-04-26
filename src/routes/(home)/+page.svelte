@@ -214,7 +214,7 @@
 				<div
 					bind:this={featureBoxes[featureBoxes.length]}
 					class="group relative flex min-h-[320px] flex-col items-center rounded-lg bg-[#121212]/80 p-8 text-center backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-10"
-					style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
+					style="opacity: 0; transform: translateY(20px);"
 				>
 					<div
 						class="mb-6 rounded-full bg-[#e20074]/10 p-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#e20074]/20"
@@ -302,8 +302,8 @@
 			<!-- Basic Plan -->
 			<div
 				bind:this={basicPlan}
-				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateX(-50px);"
 			>
 				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Basic</h3>
@@ -374,8 +374,8 @@
 			<!-- Premium Plan -->
 			<div
 				bind:this={premiumPlan}
-				class="pricing-panel group relative flex flex-col overflow-hidden rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateY(-20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
+				class="group relative flex flex-col overflow-hidden rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateY(-20px);"
 			>
 				<!-- Corner Ribbon -->
 				<div class="absolute top-[22px] right-[-58px] z-10 rotate-45">
@@ -468,8 +468,8 @@
 			<!-- Advanced Plan -->
 			<div
 				bind:this={advancedPlan}
-				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8 md:col-span-2 lg:col-span-1"
-				style="opacity: 0; transform: translateX(50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8 md:col-span-2 lg:col-span-1"
+				style="opacity: 0; transform: translateX(50px);"
 			>
 				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Advanced</h3>
@@ -549,6 +549,30 @@
 				</div>
 			</div>
 		</div>
+		<!-- Custom Project Panel -->
+		<div class="mt-8 flex justify-center">
+			<div
+				class="group relative flex w-full max-w-2xl flex-col items-center rounded-lg bg-[#121212]/80 p-8 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+			>
+				<div class="mb-4 flex items-center justify-center">
+					<div class="rounded-full bg-[#e20074]/10 p-4">
+						<Icon icon="ic:baseline-discord" width="40" height="40" class="text-[#e20074]" />
+					</div>
+				</div>
+				<h3 class="mb-2 text-center text-2xl font-bold text-white">Custom Project</h3>
+				<p class="mb-6 text-center text-gray-300">
+					Need something more powerful, a custom solution, or help with a special event? Contact us
+					and our team will work with you to deliver exactly what you need.
+				</p>
+				<a href="https://discord.gg/KtfrPhdEvx" target="_blank" rel="noopener noreferrer">
+					<button
+						class="rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067]"
+					>
+						Connect Us
+					</button>
+				</a>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -577,8 +601,8 @@
 			<!-- SRT/SRTLA Endpoint -->
 			<div
 				bind:this={srtPlan}
-				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateX(-50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateX(-50px);"
 			>
 				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
@@ -644,8 +668,8 @@
 			<!-- RTMP Endpoint -->
 			<div
 				bind:this={rtmpPlan}
-				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateX(50px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateX(50px);"
 			>
 				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
@@ -707,15 +731,12 @@
 					</button>
 				</div>
 			</div>
-		</div>
 
-		<!-- PowerStreaming Plans -->
-		<div class="mt-16 grid gap-8 md:grid-cols-1">
 			<!-- PowerStreaming Basic -->
 			<div
 				bind:this={powerStreamingBasic}
-				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateY(20px);"
 			>
 				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
@@ -754,8 +775,8 @@
 			<!-- PowerStreaming Pro -->
 			<div
 				bind:this={powerStreamingPro}
-				class="pricing-panel group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
-				style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;"
+				class="group relative flex flex-col rounded-lg bg-[#121212]/80 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-[#121212] hover:shadow-lg sm:p-8"
+				style="opacity: 0; transform: translateY(20px);"
 			>
 				<div class="pointer-events-auto flex-grow">
 					<div class="mb-4 flex items-center justify-center">
@@ -861,5 +882,30 @@
 	.animate-shimmer {
 		animation: shimmer 2.5s infinite;
 		pointer-events: none;
+	}
+
+	/* Add consistent hover effect for all pricing and feature blocks */
+	.pricing-panel {
+		transition: all 500ms ease;
+		min-height: 220px;
+		transform: translateY(0);
+		will-change: transform;
+	}
+
+	.pricing-panel:hover {
+		transform: scale(1.05);
+		background-color: rgb(18, 18, 18);
+		box-shadow:
+			0 10px 15px -3px rgb(0 0 0 / 0.1),
+			0 4px 6px -4px rgb(0 0 0 / 0.1);
+	}
+
+	.pricing-panel .icon-container {
+		transition: all 300ms ease;
+	}
+
+	.pricing-panel:hover .icon-container {
+		transform: scale(1.1);
+		background-color: rgba(226, 0, 116, 0.2);
 	}
 </style>

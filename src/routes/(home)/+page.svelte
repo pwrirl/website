@@ -311,7 +311,7 @@
 						{isDedicated ? 'Dedicated Server' : 'Virtual Private Server'}
 					</p>
 					<div class="mb-6">
-						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '119.99' : '59.99'}</span>
+						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '99.99' : '59.99'}</span>
 						<span class="text-gray-400">/month</span>
 					</div>
 					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
@@ -387,7 +387,7 @@
 				</div>
 				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
 				<div class="relative">
-					<a href="https://buy.stripe.com/6oE03w1ySgfH6ly4gg" target="_blank" rel="noopener noreferrer" class="block">
+					<a href={isDedicated ? 'https://buy.stripe.com/5kA5nQcdwd3v11edQX' : 'https://buy.stripe.com/6oE03w1ySgfH6ly4gg'} target="_blank" rel="noopener noreferrer" class="block">
 						<button
 							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
 						>
@@ -422,7 +422,7 @@
 						{isDedicated ? 'Dedicated Server' : 'Semi-Bare Metal'}
 					</p>
 					<div class="mb-6">
-						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '239.99' : '119.99'}</span>
+						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '139.99' : '99.99'}</span>
 						<span class="text-gray-400">/month</span>
 					</div>
 					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
@@ -460,13 +460,13 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">2 Endpoints (SRT/SRTLA and RTMP)</span>
+							<span class="ml-2">1 Endpoints (SRT/SRTLA and RTMP)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">3 Streaming Destinations (Via Plugin)</span>
+							<span class="ml-2">5 Streaming Destinations (Via Plugin)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
@@ -490,7 +490,7 @@
 				</div>
 				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
 				<div class="relative">
-					<a href="https://buy.stripe.com/bIYcQicdw1kN8tG8wx" target="_blank" rel="noopener noreferrer" class="block">
+					<a href={isDedicated ? 'https://buy.stripe.com/28o03wb9s0gJ6ly6ou' : 'https://buy.stripe.com/eVag2u91k2oRcJW149'} target="_blank" rel="noopener noreferrer" class="block">
 						<button
 							class="relative w-full cursor-pointer overflow-hidden rounded-md bg-gradient-to-r from-[#e20074] to-[#ff00a0] px-8 py-3 text-lg font-medium text-white transition-all duration-300 hover:scale-105 sm:px-12 sm:py-4"
 						>
@@ -515,7 +515,7 @@
 						{isDedicated ? 'Dedicated Server' : 'Semi-Bare Metal'}
 					</p>
 					<div class="mb-6">
-						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '339.99' : '169.99'}</span>
+						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '189.99' : '129.99'}</span>
 						<span class="text-gray-400">/month</span>
 					</div>
 					<ul class="mb-4 space-y-3 text-sm sm:space-y-4 sm:text-base">
@@ -583,7 +583,7 @@
 				</div>
 				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
 				<div class="relative">
-					<a href="https://buy.stripe.com/4gw7vYa5o2oR6lyaEG" target="_blank" rel="noopener noreferrer" class="block">
+					<a href={isDedicated ? 'https://buy.stripe.com/cN2dUm2CW0gJ9xK6ox' : 'https://buy.stripe.com/6oE6rU6TcaVn9xKcMU'} target="_blank" rel="noopener noreferrer" class="block">
 						<button
 							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
 						>
@@ -804,7 +804,7 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full cursor-not-allowed rounded-md bg-gray-600 px-8 py-3 text-lg font-medium text-white sm:px-12 sm:py-4"
+						class="w-full cursor-not-allowed rounded-md bg-[#292929] px-8 py-3 text-lg font-medium text-white sm:px-12 sm:py-4"
 						disabled
 					>
 						Coming Soon
@@ -846,7 +846,7 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full cursor-not-allowed rounded-md bg-gray-600 px-8 py-3 text-lg font-medium text-white sm:px-12 sm:py-4"
+						class="w-full cursor-not-allowed rounded-md bg-[#292929] px-8 py-3 text-lg font-medium text-white sm:px-12 sm:py-4"
 						disabled
 					>
 						Coming Soon

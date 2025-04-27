@@ -306,7 +306,10 @@
 				style="opacity: 0; transform: translateX(-50px);"
 			>
 				<div class="pointer-events-auto flex-grow">
-					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Basic</h3>
+					<h3 class="mb-2 text-xl font-bold sm:text-2xl">PowerOBS Basic</h3>
+					<p class="mb-4 text-sm text-gray-400">
+						{isDedicated ? 'Semi-Bare Metal' : 'Virtual Private Server'}
+					</p>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '119.99' : '59.99'}</span>
 						<span class="text-gray-400">/month</span>
@@ -392,6 +395,9 @@
 				</div>
 				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Premium</h3>
+					<p class="mb-4 text-sm text-gray-400">
+						{isDedicated ? 'Dedicated Server' : 'Semi-Bare Metal'}
+					</p>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '239.99' : '119.99'}</span>
 						<span class="text-gray-400">/month</span>
@@ -473,6 +479,9 @@
 			>
 				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Advanced</h3>
+					<p class="mb-4 text-sm text-gray-400">
+						{isDedicated ? 'Dedicated Server' : 'Semi-Bare Metal'}
+					</p>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '339.99' : '169.99'}</span>
 						<span class="text-gray-400">/month</span>
@@ -566,7 +575,7 @@
 				</p>
 				<a href="https://discord.gg/KtfrPhdEvx" target="_blank" rel="noopener noreferrer">
 					<button
-						class="rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067]"
+						class="cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067]"
 					>
 						Connect Us
 					</button>
@@ -622,37 +631,33 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Secure Reliable Transport for mobile streaming</span>
+							<span class="ml-2">High-quality streaming with Secure Reliable Transport (SRT)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Optimized for Android & iOS devices</span>
+							<span class="ml-2"
+								>Optimized for mobile and desktop devices (Android, iOS, and more)</span
+							>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Low latency streaming with error correction</span>
+							<span class="ml-2">Ultra-low latency (sub-second) with error correction</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">AES encryption for secure transmission</span>
+							<span class="ml-2">AES-128 encryption for secure streaming</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Jitter compensation for unstable networks</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Bandwidth optimization for mobile data</span>
+							<span class="ml-2">Adaptive streaming for unstable networks and mobile data</span>
 						</li>
 					</ul>
 				</div>
@@ -689,37 +694,31 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Industry-standard streaming protocol</span>
+							<span class="ml-2">Industry-standard RTMP for legacy streaming compatibility</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Compatible with all major streaming platforms</span>
+							<span class="ml-2">Supports major platforms like Twitch and Kick</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">High-quality video delivery</span>
+							<span class="ml-2">High-quality video up to 1080p</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Stable and reliable streaming</span>
+							<span class="ml-2">Ideal for desktop streaming with OBS and other encoders</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Perfect for desktop streaming</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Wide range of encoder support</span>
+							<span class="ml-2">Broad compatibility with a wide range of encoders</span>
 						</li>
 					</ul>
 				</div>
@@ -748,7 +747,8 @@
 					</div>
 					<h3 class="mb-4 text-center text-xl font-bold sm:text-2xl">PowerStreaming Basic</h3>
 					<p class="mb-6 text-left text-gray-300">
-						Perfect for content creators looking to expand their reach across multiple platforms
+						Stream seamlessly to up to 5 platforms simultaneously. Perfect for creators looking to
+						expand their reach across multiple channels with ease and reliability.
 					</p>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">$4.99</span>
@@ -788,8 +788,8 @@
 					</div>
 					<h3 class="mb-4 text-center text-xl font-bold sm:text-2xl">PowerStreaming Pro</h3>
 					<p class="mb-6 text-left text-gray-300">
-						Ideal for professional streamers and businesses requiring maximum reach and advanced
-						features
+						Amplify your presence by streaming to up to 10 platforms at once. Ideal for advanced
+						users and brands aiming to maximize audience engagement across a wide range of channels.
 					</p>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">$9.99</span>

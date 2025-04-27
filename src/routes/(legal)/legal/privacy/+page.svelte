@@ -17,9 +17,9 @@
 				</p>
 			</div>
 
-			<div class="prose prose-invert max-w-none">
+			<div class="prose prose-invert max-w-none prose-headings:scroll-mt-20" role="region" aria-label="Privacy Policy content">
 				<section class="mb-8">
-					<h2 class="mb-4 text-2xl font-bold text-white">1. Introduction</h2>
+					<h2 id="introduction" class="mb-4 text-2xl font-bold text-white">1. Introduction</h2>
 					<p class="mb-6">
 						PowerIRL ("we," "our," or "us") is committed to protecting your privacy. This Privacy
 						Policy explains how we collect, use, disclose, and safeguard your information when you
@@ -28,7 +28,7 @@
 				</section>
 
 				<section class="mb-8">
-					<h2 class="mb-4 text-2xl font-bold text-white">2. Information We Collect</h2>
+					<h2 id="information-collected" class="mb-4 text-2xl font-bold text-white">2. Information We Collect</h2>
 					<p class="mb-4">
 						We collect several types of information from and about users of our services, including:
 					</p>
@@ -41,7 +41,7 @@
 				</section>
 
 				<section class="mb-8">
-					<h2 class="mb-4 text-2xl font-bold text-white">3. How We Use Your Information</h2>
+					<h2 id="information-usage" class="mb-4 text-2xl font-bold text-white">3. How We Use Your Information</h2>
 					<p class="mb-4">We use the information we collect to:</p>
 					<ul class="mb-6 list-disc pl-6">
 						<li>Provide and maintain our services</li>

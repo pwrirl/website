@@ -17,9 +17,9 @@
 				</p>
 			</div>
 
-			<div class="prose prose-invert max-w-none">
+			<div class="prose prose-invert max-w-none prose-headings:scroll-mt-20" role="region" aria-label="Disclaimer content">
 				<section class="mb-8">
-					<h2 class="mb-4 text-2xl font-bold text-white">1. General Disclaimer</h2>
+					<h2 id="general-disclaimer" class="mb-4 text-2xl font-bold text-white">1. General Disclaimer</h2>
 					<p class="mb-6">
 						The information provided by PowerIRL ("we," "us," or "our") on pwrirl.com (the "Site")
 						is for general informational purposes only. All information on the Site is provided in
@@ -30,7 +30,7 @@
 				</section>
 
 				<section class="mb-8">
-					<h2 class="mb-4 text-2xl font-bold text-white">2. Professional Disclaimer</h2>
+					<h2 id="professional-disclaimer" class="mb-4 text-2xl font-bold text-white">2. Professional Disclaimer</h2>
 					<p class="mb-6">
 						The Site cannot and does not contain legal, financial, or professional advice. The
 						legal, financial, or professional information is provided for general informational and
@@ -41,7 +41,7 @@
 				</section>
 
 				<section class="mb-8">
-					<h2 class="mb-4 text-2xl font-bold text-white">3. External Links Disclaimer</h2>
+					<h2 id="external-links-disclaimer" class="mb-4 text-2xl font-bold text-white">3. External Links Disclaimer</h2>
 					<p class="mb-6">
 						The Site may contain links to external websites that are not provided or maintained by
 						or in any way affiliated with us. Please note that we do not guarantee the accuracy,

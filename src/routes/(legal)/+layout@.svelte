@@ -4,11 +4,26 @@
 	import Icon from '@iconify/svelte';
 	import { fade, scale } from 'svelte/transition';
 	import { socials } from '$lib/data/socialIcons';
+	import { onMount } from 'svelte';
 	let isMobileMenuOpen = false;
 
 	function toggleMobileMenu() {
 		isMobileMenuOpen = !isMobileMenuOpen;
 	}
+	
+	// Add focus-visible polyfill to only show focus rings for keyboard navigation
+	onMount(() => {
+		// This script helps differentiate between keyboard and mouse focus
+		window.addEventListener('mousedown', () => {
+			document.body.classList.add('using-mouse');
+		});
+		
+		window.addEventListener('keydown', (event) => {
+			if (event.key === 'Tab') {
+				document.body.classList.remove('using-mouse');
+			}
+		});
+	});
 
 	const navItems = [
 		{
@@ -39,6 +54,16 @@
 	];
 </script>
 
+<!-- Skip to main content link for keyboard users -->
+<a 
+	href="#main-content" 
+	class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#e20074] focus:text-white focus:rounded"
+>
+	Skip to main content
+</a>
+
+
+
 <div class="min-h-screen bg-[#222] text-white">
 	<header class="sticky top-0 z-50 bg-[#222] py-6 text-lg text-white shadow-md shadow-black/10">
 		<div class="container mx-auto px-5">
@@ -55,10 +80,11 @@
 					{#each navItems as item}
 						<a
 							href={item.path}
-							class="group flex items-center space-x-2 text-sm font-medium transition-colors hover:text-[#e20074] {$page
+							class="group flex items-center space-x-2 text-sm font-medium transition-colors hover:text-[#e20074] focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:ring-offset-2 focus:ring-offset-[#222] rounded-md {$page
 								.url.pathname === item.path
 								? 'text-[#e20074]'
 								: 'text-gray-300'}"
+							aria-current={$page.url.pathname === item.path ? 'page' : undefined}
 						>
 							<Icon
 								icon={item.icon}
@@ -73,7 +99,12 @@
 				</div>
 
 				<!-- Mobile Menu Button -->
-				<button class="cursor-pointer hover:opacity-80 md:hidden" on:click={toggleMobileMenu}>
+				<button 
+					class="cursor-pointer hover:opacity-80 md:hidden focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:ring-offset-2 focus:ring-offset-[#222] rounded-md" 
+					on:click={toggleMobileMenu}
+					aria-label="Toggle mobile menu"
+					aria-expanded={isMobileMenuOpen}
+				>
 					<Icon icon="game-icons:hamburger-menu" width="32" height="32" color="#e20074" />
 				</button>
 			</nav>
@@ -101,12 +132,13 @@
 				<!-- Background pattern -->
 				<div
 					class="absolute inset-0 bg-[url('/images/grid.svg')] [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] bg-center"
-				/>
+				></div>
 				<div class="relative">
 					<!-- Close button -->
 					<button
-						class="absolute top-4 right-4 cursor-pointer rounded-full bg-[#1a1a1a] p-2 hover:bg-[#2a2a2a]"
+						class="absolute top-4 right-4 cursor-pointer rounded-full bg-[#1a1a1a] p-2 hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-[#e20074]"
 						on:click={toggleMobileMenu}
+						aria-label="Close mobile menu"
 					>
 						<Icon icon="mdi:close" width="24" height="24" color="#e20074" />
 					</button>
@@ -137,7 +169,7 @@
 		</div>
 	{/if}
 
-	<main>
+	<main id="main-content">
 		<slot />
 	</main>
 
@@ -156,11 +188,12 @@
 				<div class="mt-8 flex justify-center space-x-6">
 					{#each socials as social}
 						<a
-							href={social.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="group rounded-full bg-[#2a2a2a] p-3 transition-colors hover:bg-[#e20074]"
-						>
+								href={social.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label={`Follow us on ${social.name}`}
+								class="group rounded-full bg-[#2a2a2a] p-3 transition-colors hover:bg-[#e20074] focus:outline-none focus:ring-2 focus:ring-[#e20074]"
+							>
 							<Icon
 								icon={social.icon}
 								class="h-5 w-5 text-gray-300 transition-colors group-hover:text-white"
@@ -177,9 +210,10 @@
 					{#each navItems.slice(1) as item}
 						<a
 							href={item.path}
-							class="transition-colors hover:text-[#e20074] {$page.url.pathname === item.path
+							class="transition-colors hover:text-[#e20074] focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:rounded-md p-1 {$page.url.pathname === item.path
 								? 'text-[#e20074]'
 								: 'text-gray-300'}"
+							aria-current={$page.url.pathname === item.path ? 'page' : undefined}
 						>
 							{item.title}
 						</a>
@@ -195,5 +229,19 @@
 	:global(body) {
 		margin: 0;
 		padding: 0;
+	}
+	
+	/* Hide focus outlines for mouse users but keep them for keyboard users */
+	:global(body.using-mouse *:focus) {
+		outline: none !important;
+		box-shadow: none !important;
+	}
+	
+	/* Add reduced motion preference support */
+	@media (prefers-reduced-motion: reduce) {
+		:global(*) {
+			transition-duration: 0.001ms !important;
+			animation-duration: 0.001ms !important;
+		}
 	}
 </style>

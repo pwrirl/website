@@ -31,6 +31,14 @@
 	}
 </script>
 
+<!-- Skip to main content link for keyboard users -->
+<a 
+	href="#main-content" 
+	class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#e20074] focus:text-white focus:rounded"
+>
+	Skip to main content
+</a>
+
 <header class="sticky top-0 z-50 bg-[#222] py-6 text-lg text-white shadow-md shadow-black/10">
 	<div class="container mx-auto px-5">
 		<nav class="flex items-center md:items-center">
@@ -48,7 +56,7 @@
 						<li>
 							<button
 								on:click={scrollToTop}
-								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:ring-offset-2 focus:ring-offset-[#222]"
 							>
 								<Icon icon="mdi:home" width="20" height="20" class="text-[#e20074]" />
 								<span>Home</span>
@@ -57,7 +65,7 @@
 						<li>
 							<button
 								on:click={() => scrollToSection('features')}
-								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:ring-offset-2 focus:ring-offset-[#222]"
 							>
 								<Icon icon="mdi:star" width="20" height="20" class="text-[#e20074]" />
 								<span>Features</span>
@@ -66,7 +74,7 @@
 						<li>
 							<button
 								on:click={() => scrollToSection('pricing')}
-								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074]"
+								class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:ring-offset-2 focus:ring-offset-[#222]"
 							>
 								<Icon icon="mdi:tag" width="20" height="20" class="text-[#e20074]" />
 								<span>Pricing</span>
@@ -75,7 +83,7 @@
 					</ul>
 					<!-- Hamburger Menu Icon (visible on tablet and below, below logo) -->
 					<div class="mt-2 flex justify-center md:hidden">
-						<button class="cursor-pointer hover:opacity-80" on:click={toggleMobileMenu}>
+						<button class="cursor-pointer hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:ring-offset-2 focus:ring-offset-[#222] rounded-md" on:click={toggleMobileMenu} aria-label="Toggle mobile menu" aria-expanded={isMobileMenuOpen}>
 							<Icon icon="game-icons:hamburger-menu" width="32" height="32" color="#e20074" />
 						</button>
 					</div>
@@ -84,10 +92,11 @@
 			<!-- Avatar on the far right -->
 			<div class="flex items-center {isMobileMenuOpen ? 'hidden md:flex' : 'flex'}">
 				<a
-					href="https://client.pwrirl.com"
+					href="https://billing.stripe.com/p/login/cN25mb4HCbBR02k4gg"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="transition-opacity hover:opacity-80"
+					aria-label="Go to user dashboard"
+					class="transition-opacity hover:opacity-80 rounded-full focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:ring-offset-2 focus:ring-offset-[#222]"
 				>
 					<Icon icon="carbon:user-avatar-filled" width="38" height="38" color="#e20074" />
 				</a>
@@ -128,8 +137,9 @@
 			<div class="relative pt-12">
 				<!-- Close button -->
 				<button
-					class="absolute top-3 right-2 cursor-pointer rounded-full p-2 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+					class="absolute top-3 right-2 cursor-pointer rounded-full p-2 text-white/60 transition-colors hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#e20074] focus:text-white"
 					on:click={toggleMobileMenu}
+					aria-label="Close mobile menu"
 				>
 					<Icon icon="mdi:close" width="24" height="24" />
 				</button>
@@ -139,7 +149,7 @@
 					<ul class="space-y-2">
 						<li>
 							<button
-								class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
+								class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 focus:outline-none focus:ring-2 focus:ring-[#e20074]"
 								on:click={scrollToTop}
 							>
 								<Icon
@@ -153,7 +163,7 @@
 						</li>
 						<li>
 							<button
-								class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
+								class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 focus:outline-none focus:ring-2 focus:ring-[#e20074]"
 								on:click={() => scrollToSection('features')}
 							>
 								<Icon
@@ -167,7 +177,7 @@
 						</li>
 						<li>
 							<button
-								class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10"
+								class="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 focus:outline-none focus:ring-2 focus:ring-[#e20074]"
 								on:click={() => scrollToSection('pricing')}
 							>
 								<Icon
@@ -184,8 +194,10 @@
 					<!-- Quick actions -->
 					<div class="mt-8 space-y-4">
 						<a
-							href="/dashboard"
-							class="flex w-full items-center justify-center gap-2 rounded-lg bg-[#e20074] px-4 py-3 font-medium text-white transition-colors hover:bg-[#c70067]"
+							href="https://billing.stripe.com/p/login/cN25mb4HCbBR02k4gg"
+							class="flex w-full items-center justify-center gap-2 rounded-lg bg-[#e20074] px-4 py-3 font-medium text-white transition-colors hover:bg-[#c70067] focus:outline-none focus:ring-2 focus:ring-white"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							<Icon icon="mdi:account" width="20" height="20" />
 							<span>Go to Dashboard</span>

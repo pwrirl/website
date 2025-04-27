@@ -3,13 +3,13 @@ export const features = [
 		icon: 'mdi:cellphone',
 		title: 'True Mobile Freedom',
 		description:
-			'Unlike other platforms, we offer native support for both Android & iPhone with zero latency. Stream from anywhere with our optimized mobile apps and cloud infrastructure.'
+			'We offer native support for both Android & iPhone. Stream from anywhere with mobile apps to your home PC or our cloud infrastructure.'
 	},
 	{
 		icon: 'mdi:shield-check',
 		title: 'Zero Drop Guarantee',
 		description:
-			'Our proprietary Cloud OBS technology ensures your stream never drops, even with unstable connections. Automatic failover and backup systems keep you live 24/7.'
+			'Cloud OBS technology ensures your stream never drops, even with unstable connections. Automatic failover and backup systems keep you live 24/7.'
 	},
 	{
 		icon: 'mdi:layers',
@@ -21,7 +21,7 @@ export const features = [
 		icon: 'mdi:star',
 		title: 'Partner Priority Support',
 		description:
-			'Our Partner Program goes beyond discounts. Get dedicated support, early access to features, and custom solutions tailored to your streaming needs.'
+			'Our Partner Program goes beyond discounts. Get dedicated support, early access to features, sponsorships, and custom solutions tailored to your streaming needs.'
 	},
 	{
 		icon: 'mdi:hand-heart',
@@ -33,6 +33,6 @@ export const features = [
 		icon: 'mdi:desktop-classic',
 		title: 'Universal Remote Control',
 		description:
-			"Control your stream from any device, anywhere. Our web-based dashboard and mobile apps give you complete control over your broadcast, even when you're away from your main setup."
+			"Control your stream from any device, we give you complete control over your broadcast, even when you're away from your main setup."
 	}
 ];

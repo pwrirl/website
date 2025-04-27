@@ -17,7 +17,7 @@
 				</p>
 			</div>
 
-			<div class="prose prose-invert max-w-none">
+			<div class="prose prose-invert max-w-none prose-headings:scroll-mt-20" role="region" aria-label="Terms of Service content">
 				<p class="mb-6">
 					This web page represents our Terms of Service and Sale ("Agreement") regarding our
 					website, located at pwrirl.com, and the tools we provide you (the "Website" or the
@@ -37,14 +37,14 @@
 					bound, please do not use or access our Website.
 				</p>
 
-				<h2 class="mb-4 text-2xl font-bold text-white">Limited License</h2>
+				<h2 id="limited-license" class="mb-4 text-2xl font-bold text-white">Limited License</h2>
 				<p class="mb-6">
 					PowerIRL grants you a non-exclusive, non-transferable, revocable license to access and use
 					our Website in order for you to make purchases of electronic documents and related
 					services through our Website, strictly in accordance with our Legal Terms.
 				</p>
 
-				<h2 class="mb-4 text-2xl font-bold text-white">Copyrights and Trademarks</h2>
+				<h2 id="copyrights-trademarks" class="mb-4 text-2xl font-bold text-white">Copyrights and Trademarks</h2>
 				<p class="mb-6">
 					Unless otherwise noted, all materials including without limitation, logos, brand names,
 					images, designs, photographs, video clips and written and other materials that appear as

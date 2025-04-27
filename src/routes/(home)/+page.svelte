@@ -139,15 +139,15 @@
 	</button>
 {/if}
 
-<div
-	class="relative flex h-[75vh] w-full items-center justify-center overflow-hidden sm:h-[50vh] md:h-[75vh]"
->
+<div id="main-content" class="relative flex h-[75vh] w-full items-center justify-center overflow-hidden sm:h-[50vh] md:h-[75vh]">
 	<video
 		autoplay
 		loop
 		muted
 		playsinline
 		poster={posterImage}
+		aria-label="PowerIRL streaming platform demonstration video"
+		title="PowerIRL streaming platform demonstration"
 		class="absolute top-0 left-0 z-[1] h-full w-full transform object-cover"
 		style="transform: scale(1.1) translateY({y * 0.2}px)"
 		on:error={() => console.log('Video failed to load, showing poster image')}
@@ -167,8 +167,8 @@
 			Stream Anywhere with <span class="font-bold text-[#e20074]">PowerIRL</span>
 		</h1>
 		<p class="mb-8 text-xl drop-shadow sm:text-2xl">
-			The only platform that combines cloud-based OBS with true mobile freedom. Whether you're
-			streaming from your desktop or on the go, PowerIRL keeps you live with zero drops, full
+			PowerIRL combines cloud-based OBS with true mobile freedom. Whether you're
+			streaming from your desktop or on the go, PowerIRL keeps you live with stream drop protection, full
 			customization, and enterprise-grade reliability.
 		</p>
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -273,7 +273,7 @@
 			</span>
 			<button
 				on:click={() => (isDedicated = !isDedicated)}
-				class="relative flex h-8 w-20 items-center rounded-full border-2 border-[#222] bg-[#222] px-1 transition-colors duration-300 focus:outline-none"
+				class="relative flex h-7 w-14 items-center rounded-full border-2 border-[#222] bg-[#222] px-1 transition-colors duration-300 focus:outline-none"
 				aria-label="Toggle VPS/Dedicated"
 			>
 				<div
@@ -283,8 +283,8 @@
 						: '#121212'};"
 				></div>
 				<div
-					class="relative z-10 h-6 w-6 rounded-full bg-white shadow-md transition-transform duration-300"
-					style="transform: translateX({isDedicated ? '48px' : '0'});"
+					class="relative z-10 h-5 w-5 rounded-full bg-white shadow-md transition-transform duration-300"
+					style="transform: translateX({isDedicated ? '26px' : '0'});"
 				></div>
 			</button>
 			<span
@@ -308,7 +308,7 @@
 				<div class="pointer-events-auto flex-grow">
 					<h3 class="mb-2 text-xl font-bold sm:text-2xl">PowerOBS Basic</h3>
 					<p class="mb-4 text-sm text-gray-400">
-						{isDedicated ? 'Semi-Bare Metal' : 'Virtual Private Server'}
+						{isDedicated ? 'Dedicated Server' : 'Virtual Private Server'}
 					</p>
 					<div class="mb-6">
 						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '119.99' : '59.99'}</span>
@@ -337,40 +337,63 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">1080p/60FPS Streaming</span>
+							<span class="ml-2">Powered by Nvidia GPU</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Basic Stream Overlays</span>
+							<span class="ml-2">1 Endpoint (SRT/SRTLA or RTMP)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Mobile Streaming</span>
+							<span class="ml-2">1080P/60FPS Streaming</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Cloud OBS Access</span>
+							<span class="ml-2">Basic Overlays/Alerts</span>
+						</li>
+						{#if isDedicated}
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Remote Desktop Access</span>
+						</li>
+						{/if}
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">1 Streaming Destination (Multi-Streaming Add-On)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Basic Analytics</span>
+							<span class="ml-2">Optimized for Mobile Streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Dedicated Edition Available</span>
 						</li>
 					</ul>
 				</div>
+				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
 				<div class="relative">
-					<button
-						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-					>
-						Order Now
-					</button>
+					<a href="https://buy.stripe.com/6oE03w1ySgfH6ly4gg" target="_blank" rel="noopener noreferrer" class="block">
+						<button
+							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
+						>
+							Order Now
+						</button>
+					</a>
 				</div>
 			</div>
 
@@ -394,7 +417,7 @@
 					</div>
 				</div>
 				<div class="pointer-events-auto flex-grow">
-					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Premium</h3>
+					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Advanced</h3>
 					<p class="mb-4 text-sm text-gray-400">
 						{isDedicated ? 'Dedicated Server' : 'Semi-Bare Metal'}
 					</p>
@@ -407,13 +430,43 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Everything in Basic</span>
+							<span class="ml-2">Free Setup</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Remote Desktop Control</span>
+							<span class="ml-2">White Glove Service</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">24/7 Support via Discord</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Powered by Nvidia GPU</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">1080P/60FPS Streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">2 Endpoints (SRT/SRTLA and RTMP)</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">3 Streaming Destinations (Via Plugin)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
@@ -425,13 +478,7 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">1080p/60FPS Streaming</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Cloud Recording</span>
+							<span class="ml-2">Remote Desktop Access</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
@@ -439,35 +486,20 @@
 							</div>
 							<span class="ml-2">Advanced Stream Settings</span>
 						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Scene Collections</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Priority Support</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Stream Analytics</span>
-						</li>
 					</ul>
 				</div>
+				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
 				<div class="relative">
-					<button
-						class="relative w-full cursor-pointer overflow-hidden rounded-md bg-gradient-to-r from-[#e20074] to-[#ff00a0] px-8 py-3 text-lg font-medium text-white transition-all duration-300 hover:scale-105 sm:px-12 sm:py-4"
-					>
-						<div class="relative z-10">Order Now</div>
-						<div
-							class="animate-shimmer absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-						></div>
-					</button>
+					<a href="https://buy.stripe.com/bIYcQicdw1kN8tG8wx" target="_blank" rel="noopener noreferrer" class="block">
+						<button
+							class="relative w-full cursor-pointer overflow-hidden rounded-md bg-gradient-to-r from-[#e20074] to-[#ff00a0] px-8 py-3 text-lg font-medium text-white transition-all duration-300 hover:scale-105 sm:px-12 sm:py-4"
+						>
+							<div class="relative z-10">Order Now</div>
+							<div
+								class="animate-shimmer absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+							></div>
+						</button>
+					</a>
 				</div>
 			</div>
 
@@ -478,7 +510,7 @@
 				style="opacity: 0; transform: translateX(50px);"
 			>
 				<div class="pointer-events-auto flex-grow">
-					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Advanced</h3>
+					<h3 class="mb-4 text-xl font-bold sm:text-2xl">PowerOBS Premium</h3>
 					<p class="mb-4 text-sm text-gray-400">
 						{isDedicated ? 'Dedicated Server' : 'Semi-Bare Metal'}
 					</p>
@@ -486,24 +518,54 @@
 						<span class="text-3xl font-bold sm:text-4xl">${isDedicated ? '339.99' : '169.99'}</span>
 						<span class="text-gray-400">/month</span>
 					</div>
-					<ul class="mb-8 space-y-3 text-sm sm:space-y-4 sm:text-base">
+					<ul class="mb-4 space-y-3 text-sm sm:space-y-4 sm:text-base">
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Everything in Basic</span>
+							<span class="ml-2">Free Setup</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Priority Support</span>
+							<span class="ml-2">White Glove Service</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Delivered in 24 Hours</span>
+							<span class="ml-2">24/7 Support via Discord</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Powered by Nvidia GPU</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">1080P/60FPS Streaming</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">3 Endpoints (SRT/SRTLA and RTMP)</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">10 Streaming Destinations (Via Plugin)</span>
+						</li>
+						<li class="flex items-center">
+							<div class="checkmark-icon">
+								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+							</div>
+							<span class="ml-2">Custom Overlays & Alerts</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
@@ -515,46 +577,19 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">Unmetered Bandwidth</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Custom Stream Overlays</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Multi-Platform Streaming</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Advanced Analytics</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Stream Scheduling</span>
-						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Custom Alerts & Notifications</span>
+							<span class="ml-2">Advanced Stream Settings</span>
 						</li>
 					</ul>
 				</div>
+				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
 				<div class="relative">
-					<button
-						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-					>
-						Order Now
-					</button>
+					<a href="https://buy.stripe.com/4gw7vYa5o2oR6lyaEG" target="_blank" rel="noopener noreferrer" class="block">
+						<button
+							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
+						>
+							Order Now
+						</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -662,11 +697,13 @@
 					</ul>
 				</div>
 				<div class="relative">
-					<button
-						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-					>
-						Order Now
-					</button>
+					<a href="https://buy.stripe.com/8wM2bEcdw0gJaBO7sv" target="_blank" rel="noopener noreferrer" class="block">
+						<button
+							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
+						>
+							Order Now
+						</button>
+					</a>
 				</div>
 			</div>
 
@@ -723,11 +760,13 @@
 					</ul>
 				</div>
 				<div class="relative">
-					<button
-						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
-					>
-						Order Now
-					</button>
+					<a href="https://buy.stripe.com/28o9E64L4gfH11eeUY" target="_blank" rel="noopener noreferrer" class="block">
+						<button
+							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
+						>
+							Order Now
+						</button>
+					</a>
 				</div>
 			</div>
 
@@ -765,9 +804,10 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
+						class="w-full cursor-not-allowed rounded-md bg-gray-600 px-8 py-3 text-lg font-medium text-white sm:px-12 sm:py-4"
+						disabled
 					>
-						Get Started
+						Coming Soon
 					</button>
 				</div>
 			</div>
@@ -806,9 +846,10 @@
 				</div>
 				<div class="relative">
 					<button
-						class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
+						class="w-full cursor-not-allowed rounded-md bg-gray-600 px-8 py-3 text-lg font-medium text-white sm:px-12 sm:py-4"
+						disabled
 					>
-						Get Started
+						Coming Soon
 					</button>
 				</div>
 			</div>

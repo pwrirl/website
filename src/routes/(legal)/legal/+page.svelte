@@ -50,7 +50,8 @@
 				<div class="relative">
 					<a
 						href={doc.path}
-						class="inline-block w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
+						class="inline-block w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#121212] sm:px-12 sm:py-4"
+						aria-label="Read {doc.title}"
 					>
 						Read
 					</a>
@@ -65,6 +66,22 @@
 	.pricing-panel {
 		transition: all 500ms ease;
 		min-height: 220px;
+	}
+	
+	/* Add reduced motion preference support */
+	@media (prefers-reduced-motion: reduce) {
+		.pricing-panel,
+		.pricing-panel .icon-container {
+			transition: none;
+		}
+		
+		.pricing-panel:hover {
+			transform: none;
+		}
+		
+		.pricing-panel:hover .icon-container {
+			transform: none;
+		}
 	}
 
 	.pricing-panel:hover {

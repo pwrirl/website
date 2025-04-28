@@ -139,7 +139,10 @@
 	</button>
 {/if}
 
-<div id="main-content" class="relative flex h-[75vh] w-full items-center justify-center overflow-hidden sm:h-[50vh] md:h-[75vh]">
+<div
+	id="main-content"
+	class="relative flex h-[75vh] w-full items-center justify-center overflow-hidden sm:h-[50vh] md:h-[75vh]"
+>
 	<video
 		autoplay
 		loop
@@ -167,9 +170,9 @@
 			Stream Anywhere with <span class="font-bold text-[#e20074]">PowerIRL</span>
 		</h1>
 		<p class="mb-8 text-xl drop-shadow sm:text-2xl">
-			PowerIRL combines cloud-based OBS with true mobile freedom. Whether you're
-			streaming from your desktop or on the go, PowerIRL keeps you live with stream drop protection, full
-			customization, and enterprise-grade reliability.
+			PowerIRL combines cloud-based OBS with true mobile freedom. Whether you're streaming from your
+			desktop or on the go, PowerIRL keeps you live with stream drop protection, full customization,
+			and enterprise-grade reliability.
 		</p>
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
 			<button
@@ -343,13 +346,13 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">1 Endpoint (SRT/SRTLA or RTMP)</span>
+							<span class="ml-2">1080P/60FPS Streaming</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">1080P/60FPS Streaming</span>
+							<span class="ml-2">1 Endpoint (SRT/SRTLA or RTMP)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
@@ -358,12 +361,12 @@
 							<span class="ml-2">Basic Overlays/Alerts</span>
 						</li>
 						{#if isDedicated}
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Remote Desktop Access</span>
-						</li>
+							<li class="flex items-center">
+								<div class="checkmark-icon">
+									<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+								</div>
+								<span class="ml-2">Remote Desktop Access</span>
+							</li>
 						{/if}
 						<li class="flex items-center">
 							<div class="checkmark-icon">
@@ -377,17 +380,28 @@
 							</div>
 							<span class="ml-2">Optimized for Mobile Streaming</span>
 						</li>
-						<li class="flex items-center">
-							<div class="checkmark-icon">
-								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
-							</div>
-							<span class="ml-2">Dedicated Edition Available</span>
-						</li>
+						{#if !isDedicated}
+							<li class="flex items-center">
+								<div class="checkmark-icon">
+									<Icon icon="mdi:check" class="text-white" width="20" height="20" />
+								</div>
+								<span class="ml-2">Dedicated Edition Available</span>
+							</li>
+						{/if}
 					</ul>
 				</div>
-				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
+				<p class="mb-4 text-center text-xs text-gray-400">
+					Servers are typically deployed within 24 hours
+				</p>
 				<div class="relative">
-					<a href={isDedicated ? 'https://buy.stripe.com/5kA5nQcdwd3v11edQX' : 'https://buy.stripe.com/6oE03w1ySgfH6ly4gg'} target="_blank" rel="noopener noreferrer" class="block">
+					<a
+						href={isDedicated
+							? 'https://buy.stripe.com/5kA5nQcdwd3v11edQX'
+							: 'https://buy.stripe.com/6oE03w1ySgfH6ly4gg'}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="block"
+					>
 						<button
 							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
 						>
@@ -466,7 +480,7 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">5 Streaming Destinations (Via Plugin)</span>
+							<span class="ml-2">5 Streaming Destinations (Via Plugin*)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
@@ -488,9 +502,18 @@
 						</li>
 					</ul>
 				</div>
-				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
+				<p class="mb-4 text-center text-xs text-gray-400">
+					Servers are typically deployed within 24 hours
+				</p>
 				<div class="relative">
-					<a href={isDedicated ? 'https://buy.stripe.com/28o03wb9s0gJ6ly6ou' : 'https://buy.stripe.com/eVag2u91k2oRcJW149'} target="_blank" rel="noopener noreferrer" class="block">
+					<a
+						href={isDedicated
+							? 'https://buy.stripe.com/28o03wb9s0gJ6ly6ou'
+							: 'https://buy.stripe.com/eVag2u91k2oRcJW149'}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="block"
+					>
 						<button
 							class="relative w-full cursor-pointer overflow-hidden rounded-md bg-gradient-to-r from-[#e20074] to-[#ff00a0] px-8 py-3 text-lg font-medium text-white transition-all duration-300 hover:scale-105 sm:px-12 sm:py-4"
 						>
@@ -559,7 +582,7 @@
 							<div class="checkmark-icon">
 								<Icon icon="mdi:check" class="text-white" width="20" height="20" />
 							</div>
-							<span class="ml-2">10 Streaming Destinations (Via Plugin)</span>
+							<span class="ml-2">10 Streaming Destinations (Via Plugin*)</span>
 						</li>
 						<li class="flex items-center">
 							<div class="checkmark-icon">
@@ -581,9 +604,18 @@
 						</li>
 					</ul>
 				</div>
-				<p class="mb-4 text-center text-xs text-gray-400">Servers are typically deployed within 24 hours</p>
+				<p class="mb-4 text-center text-xs text-gray-400">
+					Servers are typically deployed within 24 hours
+				</p>
 				<div class="relative">
-					<a href={isDedicated ? 'https://buy.stripe.com/cN2dUm2CW0gJ9xK6ox' : 'https://buy.stripe.com/6oE6rU6TcaVn9xKcMU'} target="_blank" rel="noopener noreferrer" class="block">
+					<a
+						href={isDedicated
+							? 'https://buy.stripe.com/cN2dUm2CW0gJ9xK6ox'
+							: 'https://buy.stripe.com/6oE6rU6TcaVn9xKcMU'}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="block"
+					>
 						<button
 							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
 						>
@@ -697,7 +729,12 @@
 					</ul>
 				</div>
 				<div class="relative">
-					<a href="https://buy.stripe.com/8wM2bEcdw0gJaBO7sv" target="_blank" rel="noopener noreferrer" class="block">
+					<a
+						href="https://buy.stripe.com/8wM2bEcdw0gJaBO7sv"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="block"
+					>
 						<button
 							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
 						>
@@ -760,7 +797,12 @@
 					</ul>
 				</div>
 				<div class="relative">
-					<a href="https://buy.stripe.com/28o9E64L4gfH11eeUY" target="_blank" rel="noopener noreferrer" class="block">
+					<a
+						href="https://buy.stripe.com/28o9E64L4gfH11eeUY"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="block"
+					>
 						<button
 							class="w-full cursor-pointer rounded-md bg-[#e20074] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#c70067] sm:px-12 sm:py-4"
 						>

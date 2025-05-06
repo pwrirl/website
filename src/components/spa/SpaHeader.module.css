@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222; /* Dark background */
+  color: white;
+  padding: 1rem 2rem; /* Adjust padding as needed */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem; /* Space between nav items */
+  margin-left: 2rem; /* Space between logo and nav */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #e83e8c; /* Pinkish hover color */
+}
+
+.userIcon {
+  color: #e83e8c; /* Pinkish color */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.userIcon:hover {
+  color: white;
+}

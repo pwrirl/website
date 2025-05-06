@@ -1,0 +1,90 @@
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.socialIcon {
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: #e83e8c;
+}
+
+.divider {
+  width: 80%;
+  max-width: 600px;
+  height: 1px;
+  background-color: #444;
+  margin: 0 auto 1.5rem;
+}
+
+.legalLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legalLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.legalLinks a:hover {
+  color: #e83e8c;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.backToTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e83e8c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.backToTop:hover {
+  background-color: #c62b74;
+}

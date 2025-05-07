@@ -76,12 +76,14 @@ export default function SpaHeader() {
                     <button
                       onClick={scrollToTop}
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+                      aria-label="Scroll to top"
                     >
                       <Icon
                         icon="mdi:home"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
+                        aria-hidden="true"
                       />
                       <span>Home</span>
                     </button>
@@ -90,12 +92,14 @@ export default function SpaHeader() {
                     <button
                       onClick={() => scrollToSection("features")}
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+                      aria-label="Scroll to features section"
                     >
                       <Icon
                         icon="mdi:star"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
+                        aria-hidden="true"
                       />
                       <span>Features</span>
                     </button>
@@ -104,12 +108,14 @@ export default function SpaHeader() {
                     <button
                       onClick={() => scrollToSection("cloud-obs")}
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+                      aria-label="Scroll to cloud OBS section"
                     >
                       <Icon
                         icon="mdi:desktop-tower-monitor"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
+                        aria-hidden="true"
                       />
                       <span>Cloud OBS</span>
                     </button>
@@ -118,12 +124,14 @@ export default function SpaHeader() {
                     <button
                       onClick={() => scrollToSection("endpoints")}
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+                      aria-label="Scroll to endpoints section"
                     >
                       <Icon
                         icon="mdi:connection"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
+                        aria-hidden="true"
                       />
                       <span>Endpoints</span>
                     </button>
@@ -132,12 +140,14 @@ export default function SpaHeader() {
                     <button
                       onClick={() => scrollToSection("multi-stream")}
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+                      aria-label="Scroll to multi-stream section"
                     >
                       <Icon
                         icon="mdi:broadcast"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
+                        aria-hidden="true"
                       />
                       <span>Multi-Stream</span>
                     </button>
@@ -156,6 +166,7 @@ export default function SpaHeader() {
                       width="32"
                       height="32"
                       color="#fff"
+                      aria-hidden="true"
                     />
                   </button>
                 </div>
@@ -208,7 +219,7 @@ export default function SpaHeader() {
                 onClick={toggleMobileMenu}
                 aria-label="Close mobile menu"
               >
-                <Icon icon="mdi:close" width="24" height="24" />
+                <Icon icon="mdi:close" width="24" height="24" aria-hidden="true" />
               </button>
 
               {/* Menu items */}
@@ -218,12 +229,14 @@ export default function SpaHeader() {
                     <button
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
                       onClick={scrollToTop}
+                      aria-label="Scroll to top"
                     >
                       <Icon
                         icon="mdi:home"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+                        aria-hidden="true"
                       />
                       <span className="font-medium text-white">Home</span>
                     </button>
@@ -232,12 +245,14 @@ export default function SpaHeader() {
                     <button
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
                       onClick={() => scrollToSection("features")}
+                      aria-label="Scroll to features section"
                     >
                       <Icon
                         icon="mdi:star"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+                        aria-hidden="true"
                       />
                       <span className="font-medium text-white">Features</span>
                     </button>
@@ -246,12 +261,14 @@ export default function SpaHeader() {
                     <button
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
                       onClick={() => scrollToSection("cloud-obs")}
+                      aria-label="Scroll to cloud OBS section"
                     >
                       <Icon
                         icon="mdi:desktop-tower-monitor"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+                        aria-hidden="true"
                       />
                       <span className="font-medium text-white">Cloud OBS</span>
                     </button>
@@ -260,12 +277,14 @@ export default function SpaHeader() {
                     <button
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
                       onClick={() => scrollToSection("endpoints")}
+                      aria-label="Scroll to endpoints section"
                     >
                       <Icon
                         icon="mdi:connection"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+                        aria-hidden="true"
                       />
                       <span className="font-medium text-white">Endpoints</span>
                     </button>
@@ -274,12 +293,14 @@ export default function SpaHeader() {
                     <button
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
                       onClick={() => scrollToSection("multi-stream")}
+                      aria-label="Scroll to multi-stream section"
                     >
                       <Icon
                         icon="mdi:broadcast"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+                        aria-hidden="true"
                       />
                       <span className="font-medium text-white">Multi-Stream</span>
                     </button>

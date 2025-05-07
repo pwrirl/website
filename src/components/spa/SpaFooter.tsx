@@ -9,6 +9,13 @@ export default function SpaFooter() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (section: string) => {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="flex flex-col items-center bg-[#222222] px-6 py-8 text-white text-center">
       <div className="mb-4">
@@ -63,6 +70,66 @@ export default function SpaFooter() {
       >
         <Icon icon="mdi:chevron-up" width="24" height="24" />
       </div>
+
+      <button
+        onClick={() => scrollToSection("features")}
+        className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+        aria-label="Scroll to features section"
+      >
+        <Icon
+          icon="mdi:star"
+          width="18"
+          height="18"
+          className="text-[#e20074]"
+          aria-hidden="true"
+        />
+        <span>Features</span>
+      </button>
+
+      <button
+        onClick={() => scrollToSection("cloud-obs")}
+        className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+        aria-label="Scroll to cloud OBS section"
+      >
+        <Icon
+          icon="mdi:desktop-tower-monitor"
+          width="18"
+          height="18"
+          className="text-[#e20074]"
+          aria-hidden="true"
+        />
+        <span>Cloud OBS</span>
+      </button>
+
+      <button
+        onClick={() => scrollToSection("endpoints")}
+        className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+        aria-label="Scroll to endpoints section"
+      >
+        <Icon
+          icon="mdi:connection"
+          width="18"
+          height="18"
+          className="text-[#e20074]"
+          aria-hidden="true"
+        />
+        <span>Endpoints</span>
+      </button>
+
+      <button
+        onClick={() => scrollToSection("multi-stream")}
+        className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+        aria-label="Scroll to multi-stream section"
+      >
+        <Icon
+          icon="mdi:broadcast"
+          width="18"
+          height="18"
+          className="text-[#e20074]"
+          aria-hidden="true"
+        />
+        <span>Multi-Stream</span>
+      </button>
     </footer>
   );
 }

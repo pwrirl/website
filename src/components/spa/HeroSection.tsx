@@ -29,7 +29,9 @@ export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -80; // Offset for sticky header
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -83,61 +85,21 @@ export default function HeroSection() {
         </p>
         <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-4">
           <button
-            onClick={() => scrollToSection("features")}
-            className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-            aria-label="Scroll to features section"
-          >
-            <Icon
-              icon="mdi:star"
-              width="18"
-              height="18"
-              className="text-[#e20074]"
-              aria-hidden="true"
-            />
-            <span>Features</span>
-          </button>
-          <button
             onClick={() => scrollToSection("cloud-obs")}
-            className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-            aria-label="Scroll to cloud OBS section"
+            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white px-6 py-3 text-base font-medium transition-colors sm:w-auto sm:px-6 sm:py-3 sm:text-base"
           >
-            <Icon
-              icon="mdi:desktop-tower-monitor"
-              width="18"
-              height="18"
-              className="text-[#e20074]"
-              aria-hidden="true"
-            />
-            <span>Cloud OBS</span>
+            <Icon icon="mdi:rocket-launch" width={20} height={20} />
+            <span>Get Started</span>
           </button>
-          <button
-            onClick={() => scrollToSection("endpoints")}
-            className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-            aria-label="Scroll to endpoints section"
+          <a
+            href="https://discord.gg/KtfrPhdEvx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-6 sm:py-3 sm:text-base"
           >
-            <Icon
-              icon="mdi:connection"
-              width="18"
-              height="18"
-              className="text-[#e20074]"
-              aria-hidden="true"
-            />
-            <span>Endpoints</span>
-          </button>
-          <button
-            onClick={() => scrollToSection("multi-stream")}
-            className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-            aria-label="Scroll to multi-stream section"
-          >
-            <Icon
-              icon="mdi:broadcast"
-              width="18"
-              height="18"
-              className="text-[#e20074]"
-              aria-hidden="true"
-            />
-            <span>Multi-Stream</span>
-          </button>
+            <Icon icon="ic:baseline-discord" width={20} height={20} />
+            <span>Join our Discord</span>
+          </a>
         </div>
       </div>
     </div>

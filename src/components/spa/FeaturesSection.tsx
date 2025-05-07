@@ -76,65 +76,6 @@ export default function FeaturesSection() {
             />
           ))}
         </div>
-
-        <div className="mt-12 text-center">
-          <button
-            onClick={() => scrollToSection("features")}
-            className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-            aria-label="Scroll to features section"
-          >
-            <Icon
-              icon="mdi:star"
-              width={18}
-              height={18}
-              className="text-[#e20074]"
-              aria-hidden="true"
-            />
-            <span>Features</span>
-          </button>
-          <button
-            onClick={() => scrollToSection("cloud-obs")}
-            className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-            aria-label="Scroll to cloud OBS section"
-          >
-            <Icon
-              icon="mdi:desktop-tower-monitor"
-              width={18}
-              height={18}
-              className="text-[#e20074]"
-              aria-hidden="true"
-            />
-            <span>Cloud OBS</span>
-          </button>
-          <button
-            onClick={() => scrollToSection("endpoints")}
-            className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-            aria-label="Scroll to endpoints section"
-          >
-            <Icon
-              icon="mdi:connection"
-              width={18}
-              height={18}
-              className="text-[#e20074]"
-              aria-hidden="true"
-            />
-            <span>Endpoints</span>
-          </button>
-          <button
-            onClick={() => scrollToSection("multi-stream")}
-            className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-            aria-label="Scroll to multi-stream section"
-          >
-            <Icon
-              icon="mdi:broadcast"
-              width={18}
-              height={18}
-              className="text-[#e20074]"
-              aria-hidden="true"
-            />
-            <span>Multi-Stream</span>
-          </button>
-        </div>
       </div>
     </section>
   );

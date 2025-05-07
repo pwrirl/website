@@ -15,14 +15,14 @@ export default function StreamingSection() {
             <span className="relative z-10">Multi-Stream Plans</span>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
           </h2>
-          <p className="text-center text-gray-300 max-w-3xl mx-auto text-lg mb-4">
+          <p className="text-center text-white max-w-3xl mx-auto text-lg mb-4">
             Stream to multiple platforms simultaneously
           </p>
         </div>
 
         {/* PowerStreaming Plans */}
         <div className="w-full mb-10">
-          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden relative  flex flex-col">
+          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden relative flex flex-col">
             {/* Toggle inside the card */}
             <div className="flex flex-col items-center justify-center px-4 mb-4 pt-4">
               <div className="flex items-center justify-center mb-2">

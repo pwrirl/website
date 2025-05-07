@@ -149,7 +149,7 @@ export default function ObsSection() {
             <span className="relative z-10">Cloud OBS Plans</span>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
           </h2>
-          <p className="text-center text-gray-300 max-w-3xl mx-auto text-lg">
+          <p className="text-center text-white max-w-3xl mx-auto text-lg">
             Choose the perfect PowerOBS plan for your streaming needs
           </p>
         </div>
@@ -158,7 +158,7 @@ export default function ObsSection() {
         <div className="flex items-center justify-center mb-12">
           <span
             className={`text-lg ${
-              !isDedicated ? "text-[#E20074] font-bold" : "text-gray-400"
+              !isDedicated ? "text-[#E20074] font-bold" : "text-white"
             }`}
           >
             VPS
@@ -178,7 +178,7 @@ export default function ObsSection() {
           </div>
           <span
             className={`ml-4 text-lg ${
-              isDedicated ? "text-[#E20074] font-bold" : "text-gray-400"
+              isDedicated ? "text-[#E20074] font-bold" : "text-white"
             }`}
           >
             Dedicated
@@ -208,18 +208,18 @@ export default function ObsSection() {
                     <h3 className="text-3xl md:text-4xl font-bold mb-4">
                       {plan.name}
                     </h3>
-                    <p className="text-base text-gray-400 mb-6">
+                    <p className="text-base text-white mb-6">
                       {plan.description}
                     </p>
                     <div className="mb-6">
                       <span className="text-5xl font-bold">{plan.price}</span>
-                      <span className="text-gray-400 text-base ml-2">
+                      <span className="text-white text-base ml-2">
                         /month
                       </span>
                     </div>
                     {/* Button in left column for large screens */}
                     <div className="hidden lg:block mt-auto">
-                      <p className="text-sm text-gray-500 mb-4">
+                      <p className="text-sm text-white mb-4">
                         Servers are typically deployed within 24 hours
                       </p>
                       <button className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full">
@@ -245,7 +245,7 @@ export default function ObsSection() {
                   </div>
                   {/* Button at the very bottom for stacked/column layout (below lg) */}
                   <div className="block lg:hidden mt-4 w-full">
-                    <p className="text-sm text-gray-500 mb-4 text-center">
+                    <p className="text-sm text-white mb-4 text-center">
                       Servers are typically deployed within 24 hours
                     </p>
                     <button className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full">
@@ -271,12 +271,12 @@ export default function ObsSection() {
                     <h3 className="text-2xl md:text-3xl font-bold mb-4">
                       {plan.name}
                     </h3>
-                    <p className="text-base text-gray-400 mb-4">
+                    <p className="text-base text-white mb-4">
                       {plan.description}
                     </p>
                     <div className="mb-6">
                       <span className="text-4xl font-bold">{plan.price}</span>
-                      <span className="text-gray-400 text-base ml-2">
+                      <span className="text-white text-base ml-2">
                         /month
                       </span>
                     </div>
@@ -296,7 +296,7 @@ export default function ObsSection() {
                     </ul>
                   </div>
                   <div className="mt-auto">
-                    <p className="text-sm text-gray-500 mb-4">
+                    <p className="text-sm text-white mb-4">
                       Servers are typically deployed within 24 hours
                     </p>
                     <button className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md transition-colors text-lg font-bold cursor-pointer">
@@ -314,7 +314,7 @@ export default function ObsSection() {
             <Icon icon="mdi:discord" width="48" height="48" />
           </div>
           <h3 className="text-2xl font-bold mb-3">Custom Project</h3>
-          <p className="text-gray-300 mb-6 max-w-lg mx-auto">
+          <p className="text-white mb-6 max-w-lg mx-auto">
             Need something more powerful, a custom solution, or help with a
             special event? Contact us and our team will work with you to deliver
             exactly what you need.

@@ -155,7 +155,7 @@ export default function SpaHeader() {
                       icon="game-icons:hamburger-menu"
                       width="32"
                       height="32"
-                      color="#e20074"
+                      color="#fff"
                     />
                   </button>
                 </div>
@@ -290,7 +290,7 @@ export default function SpaHeader() {
                 <div className="mt-8 space-y-4">
                   <a
                     href="https://billing.stripe.com/p/login/cN25mb4HCbBR02k4gg"
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#e20074] px-4 py-3 font-medium text-white transition-colors hover:bg-[#c70067] outline-none"
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] px-4 py-3 font-medium text-white transition-colors outline-none"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

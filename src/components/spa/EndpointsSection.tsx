@@ -12,7 +12,7 @@ export default function EndpointsSection() {
             <span className="relative z-10">Endpoint Plans</span>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
           </h2>
-          <p className="text-center text-gray-300 max-w-3xl mx-auto text-lg mb-6">
+          <p className="text-center text-white max-w-3xl mx-auto text-lg mb-6">
             Enhance your streaming setup with our specialized services
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function EndpointsSection() {
                 </h3>
                 <div className="mb-6 text-center">
                   <span className="text-4xl font-bold">$9.99</span>
-                  <span className="text-gray-400 text-base ml-2">/month</span>
+                  <span className="text-white text-base ml-2">/month</span>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start">
@@ -98,7 +98,7 @@ export default function EndpointsSection() {
                 </h3>
                 <div className="mb-6 text-center">
                   <span className="text-4xl font-bold">$9.99</span>
-                  <span className="text-gray-400 text-base ml-2">/month</span>
+                  <span className="text-white text-base ml-2">/month</span>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start">

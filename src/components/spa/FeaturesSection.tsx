@@ -52,7 +52,7 @@ export default function FeaturesSection() {
             </span>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
           </h2>
-          <p className="text-center text-gray-300 max-w-3xl mx-auto text-lg">
+          <p className="text-center text-white max-w-3xl mx-auto text-lg">
             PowerIRL provides everything you need for high-quality live
             streaming with no technical hassle.
           </p>

@@ -15,7 +15,7 @@ export default function FeatureBlock({ icon, title, description }: FeatureBlockP
         <Icon icon={icon} className="text-[#E20074]" width="56" height="56" />
       </div>
       <h3 className="text-2xl font-bold mb-4 text-white text-center">{title}</h3>
-      <p className="text-gray-300 text-center text-base leading-relaxed">{description}</p>
+      <p className="text-white text-center text-base leading-relaxed">{description}</p>
     </div>
   );
 }

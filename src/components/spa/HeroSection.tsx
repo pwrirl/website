@@ -84,7 +84,7 @@ export default function HeroSection() {
         <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-4">
           <button
             onClick={() => scrollToSection("pricing")}
-            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-[#e20074] bg-[#e20074] px-4 py-3 text-base font-medium text-white transition-colors hover:bg-[#c70067] hover:border-[#c70067] sm:w-auto sm:px-6 sm:py-3 sm:text-base"
+            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white px-4 py-3 text-base font-medium text-white transition-colors sm:w-auto sm:px-6 sm:py-3 sm:text-base"
           >
             <Icon icon="mdi:rocket-launch" width="20" height="20" />
             <span>Get Started</span>

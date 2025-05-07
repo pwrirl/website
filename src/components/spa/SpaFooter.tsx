@@ -22,7 +22,7 @@ export default function SpaFooter() {
         />
       </div>
       
-      <p className="max-w-[500px] mx-auto mb-8 text-sm text-gray-300 leading-relaxed">
+      <p className="max-w-[500px] mx-auto mb-8 text-sm text-white leading-relaxed">
         The future of cloud-based streaming. Professional-grade tools for content creators.
       </p>
       
@@ -53,12 +53,12 @@ export default function SpaFooter() {
         <Link href="/privacy" className="text-xs text-white hover:text-[#E20074]">Privacy Policy</Link>
       </div>
       
-      <div className="text-xs text-gray-500 mb-6">
+      <div className="text-xs text-white mb-6">
         © {new Date().getFullYear()} PowerIRL, an SEO Nexus, LLC Company. All rights reserved.
       </div>
       
       <div 
-        className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-[#E20074] hover:bg-[#c70067] text-white flex items-center justify-center cursor-pointer z-10"
+        className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white flex items-center justify-center cursor-pointer z-10 transition-colors"
         onClick={scrollToTop}
       >
         <Icon icon="mdi:chevron-up" width="24" height="24" />

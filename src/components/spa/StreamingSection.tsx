@@ -11,8 +11,8 @@ export default function StreamingSection() {
       <div className="container mx-auto">
         {/* PowerStreaming Section */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 relative inline-block">
-            <span className="relative z-10">PowerStreaming</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 relative inline-block">
+            <span className="relative z-10">Multi-Stream Plans</span>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
           </h2>
           <p className="text-center text-gray-300 max-w-3xl mx-auto text-lg mb-4">
@@ -22,7 +22,7 @@ export default function StreamingSection() {
 
         {/* PowerStreaming Plans */}
         <div className="w-full mb-10">
-          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden relative shadow-[0_4px_16px_rgba(0,0,0,0.3)] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] flex flex-col">
+          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden relative  flex flex-col">
             {/* Toggle inside the card */}
             <div className="flex flex-col items-center justify-center px-4 mb-4 pt-4">
               <div className="flex items-center justify-center mb-2">
@@ -91,7 +91,7 @@ export default function StreamingSection() {
                 
                 {/* Button in left column for desktop, hidden in mobile */}
                 <div className="hidden lg:block mt-auto">
-                  <button className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md transition-all duration-300 text-lg font-bold shadow-lg cursor-pointer">
+                  <button className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full">
                     <span className="relative z-10">Coming Soon</span>
                   </button>
                 </div>
@@ -162,7 +162,7 @@ export default function StreamingSection() {
             
             {/* Button at bottom for mobile, hidden in desktop */}
             <div className="px-6 pt-2 pb-8 mt-auto lg:hidden">
-              <button className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md transition-all duration-300 text-lg font-bold shadow-lg cursor-pointer">
+              <button className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full">
                 <span className="relative z-10">Coming Soon</span>
               </button>
             </div>

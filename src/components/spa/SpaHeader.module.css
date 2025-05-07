@@ -25,19 +25,9 @@
   align-items: center;
   gap: 0.5rem; /* Space between icon and text */
   font-size: 0.9rem;
-  transition: color 0.2s ease;
-}
-
-.nav a:hover {
-  color: #e83e8c; /* Pinkish hover color */
 }
 
 .userIcon {
   color: #e83e8c; /* Pinkish color */
   cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.userIcon:hover {
-  color: white;
 }

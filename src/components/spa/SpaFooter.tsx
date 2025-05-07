@@ -27,19 +27,19 @@ export default function SpaFooter() {
       </p>
       
       <div className="flex gap-6 mb-8">
-        <a href="https://discord.gg/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074] transition-colors duration-200">
+        <a href="https://discord.gg/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074]">
           <Icon icon="mdi:discord" width="24" height="24" />
         </a>
-        <a href="https://kick.com/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074] transition-colors duration-200">
+        <a href="https://kick.com/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074]">
           <Icon icon="simple-icons:kick" width="24" height="24" />
         </a>
-        <a href="https://twitch.tv/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074] transition-colors duration-200">
+        <a href="https://twitch.tv/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074]">
           <Icon icon="mdi:twitch" width="24" height="24" />
         </a>
-        <a href="https://twitter.com/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074] transition-colors duration-200">
+        <a href="https://twitter.com/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074]">
           <Icon icon="mdi:twitter" width="24" height="24" />
         </a>
-        <a href="https://github.com/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074] transition-colors duration-200">
+        <a href="https://github.com/powerirl" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E20074]">
           <Icon icon="mdi:github" width="24" height="24" />
         </a>
       </div>
@@ -47,10 +47,10 @@ export default function SpaFooter() {
       <div className="w-4/5 max-w-[600px] h-px bg-gray-700 mb-6"></div>
       
       <div className="flex flex-wrap justify-center gap-6 mb-4">
-        <Link href="/legal" className="text-xs text-white hover:text-[#E20074] transition-colors duration-200">Legal</Link>
-        <Link href="/terms" className="text-xs text-white hover:text-[#E20074] transition-colors duration-200">Terms of Service</Link>
-        <Link href="/disclaimer" className="text-xs text-white hover:text-[#E20074] transition-colors duration-200">Disclaimer</Link>
-        <Link href="/privacy" className="text-xs text-white hover:text-[#E20074] transition-colors duration-200">Privacy Policy</Link>
+        <Link href="/legal" className="text-xs text-white hover:text-[#E20074]">Legal</Link>
+        <Link href="/terms" className="text-xs text-white hover:text-[#E20074]">Terms of Service</Link>
+        <Link href="/disclaimer" className="text-xs text-white hover:text-[#E20074]">Disclaimer</Link>
+        <Link href="/privacy" className="text-xs text-white hover:text-[#E20074]">Privacy Policy</Link>
       </div>
       
       <div className="text-xs text-gray-500 mb-6">
@@ -58,7 +58,7 @@ export default function SpaFooter() {
       </div>
       
       <div 
-        className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-[#E20074] text-white flex items-center justify-center cursor-pointer hover:bg-[#B10058] transition-colors duration-200 z-10"
+        className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-[#E20074] hover:bg-[#c70067] text-white flex items-center justify-center cursor-pointer z-10"
         onClick={scrollToTop}
       >
         <Icon icon="mdi:chevron-up" width="24" height="24" />

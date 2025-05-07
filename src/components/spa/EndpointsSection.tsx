@@ -8,8 +8,8 @@ export default function EndpointsSection() {
       <div className="container mx-auto">
         {/* Endpoints & PowerStreaming */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 relative inline-block">
-            <span className="relative z-10">Endpoints & PowerStreaming</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 relative inline-block">
+            <span className="relative z-10">Endpoint Plans</span>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
           </h2>
           <p className="text-center text-gray-300 max-w-3xl mx-auto text-lg mb-6">
@@ -20,7 +20,7 @@ export default function EndpointsSection() {
         {/* SRT/SRTLA and RTMP blocks side by side */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {/* SRT/SRTLA Block */}
-          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden relative shadow-[0_4px_16px_rgba(0,0,0,0.3)] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] flex flex-col">
+          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden flex flex-col">
             <div className="p-8 flex flex-col flex-grow">
               <div>
                 <div className="text-[#E20074] mb-4 flex justify-center">
@@ -79,7 +79,7 @@ export default function EndpointsSection() {
                 </ul>
               </div>
               <div className="mt-auto">
-                <button className="w-full bg-[#E20074] hover:bg-[#B10058] text-white py-5 rounded-md transition-colors text-lg font-bold cursor-pointer">
+                <button className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md text-lg font-bold cursor-pointer">
                   Order Now
                 </button>
               </div>
@@ -87,7 +87,7 @@ export default function EndpointsSection() {
           </div>
 
           {/* RTMP Block */}
-          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden relative shadow-[0_4px_16px_rgba(0,0,0,0.3)] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] flex flex-col">
+          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden flex flex-col">
             <div className="p-8 flex flex-col flex-grow">
               <div>
                 <div className="text-[#E20074] mb-4 flex justify-center">
@@ -144,7 +144,7 @@ export default function EndpointsSection() {
                 </ul>
               </div>
               <div className="mt-auto">
-                <button className="w-full bg-[#E20074] hover:bg-[#B10058] text-white py-5 rounded-md transition-colors text-lg font-bold cursor-pointer">
+                <button className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md text-lg font-bold cursor-pointer">
                   Order Now
                 </button>
               </div>

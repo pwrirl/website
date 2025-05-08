@@ -5,11 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 
-export default function SpaHeader() {
+export default function PrimaryHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Add scroll event listener
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -20,28 +19,11 @@ export default function SpaHeader() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const yOffset = -80; // Offset for sticky header
-      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
   };
 
   return (
@@ -73,84 +55,64 @@ export default function SpaHeader() {
                 {/* Desktop Menu (hidden on medium screens and below) */}
                 <ul className="hidden space-x-3 xl:space-x-4 lg:flex text-sm xl:text-base">
                   <li>
-                    <button
-                      onClick={scrollToTop}
+                    <Link
+                      href="/about"
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-                      aria-label="Scroll to top"
                     >
                       <Icon
-                        icon="mdi:home"
+                        icon="mdi:information"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
                         aria-hidden="true"
                       />
-                      <span>Home</span>
-                    </button>
+                      <span>About</span>
+                    </Link>
                   </li>
                   <li>
-                    <button
-                      onClick={() => scrollToSection("features")}
+                    <Link
+                      href="/partners"
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-                      aria-label="Scroll to features section"
                     >
                       <Icon
-                        icon="mdi:star"
+                        icon="mdi:handshake"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
                         aria-hidden="true"
                       />
-                      <span>Features</span>
-                    </button>
+                      <span>Partners</span>
+                    </Link>
                   </li>
                   <li>
-                    <button
-                      onClick={() => scrollToSection("cloud-obs")}
+                    <Link
+                      href="/resources"
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-                      aria-label="Scroll to cloud OBS section"
                     >
                       <Icon
-                        icon="mdi:desktop-tower-monitor"
+                        icon="mdi:book-open-page-variant"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
                         aria-hidden="true"
                       />
-                      <span>Cloud OBS</span>
-                    </button>
+                      <span>Resources</span>
+                    </Link>
                   </li>
                   <li>
-                    <button
-                      onClick={() => scrollToSection("endpoints")}
+                    <Link
+                      href="/legal"
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-                      aria-label="Scroll to endpoints section"
                     >
                       <Icon
-                        icon="mdi:connection"
+                        icon="mdi:file-document"
                         width="18"
                         height="18"
                         className="text-[#e20074]"
                         aria-hidden="true"
                       />
-                      <span>Endpoints</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => scrollToSection("multi-stream")}
-                      className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
-                      aria-label="Scroll to multi-stream section"
-                    >
-                      <Icon
-                        icon="mdi:broadcast"
-                        width="18"
-                        height="18"
-                        className="text-[#e20074]"
-                        aria-hidden="true"
-                      />
-                      <span>Multi-Stream</span>
-                    </button>
+                      <span>Legal</span>
+                    </Link>
                   </li>
                 </ul>
                 {/* Hamburger Menu Icon (visible on medium and below, below logo) */}
@@ -226,84 +188,64 @@ export default function SpaHeader() {
               <div className="p-6">
                 <ul className="space-y-2">
                   <li>
-                    <button
+                    <Link
+                      href="/about"
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
-                      onClick={scrollToTop}
-                      aria-label="Scroll to top"
                     >
                       <Icon
-                        icon="mdi:home"
+                        icon="mdi:information"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
                         aria-hidden="true"
                       />
-                      <span className="font-medium text-white">Home</span>
-                    </button>
+                      <span className="font-medium text-white">About</span>
+                    </Link>
                   </li>
                   <li>
-                    <button
+                    <Link
+                      href="/partners"
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
-                      onClick={() => scrollToSection("features")}
-                      aria-label="Scroll to features section"
                     >
                       <Icon
-                        icon="mdi:star"
+                        icon="mdi:handshake"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
                         aria-hidden="true"
                       />
-                      <span className="font-medium text-white">Features</span>
-                    </button>
+                      <span className="font-medium text-white">Partners</span>
+                    </Link>
                   </li>
                   <li>
-                    <button
+                    <Link
+                      href="/resources"
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
-                      onClick={() => scrollToSection("cloud-obs")}
-                      aria-label="Scroll to cloud OBS section"
                     >
                       <Icon
-                        icon="mdi:desktop-tower-monitor"
+                        icon="mdi:book-open-page-variant"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
                         aria-hidden="true"
                       />
-                      <span className="font-medium text-white">Cloud OBS</span>
-                    </button>
+                      <span className="font-medium text-white">Resources</span>
+                    </Link>
                   </li>
                   <li>
-                    <button
+                    <Link
+                      href="/legal"
                       className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
-                      onClick={() => scrollToSection("endpoints")}
-                      aria-label="Scroll to endpoints section"
                     >
                       <Icon
-                        icon="mdi:connection"
+                        icon="mdi:file-document"
                         width="24"
                         height="24"
                         className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
                         aria-hidden="true"
                       />
-                      <span className="font-medium text-white">Endpoints</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
-                      onClick={() => scrollToSection("multi-stream")}
-                      aria-label="Scroll to multi-stream section"
-                    >
-                      <Icon
-                        icon="mdi:broadcast"
-                        width="24"
-                        height="24"
-                        className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
-                        aria-hidden="true"
-                      />
-                      <span className="font-medium text-white">Multi-Stream</span>
-                    </button>
+                      <span className="font-medium text-white">Legal</span>
+                    </Link>
                   </li>
                 </ul>
 
@@ -326,4 +268,4 @@ export default function SpaHeader() {
       )}
     </>
   );
-}
+} 

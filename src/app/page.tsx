@@ -8,6 +8,8 @@ import ObsSection from "@/components/spa/ObsSection";
 import StreamingSection from "@/components/spa/StreamingSection";
 import EndpointsSection from "@/components/spa/EndpointsSection";
 import HeroSection from "@/components/spa/HeroSection";
+import SpaHeader from "@/components/spa/SpaHeader";
+import PrimaryFooter from "@/components/layout/PrimaryFooter";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -40,21 +42,25 @@ export default function Home() {
   };
 
   return (
-    <main>
-      {/* Hero Section */}
-      <HeroSection />
+    <>
+      <SpaHeader />
+      <main style={{ minHeight: "calc(100vh - 200px)" }}>
+        {/* Hero Section */}
+        <HeroSection />
 
-      {/* Features Section */}
-      <FeaturesSection />
+        {/* Features Section */}
+        <FeaturesSection />
 
-      {/* OBS Section */}
-      <ObsSection />
+        {/* OBS Section */}
+        <ObsSection />
 
-      {/* Endpoints Section */}
-      <EndpointsSection />
+        {/* Endpoints Section */}
+        <EndpointsSection />
 
-      {/* Streaming Section */}
-      <StreamingSection />
-    </main>
+        {/* Streaming Section */}
+        <StreamingSection />
+      </main>
+      <PrimaryFooter />
+    </>
   );
 }

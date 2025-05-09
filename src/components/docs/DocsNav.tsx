@@ -72,6 +72,18 @@ export default function DocsNav() {
               Meld Studio
             </Link>
           </li>
+          <li>
+            <Link
+              href="/docs/computer-software/noalbs"
+              className={`block px-4 py-2 rounded-lg transition-colors ${
+                isActive("/docs/computer-software/noalbs")
+                  ? "bg-[#e20074] text-white"
+                  : "text-gray-400 hover:bg-[#23232b] hover:text-white"
+              }`}
+            >
+              NOALBS
+            </Link>
+          </li>
         </ul>
       </div>
 

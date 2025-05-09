@@ -6,7 +6,7 @@ export default function AboutPage() {
     {
       name: "DanSizn",
       role: "Co-Owner",
-      image: "/images/dansizn.jpg",
+      image: "/images/owners/dansignz.svg",
       bio: [
         "I was born and raised in Washington State and still haven't left. (Shocking! I know and its really not that gray…) I grew up around video games / electronics as I really did enjoy taking apart old broken electronics to see how they worked and ended up growing into a hobby.",
         "In the early 2000's I was involved in building gaming leagues that ran for many years but as time went on and the development companies and other groups with investors came along the leagues started to fall apart. We originally operated fully off of mIRC as discord was not around and a website.",
@@ -24,7 +24,7 @@ export default function AboutPage() {
     {
       name: "Seekaplayer",
       role: "Co-Owner",
-      image: "/images/seekaplayer.jpg",
+      image: "/images/owners/seekaplayer.svg",
       bio: [
         "My name is Seekaplayer and I love Gaming, Technology, Music, and Fitness. I've been gaming since I was a little kid and still do to this day.",
         "I'm very passionate about learning new things and IRL Streaming was always something I wanted to get into. As a streamer and creator I undersand the struggle we face and the cost to do this can be heavy.",

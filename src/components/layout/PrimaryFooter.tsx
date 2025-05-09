@@ -3,9 +3,15 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
-export default function PrimaryFooter() {
+interface PrimaryFooterProps {
+  variant?: 'public' | 'internal';
+}
+
+export default function PrimaryFooter({ variant = 'public' }: PrimaryFooterProps) {
+  const isInternal = variant === 'internal';
+  
   return (
-    <footer className="relative bg-black text-white pt-12 pb-6 px-4">
+    <footer className={`relative ${isInternal ? 'bg-white text-gray-900' : 'bg-[#101010] text-white'} pt-12 pb-6 px-4`}>
       <div className="container mx-auto px-5 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:items-start">
           {/* Logo */}
@@ -20,18 +26,18 @@ export default function PrimaryFooter() {
                 priority
               />
             </Link>
-            <p className="text-gray-400 text-sm">
+            <p className={`text-sm ${isInternal ? 'text-gray-600' : 'text-gray-400'}`}>
               Making professional streaming accessible to everyone.
             </p>
           </div>
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isInternal ? 'text-gray-900' : 'text-[#e20074]'}`}>Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
                 >
                   About
                 </Link>
@@ -39,7 +45,7 @@ export default function PrimaryFooter() {
               <li>
                 <Link
                   href="/partners"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
                 >
                   Partners
                 </Link>
@@ -47,7 +53,7 @@ export default function PrimaryFooter() {
               <li>
                 <Link
                   href="/resources"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
                 >
                   Resources
                 </Link>
@@ -56,12 +62,12 @@ export default function PrimaryFooter() {
           </div>
           {/* Legal */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isInternal ? 'text-gray-900' : 'text-[#e20074]'}`}>Legal</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/legal"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
                 >
                   Legal Homepage
                 </Link>
@@ -69,7 +75,7 @@ export default function PrimaryFooter() {
               <li>
                 <Link
                   href="/legal/terms"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
                 >
                   Terms of Service
                 </Link>
@@ -77,7 +83,7 @@ export default function PrimaryFooter() {
               <li>
                 <Link
                   href="/legal/privacy"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
                 >
                   Privacy Policy
                 </Link>
@@ -85,7 +91,7 @@ export default function PrimaryFooter() {
               <li>
                 <Link
                   href="/legal/disclaimer"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
                 >
                   Disclaimer
                 </Link>
@@ -94,14 +100,14 @@ export default function PrimaryFooter() {
           </div>
           {/* Contact */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isInternal ? 'text-gray-900' : 'text-[#e20074]'}`}>Contact</h3>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://twitch.tv/powerirl"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitch"
-                className="text-white hover:text-[#e20074] transition-colors text-2xl"
+                className={`transition-colors text-2xl ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-[#e20074]'}`}
               >
                 <Icon icon="mdi:twitch" />
               </a>
@@ -110,7 +116,7 @@ export default function PrimaryFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Kick"
-                className="text-white hover:text-[#e20074] transition-colors text-2xl"
+                className={`transition-colors text-2xl ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-[#e20074]'}`}
               >
                 <Icon icon="simple-icons:kick" />
               </a>
@@ -119,7 +125,7 @@ export default function PrimaryFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="text-white hover:text-[#e20074] transition-colors text-2xl"
+                className={`transition-colors text-2xl ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-[#e20074]'}`}
               >
                 <Icon icon="mdi:youtube" />
               </a>
@@ -128,7 +134,7 @@ export default function PrimaryFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X"
-                className="text-white hover:text-[#e20074] transition-colors text-2xl"
+                className={`transition-colors text-2xl ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-[#e20074]'}`}
               >
                 <Icon icon="simple-icons:x" />
               </a>
@@ -137,7 +143,7 @@ export default function PrimaryFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="text-white hover:text-[#e20074] transition-colors text-2xl"
+                className={`transition-colors text-2xl ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-[#e20074]'}`}
               >
                 <Icon icon="mdi:github" />
               </a>
@@ -146,10 +152,10 @@ export default function PrimaryFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-gray-800 mb-20 md:mb-0">
+        <div className={`mt-8 pt-8 border-t ${isInternal ? 'border-gray-200' : 'border-gray-800'} mb-20 md:mb-0`}>
           <div className="flex flex-col-reverse md:flex-row md:justify-between items-center gap-4 md:gap-0">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              © 2025 PowerIRL, an SEO Nexus, LLC Company. All rights reserved.
+            <p className={`text-sm text-center md:text-left ${isInternal ? 'text-gray-500' : 'text-gray-400'}`}>
+              © {new Date().getFullYear()} PowerIRL, an SEO Nexus, LLC Company. All rights reserved.
             </p>
           </div>
         </div>

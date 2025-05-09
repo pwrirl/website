@@ -29,39 +29,34 @@ export default function StreamingSection() {
                 <span
                   className={`text-base whitespace-nowrap ${
                     !isPowerStreamingPro
-                      ? "text-[#E20074] font-bold"
+                      ? "text-[#E20074]"
                       : "text-white"
                   }`}
                 >
                   Basic (5 Destinations)
                 </span>
                 <div
-                  className={`relative mx-3 w-12 h-6 rounded-full ${
-                    isPowerStreamingPro ? "bg-[#E20074]" : "bg-gray-800"
+                  className={`relative mx-4 w-14 h-7 rounded-full ${
+                    isPowerStreamingPro ? "bg-gradient-to-r from-[#e20074] to-[#ff00a0]" : "bg-gray-800"
                   } transition-colors duration-300 cursor-pointer`}
                   onClick={() => setIsPowerStreamingPro((prevState) => !prevState)}
                 >
                   <div
-                    className="absolute top-1 h-4 w-4 rounded-full bg-white transform transition-transform duration-300"
+                    className="absolute top-1 h-5 w-5 rounded-full bg-white transform transition-transform duration-300"
                     style={{
                       transform: isPowerStreamingPro
-                        ? "translateX(28px)"
+                        ? "translateX(32px)"
                         : "translateX(4px)",
                     }}
                   ></div>
                 </div>
                 <span
                   className={`text-base whitespace-nowrap ${
-                    isPowerStreamingPro ? "text-[#E20074] font-bold" : "text-white"
+                    isPowerStreamingPro ? "text-[#E20074]" : "text-white"
                   }`}
                 >
                   Pro (10 Destinations)
                 </span>
-              </div>
-              <div className="text-center">
-                <p className="text-base text-white">
-                  Stream to {isPowerStreamingPro ? "10" : "5"} different destinations simultaneously
-                </p>
               </div>
             </div>
             
@@ -91,7 +86,7 @@ export default function StreamingSection() {
                 
                 {/* Button in left column for desktop, hidden in mobile */}
                 <div className="hidden lg:block mt-auto">
-                  <button className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full">
+                  <button className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-not-allowed w-full">
                     <span className="relative z-10">Coming Soon</span>
                   </button>
                 </div>

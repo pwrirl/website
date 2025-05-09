@@ -20,11 +20,11 @@ export default function ObsSection() {
   const [isDedicated, setIsDedicated] = useState(false);
   const [isPowerStreamingPro, setIsPowerStreamingPro] = useState(false);
 
-  // VPS Plans
-  const vpsPlans: PricingPlan[] = [
+  // Semi-Bare Metal Plans
+  const semiBareMetalPlans: PricingPlan[] = [
     {
       name: "PowerOBS Basic",
-      description: "Virtual Private Server",
+      description: "Semi-Bare Metal",
       price: "$59.99",
       features: [
         { text: "Free Setup", included: true },
@@ -53,10 +53,10 @@ export default function ObsSection() {
         { text: "24/7 Support via Discord", included: true },
         { text: "Powered by Nvidia GPU", included: true },
         { text: "1080P/60FPS Streaming", included: true },
-        { text: "1 Endpoint (SRT/SRTLA and RTMP)", included: true },
+        { text: "2 Endpoints (SRT/SRTLA and RTMP)", included: true },
         { text: "5 Streaming Destinations (Via Plugin*)", included: true },
         { text: "Custom Overlays & Alerts", included: true },
-        { text: "Remote Desktop Access", included: true },
+        { text: "Remote Desktop Access (On Request)", included: true },
         { text: "Advanced Stream Settings", included: true },
       ],
     },
@@ -73,7 +73,7 @@ export default function ObsSection() {
         { text: "3 Endpoints (SRT/SRTLA and RTMP)", included: true },
         { text: "10 Streaming Destinations (Via Plugin*)", included: true },
         { text: "Custom Overlays & Alerts", included: true },
-        { text: "Remote Desktop Access", included: true },
+        { text: "Remote Desktop Access (On Request)", included: true },
         { text: "Advanced Stream Settings", included: true },
       ],
     },
@@ -92,8 +92,8 @@ export default function ObsSection() {
         { text: "Powered by Nvidia GPU", included: true },
         { text: "1080P/60FPS Streaming", included: true },
         { text: "1 Endpoint (SRT/SRTLA or RTMP)", included: true },
-        { text: "Basic Overlays/Alerts", included: true },
-        { text: "Remote Desktop Access", included: true },
+        { text: "Custom Overlays & Alerts", included: true },
+        { text: "Remote Desktop Access (On Request)", included: true },
         {
           text: "1 Streaming Destination (Multi-Streaming Add-On)",
           included: true,
@@ -112,10 +112,10 @@ export default function ObsSection() {
         { text: "24/7 Support via Discord", included: true },
         { text: "Powered by Nvidia GPU", included: true },
         { text: "1080P/60FPS Streaming", included: true },
-        { text: "1 Endpoint (SRT/SRTLA and RTMP)", included: true },
+        { text: "2 Endpoints (SRT/SRTLA and RTMP)", included: true },
         { text: "5 Streaming Destinations (Via Plugin*)", included: true },
         { text: "Custom Overlays & Alerts", included: true },
-        { text: "Remote Desktop Access", included: true },
+        { text: "Remote Desktop Access (On Request)", included: true },
         { text: "Advanced Stream Settings", included: true },
       ],
     },
@@ -132,14 +132,14 @@ export default function ObsSection() {
         { text: "3 Endpoints (SRT/SRTLA and RTMP)", included: true },
         { text: "10 Streaming Destinations (Via Plugin*)", included: true },
         { text: "Custom Overlays & Alerts", included: true },
-        { text: "Remote Desktop Access", included: true },
+        { text: "Remote Desktop Access (On Request)", included: true },
         { text: "Advanced Stream Settings", included: true },
       ],
     },
   ];
 
   // Get current plans based on toggle state
-  const currentPlans = isDedicated ? dedicatedPlans : vpsPlans;
+  const currentPlans = isDedicated ? dedicatedPlans : semiBareMetalPlans;
 
   return (
     <section id="cloud-obs" className="pt-8 pb-12 px-4 bg-[#121212] text-white">
@@ -158,14 +158,14 @@ export default function ObsSection() {
         <div className="flex items-center justify-center mb-12">
           <span
             className={`text-lg ${
-              !isDedicated ? "text-[#E20074] font-bold" : "text-white"
+              !isDedicated ? "text-[#E20074]" : "text-white"
             }`}
           >
-            VPS
+            Semi-Bare Metal
           </span>
           <div
             className={`relative mx-4 w-14 h-7 rounded-full ${
-              isDedicated ? "bg-[#E20074]" : "bg-gray-800"
+              isDedicated ? "bg-gradient-to-r from-[#e20074] to-[#ff00a0]" : "bg-gray-800"
             } transition-colors duration-300 cursor-pointer`}
             onClick={() => setIsDedicated(!isDedicated)}
           >
@@ -178,7 +178,7 @@ export default function ObsSection() {
           </div>
           <span
             className={`ml-4 text-lg ${
-              isDedicated ? "text-[#E20074] font-bold" : "text-white"
+              isDedicated ? "text-[#E20074]" : "text-white"
             }`}
           >
             Dedicated

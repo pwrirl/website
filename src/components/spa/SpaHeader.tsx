@@ -47,7 +47,7 @@ export default function SpaHeader() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 bg-black ${
+        className={`sticky top-0 z-50 bg-[#101010] ${
           isScrolled ? "py-4" : "py-6"
         } text-lg text-white shadow-md shadow-black/10 transition-all duration-300`}
       >

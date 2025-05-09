@@ -75,18 +75,18 @@ export default function PartnersPage() {
   return (
     <div className="min-h-screen bg-[#18181b] py-16">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 relative inline-block">
             <span className="relative z-10">Our Sponsored Partners</span>
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]" />
           </h1>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg">
             Meet the creators we proudly sponsor and support!
           </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        </header>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {partners.map((partner) => (
-            <div key={partner.name} className="bg-[#0A0A0A] rounded-2xl p-8 shadow-xl flex flex-col items-center">
+            <article key={partner.name} className="bg-[#0A0A0A] rounded-2xl p-8 shadow-xl flex flex-col items-center">
               <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-[#e20074]">
                 <Image
                   src={partner.image}
@@ -113,9 +113,9 @@ export default function PartnersPage() {
                   ) : null
                 )}
               </div>
-            </div>
+            </article>
           ))}
-        </div>
+        </section>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import LegalNavigation from "@/components/legal/LegalNavigation";
 export default function PrivacyPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
-      <div className="prose prose-invert prose-lg max-w-none">
+      <section className="prose prose-invert prose-lg max-w-none">
         <LegalNavigation currentPage="privacy" />
         
         <h1 className="mt-16 text-3xl md:text-5xl font-bold text-white mb-6 relative inline-block">
@@ -155,7 +155,7 @@ export default function PrivacyPage() {
         <h2 className="text-2xl font-semibold text-white mt-8 mb-4">Changes to This Privacy Policy</h2>
         <p className="text-white font-medium">We may update this Privacy Policy from time to time. Changes will be posted on this page and, where appropriate, you will be notified via email or prominent notice.</p>
         <p className="text-white font-medium">Please review this page periodically for updates. Changes are effective once posted.</p>
-      </div>
+      </section>
     </div>
   );
 } 

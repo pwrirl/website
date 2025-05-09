@@ -3,7 +3,7 @@ import LegalNavigation from "@/components/legal/LegalNavigation";
 export default function DisclaimerPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
-      <div className="prose prose-invert prose-lg max-w-none">
+      <section className="prose prose-invert prose-lg max-w-none">
         <LegalNavigation currentPage="disclaimer" />
         
         <h1 className="mt-16 text-3xl md:text-5xl font-bold text-white mb-6 relative inline-block">
@@ -54,7 +54,7 @@ export default function DisclaimerPage() {
         <h2 className="text-2xl font-semibold text-white mt-8 mb-4">"Use at Your Own Risk" Disclaimer</h2>
         <p className="text-white font-medium">All information in the Service is provided "as is", with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability, and fitness for a particular purpose.</p>
         <p className="text-white font-medium">The Company will not be liable to You or anyone else for any decision made or action taken in reliance on the information given by the Service or for any consequential, special, or similar damages, even if advised of the possibility of such damages.</p>
-      </div>
+      </section>
     </div>
   );
 } 

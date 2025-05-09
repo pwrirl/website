@@ -24,20 +24,20 @@ export default function LegalPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#18181b]">
+    <main className="min-h-screen bg-[#18181b]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 relative inline-block">
             <span className="relative z-10">Legal Information</span>
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]" />
           </h1>
           <p className="text-center text-white max-w-3xl mx-auto text-lg">
             Important information about using PowerIRL's services. Please review
             these documents carefully.
           </p>
-        </div>
+        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {legalDocs.map((doc) => (
             <Link
               key={doc.title}
@@ -57,9 +57,9 @@ export default function LegalPage() {
               </p>
             </Link>
           ))}
-        </div>
+        </section>
 
-        <div className="mt-16 bg-black rounded-2xl shadow-lg p-8 flex flex-col items-center text-center">
+        <section className="mt-16 bg-black rounded-2xl shadow-lg p-8 flex flex-col items-center text-center">
           <h2 className="text-2xl font-semibold text-white mb-4">
             Need Help?
           </h2>
@@ -76,8 +76,8 @@ export default function LegalPage() {
             <Icon icon="mdi:discord" className="w-5 h-5" />
             Join Discord
           </a>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 } 

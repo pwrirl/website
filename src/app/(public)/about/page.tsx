@@ -68,21 +68,19 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#18181b] py-16">
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Header Section */}
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 relative inline-block">
             <span className="relative z-10">About PowerIRL</span>
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]"></span>
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]" />
           </h1>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg">
             Making professional streaming accessible to everyone through innovative solutions and dedicated support.
           </p>
-        </div>
+        </header>
 
-        {/* Co-Owners Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
           {owners.map((owner) => (
-            <div key={owner.name} className="bg-[#0A0A0A] rounded-2xl p-8 shadow-xl">
+            <article key={owner.name} className="bg-[#0A0A0A] rounded-2xl p-8 shadow-xl">
               <div className="flex flex-col items-center">
                 <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden border-4 border-[#e20074]">
                   <Image
@@ -96,16 +94,14 @@ export default function AboutPage() {
                 <h2 className="text-2xl font-bold text-white mb-2">{owner.name}</h2>
                 <p className="text-[#e20074] font-medium mb-4">{owner.role}</p>
                 <p className="text-gray-400 text-center mb-6">{owner.bio}</p>
-                
                 {/* Social Links */}
                 {renderSocialLinks(owner.social)}
               </div>
-            </div>
+            </article>
           ))}
-        </div>
+        </section>
 
-        {/* Company Information */}
-        <div className="bg-[#0A0A0A] rounded-2xl p-8 shadow-xl max-w-3xl mx-auto">
+        <section className="bg-[#0A0A0A] rounded-2xl p-8 shadow-xl max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">Company Information</h2>
           <div className="space-y-8">
             <div className="text-center">
@@ -123,7 +119,7 @@ export default function AboutPage() {
               </address>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

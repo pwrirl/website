@@ -1,28 +1,66 @@
+import ResourcesNav from "@/components/resources/ResourcesNav";
+import { Icon } from "@iconify/react";
+import Link from "next/link";
+
+const infoBlocks = [
+  {
+    label: "Backpack Hardware",
+    icon: "mdi:bag-personal",
+    description: "Recommended backpacks, battery packs, and portable gear for IRL streaming on the go.",
+    href: "/resources/backpack-hardware"
+  },
+  {
+    label: "Phone Hardware",
+    icon: "mdi:cellphone",
+    description: "Best phones, mounts, and accessories for mobile streaming setups.",
+    href: "/resources/phone-hardware"
+  },
+  {
+    label: "Mobile Apps",
+    icon: "mdi:apps",
+    description: "Top apps for streaming, chat, overlays, and more on your phone or tablet.",
+    href: "/resources/mobile-apps"
+  },
+  {
+    label: "Computer Software",
+    icon: "mdi:laptop",
+    description: "Essential software for desktop streaming, overlays, and production.",
+    href: "/resources/computer-software"
+  }
+];
+
 export default function ResourcesPage() {
   return (
-    <div className="prose prose-lg max-w-none">
-      <h1>Resources</h1>
-      
-      <h2>Getting Started</h2>
-      <p>
-        New to PowerIRL? Check out our comprehensive guides and tutorials to help
-        you get started with streaming.
-      </p>
-
-      <h2>Documentation</h2>
-      <p>
-        Our detailed documentation covers everything from basic setup to advanced
-        features. Find answers to your questions and learn how to make the most
-        of PowerIRL.
-      </p>
-
-      <h2>Community</h2>
-      <p>
-        Join our community of streamers and creators. Share experiences, get help,
-        and connect with other PowerIRL users.
-      </p>
-
-      {/* Add more sections as needed */}
+    <div className="min-h-screen bg-[#18181b] py-16">
+      <div className="container mx-auto px-4 max-w-7xl flex flex-col lg:flex-row gap-12">
+        <aside className="lg:w-1/4 mb-8 lg:mb-0">
+          <ResourcesNav />
+        </aside>
+        <section className="flex-1">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 relative inline-block">
+            <span className="relative z-10">Streaming Resources</span>
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]" />
+          </h1>
+          <p className="text-gray-400 max-w-2xl mb-8">
+            Explore our recommended hardware and software for professional streaming. Select a category from the navigation to get started. (Affiliate links coming soon!)
+          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {infoBlocks.map((block) => (
+              <Link
+                key={block.label}
+                href={block.href}
+                className="group bg-[#23232b] rounded-2xl p-6 flex items-start gap-4 shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]"
+              >
+                <Icon icon={block.icon} className="text-4xl text-[#e20074] flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <div>
+                  <h2 className="text-xl font-bold text-white mb-2 group-hover:text-[#e20074] transition-colors">{block.label}</h2>
+                  <p className="text-gray-400">{block.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 } 

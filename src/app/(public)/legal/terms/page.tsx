@@ -3,7 +3,7 @@ import LegalNavigation from "@/components/legal/LegalNavigation";
 export default function TermsPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
-      <div className="prose prose-invert prose-lg max-w-none">
+      <section className="prose prose-invert prose-lg max-w-none">
         <LegalNavigation currentPage="terms" />
         
         <h1 className="mt-16 text-3xl md:text-5xl font-bold text-white mb-6 relative inline-block">
@@ -45,7 +45,7 @@ export default function TermsPage() {
 
         <h2 className="text-2xl font-semibold text-white mt-8 mb-4">Indemnification</h2>
         <p className="text-white font-medium">You agree to defend, indemnify and hold PowerIRL harmless from and against any and all claims, damages, costs and expenses, including attorneys' fees, arising from or related to your use of our Website or any Contracts or Services you purchase through it.</p>
-      </div>
+      </section>
     </div>
   );
 } 

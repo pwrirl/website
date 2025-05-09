@@ -101,6 +101,21 @@ export default function PrimaryHeader() {
                   </li>
                   <li>
                     <Link
+                      href="/docs"
+                      className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
+                    >
+                      <Icon
+                        icon="mdi:book-open-variant"
+                        width="18"
+                        height="18"
+                        className="text-[#e20074]"
+                        aria-hidden="true"
+                      />
+                      <span>Docs</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/legal"
                       className="flex cursor-pointer items-center gap-1 rounded-lg px-2 py-2 font-medium transition-all hover:bg-[#e20074]/10 hover:text-[#e20074] outline-none"
                     >
@@ -230,6 +245,21 @@ export default function PrimaryHeader() {
                         aria-hidden="true"
                       />
                       <span className="font-medium text-white">Resources</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/docs"
+                      className="group flex w-full cursor-pointer items-center rounded-lg px-4 py-3 transition-all hover:bg-[#e20074]/10 outline-none"
+                    >
+                      <Icon
+                        icon="mdi:book-open-variant"
+                        width="24"
+                        height="24"
+                        className="mr-3 text-[#e20074] transition-transform group-hover:scale-110"
+                        aria-hidden="true"
+                      />
+                      <span className="font-medium text-white">Docs</span>
                     </Link>
                   </li>
                   <li>

@@ -58,6 +58,14 @@ export default function PrimaryFooter({ variant = 'public' }: PrimaryFooterProps
                   Resources
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/docs"
+                  className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
+                >
+                  Docs
+                </Link>
+              </li>
             </ul>
           </div>
           {/* Legal */}
@@ -146,6 +154,15 @@ export default function PrimaryFooter({ variant = 'public' }: PrimaryFooterProps
                 className={`transition-colors text-2xl ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-[#e20074]'}`}
               >
                 <Icon icon="mdi:github" />
+              </a>
+              <a
+                href="https://discord.pwrirl.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Discord"
+                className={`transition-colors text-2xl ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-white hover:text-[#e20074]'}`}
+              >
+                <Icon icon="mdi:discord" />
               </a>
             </div>
           </div>

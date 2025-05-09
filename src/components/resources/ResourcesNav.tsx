@@ -4,14 +4,12 @@ import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 
 const navItems = [
-  { label: "Resources Home", href: "/resources", icon: "mdi:home" },
-  { label: "Backpack Hardware", href: "/resources/backpack-hardware", icon: "mdi:bag-personal" },
-  { label: "Phone Hardware", href: "/resources/phone-hardware", icon: "mdi:cellphone" },
-  { label: "Mobile Apps", href: "/resources/mobile-apps", icon: "mdi:apps" },
-  { label: "Computer Software", href: "/resources/computer-software", icon: "mdi:laptop" },
+  { label: "Hardware Home", href: "/hardware", icon: "mdi:home" },
+  { label: "Backpack Hardware", href: "/hardware/backpack-hardware", icon: "mdi:bag-personal" },
+  { label: "Phone Hardware", href: "/hardware/phone-hardware", icon: "mdi:cellphone" },
 ];
 
-export default function ResourcesNav() {
+export default function HardwareNav() {
   const pathname = usePathname();
   return (
     <nav className="flex flex-col gap-3">

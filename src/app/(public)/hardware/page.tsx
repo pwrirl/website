@@ -1,4 +1,4 @@
-import ResourcesNav from "@/components/resources/ResourcesNav";
+import HardwareNav from "@/components/resources/ResourcesNav";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
@@ -7,42 +7,30 @@ const infoBlocks = [
     label: "Backpack Hardware",
     icon: "mdi:bag-personal",
     description: "Recommended backpacks, battery packs, and portable gear for IRL streaming on the go.",
-    href: "/resources/backpack-hardware"
+    href: "/hardware/backpack-hardware"
   },
   {
     label: "Phone Hardware",
     icon: "mdi:cellphone",
     description: "Best phones, mounts, and accessories for mobile streaming setups.",
-    href: "/resources/phone-hardware"
-  },
-  {
-    label: "Mobile Apps",
-    icon: "mdi:apps",
-    description: "Top apps for streaming, chat, overlays, and more on your phone or tablet.",
-    href: "/resources/mobile-apps"
-  },
-  {
-    label: "Computer Software",
-    icon: "mdi:laptop",
-    description: "Essential software for desktop streaming, overlays, and production.",
-    href: "/resources/computer-software"
+    href: "/hardware/phone-hardware"
   }
 ];
 
-export default function ResourcesPage() {
+export default function HardwarePage() {
   return (
     <div className="min-h-screen bg-[#18181b] py-16">
       <div className="container mx-auto px-4 max-w-7xl flex flex-col lg:flex-row gap-12">
         <aside className="lg:w-1/4 mb-8 lg:mb-0">
-          <ResourcesNav />
+          <HardwareNav />
         </aside>
         <section className="flex-1">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 relative inline-block">
-            <span className="relative z-10">Streaming Resources</span>
+            <span className="relative z-10">Streaming Hardware</span>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#E20074]" />
           </h1>
           <p className="text-gray-400 max-w-2xl mb-8">
-            Explore our recommended hardware and software for professional streaming. Select a category from the navigation to get started. (Affiliate links coming soon!)
+            Explore our recommended hardware for professional streaming. Select a category from the navigation to get started. (Affiliate links coming soon!)
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {infoBlocks.map((block) => (

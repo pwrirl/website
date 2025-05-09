@@ -52,10 +52,10 @@ export default function PrimaryFooter({ variant = 'public' }: PrimaryFooterProps
               </li>
               <li>
                 <Link
-                  href="/resources"
+                  href="/hardware"
                   className={`text-sm transition-colors ${isInternal ? 'text-gray-600 hover:text-gray-900' : 'text-gray-400 hover:text-white'}`}
                 >
-                  Resources
+                  Hardware
                 </Link>
               </li>
               <li>

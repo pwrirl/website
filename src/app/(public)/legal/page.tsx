@@ -42,24 +42,18 @@ export default function LegalPage() {
             <Link
               key={doc.title}
               href={doc.href}
-              className="group flex flex-col items-center justify-center bg-black rounded-2xl shadow-lg hover:shadow-xl transition-all p-8 text-center focus:outline-none focus:ring-2 focus:ring-[#e20074]"
+              className="group flex flex-col items-center justify-center bg-[#23232b] rounded-2xl shadow-lg hover:shadow-xl transition-all p-6 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]"
             >
               <div className="flex items-center justify-center mb-6">
-                <span className="flex items-center justify-center w-20 h-20 rounded-full bg-[#e20074]/20">
-                  <Icon icon={doc.icon} className="w-10 h-10 text-[#e20074]" />
-                </span>
+                <Icon icon={doc.icon} className="w-10 h-10 text-[#e20074]" />
               </div>
-              <h2 className="text-xl font-bold text-white mb-2">
-                {doc.title}
-              </h2>
-              <p className="text-white opacity-80 mb-0">
-                {doc.description}
-              </p>
+              <h2 className="text-xl font-bold text-white mb-2 group-hover:text-[#e20074] transition-colors">{doc.title}</h2>
+              <p className="text-white opacity-80 mb-0">{doc.description}</p>
             </Link>
           ))}
         </section>
 
-        <section className="mt-16 bg-black rounded-2xl shadow-lg p-8 flex flex-col items-center text-center">
+        <section className="mt-16 bg-[#23232b] rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
           <h2 className="text-2xl font-semibold text-white mb-4">
             Need Help?
           </h2>

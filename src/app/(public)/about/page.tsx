@@ -7,7 +7,11 @@ export default function AboutPage() {
       name: "DanSizn",
       role: "Co-Owner",
       image: "/images/dansizn.jpg",
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      bio: [
+        "I was born and raised in Washington State and still haven't left. (Shocking! I know and its really not that gray…) I grew up around video games / electronics as I really did enjoy taking apart old broken electronics to see how they worked and ended up growing into a hobby.",
+        "In the early 2000's I was involved in building gaming leagues that ran for many years but as time went on and the development companies and other groups with investors came along the leagues started to fall apart. We originally operated fully off of mIRC as discord was not around and a website.",
+        "I am now a Manager / Moderator for some great content creators and I am happy with what I do as a hobby. I still do some streaming on the side but I enjoy the moderation and management aspect side of things."
+      ],
       social: {
         twitch: "https://twitch.tv/dansizn",
         kick: "https://kick.com/dansizn",
@@ -21,7 +25,11 @@ export default function AboutPage() {
       name: "Seekaplayer",
       role: "Co-Owner",
       image: "/images/seekaplayer.jpg",
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      bio: [
+        "My name is Seekaplayer and I love Gaming, Technology, Music, and Fitness. I've been gaming since I was a little kid and still do to this day.",
+        "I'm very passionate about learning new things and IRL Streaming was always something I wanted to get into. As a streamer and creator I undersand the struggle we face and the cost to do this can be heavy.",
+        "I, Along with Dan we've worked together to build something truly amazing."
+      ],
       social: {
         twitch: "https://twitch.tv/seekaplayer",
         kick: "https://kick.com/seekaplayer",
@@ -42,22 +50,24 @@ export default function AboutPage() {
       { key: 'youtube', icon: 'mdi:youtube', href: social.youtube },
       { key: 'twitter', icon: 'simple-icons:x', href: social.twitter },
       { key: 'instagram', icon: 'mdi:instagram', href: social.instagram },
-      { key: 'email', icon: 'mdi:email', href: social.email }
+      { key: 'email', icon: 'mdi:email', href: social.email },
+      { key: 'tiktok', icon: 'mdi:tiktok', href: social.tiktok },
     ];
 
     return (
       <div className="flex gap-4">
-        {links.map(({ key, icon, href }) => 
+        {links.map(({ key, icon, href }) =>
           href && (
             <a
               key={key}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#e20074] transition-colors text-2xl"
               aria-label={key.charAt(0).toUpperCase() + key.slice(1)}
             >
-              <Icon icon={icon} />
+              <div className="w-10 h-10 rounded-full bg-[#e20074] flex items-center justify-center transition-colors duration-200 hover:bg-white group">
+                <Icon icon={icon} className="text-white text-2xl group-hover:text-[#e20074] transition-colors duration-200" />
+              </div>
             </a>
           )
         )}
@@ -80,8 +90,8 @@ export default function AboutPage() {
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
           {owners.map((owner) => (
-            <article key={owner.name} className="bg-[#0A0A0A] rounded-2xl p-8 shadow-xl">
-              <div className="flex flex-col items-center">
+            <article key={owner.name} className="bg-[#23232b] rounded-2xl p-6 flex flex-col shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]">
+              <div className="flex flex-col items-center flex-1">
                 <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden border-4 border-[#e20074]">
                   <Image
                     src={owner.image}
@@ -91,11 +101,14 @@ export default function AboutPage() {
                     priority
                   />
                 </div>
-                <h2 className="text-2xl font-bold text-white mb-2">{owner.name}</h2>
+                <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-[#e20074] transition-colors">{owner.name}</h2>
                 <p className="text-[#e20074] font-medium mb-4">{owner.role}</p>
-                <p className="text-gray-400 text-center mb-6">{owner.bio}</p>
-                {/* Social Links */}
-                {renderSocialLinks(owner.social)}
+                {Array.isArray(owner.bio) ? owner.bio.map((para, idx) => (
+                  <p key={idx} className="text-gray-400 text-center mb-4">{para}</p>
+                )) : (
+                  <p className="text-gray-400 text-center mb-6">{owner.bio}</p>
+                )}
+                <div className="mt-auto">{renderSocialLinks(owner.social)}</div>
               </div>
             </article>
           ))}

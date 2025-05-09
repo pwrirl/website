@@ -192,7 +192,7 @@ export default function ObsSection() {
             .map((plan, index) => (
               <div
                 key={index}
-                className="bg-[#0A0A0A] rounded-lg overflow-hidden relative flex flex-col py-4"
+                className="bg-[#23232b] rounded-2xl overflow-hidden relative flex flex-col py-4 shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]"
               >
                 {plan.popular && (
                   <div className="absolute top-[22px] right-[-58px] z-10 rotate-45">
@@ -264,7 +264,7 @@ export default function ObsSection() {
             .map((plan, index) => (
               <div
                 key={index}
-                className="bg-[#0A0A0A] rounded-lg overflow-hidden relative flex flex-col"
+                className="bg-[#23232b] rounded-2xl overflow-hidden relative flex flex-col shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]"
               >
                 <div className="p-8 flex flex-col flex-grow">
                   <div>
@@ -309,11 +309,11 @@ export default function ObsSection() {
         </div>
 
         {/* Custom project section */}
-        <div className="max-w-3xl mx-auto mt-16 p-8 bg-[#0A0A0A] rounded-lg text-center">
+        <div className="max-w-3xl mx-auto mt-16 p-8 bg-[#23232b] rounded-2xl text-center shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]">
           <div className="text-[#E20074] mb-4">
             <Icon icon="mdi:discord" width="48" height="48" />
           </div>
-          <h3 className="text-2xl font-bold mb-3">Custom Project</h3>
+          <h3 className="text-2xl font-bold mb-3 group-hover:text-[#e20074] transition-colors">Custom Project</h3>
           <p className="text-white mb-6 max-w-lg mx-auto">
             Need something more powerful, a custom solution, or help with a
             special event? Contact us and our team will work with you to deliver

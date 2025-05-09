@@ -20,7 +20,7 @@ export default function EndpointsSection() {
         {/* SRT/SRTLA and RTMP blocks side by side */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {/* SRT/SRTLA Block */}
-          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden flex flex-col">
+          <div className="bg-[#23232b] rounded-2xl overflow-hidden flex flex-col shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]">
             <div className="p-8 flex flex-col flex-grow">
               <div>
                 <div className="text-[#E20074] mb-4 flex justify-center">
@@ -87,7 +87,7 @@ export default function EndpointsSection() {
           </div>
 
           {/* RTMP Block */}
-          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden flex flex-col">
+          <div className="bg-[#23232b] rounded-2xl overflow-hidden flex flex-col shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]">
             <div className="p-8 flex flex-col flex-grow">
               <div>
                 <div className="text-[#E20074] mb-4 flex justify-center">

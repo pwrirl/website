@@ -65,7 +65,7 @@ const socialIcons = {
   twitch: "mdi:twitch",
   x: "simple-icons:x",
   instagram: "mdi:instagram",
-  tiktok: "mdi:tiktok",
+  tiktok: "simple-icons:tiktok",
   youtube: "mdi:youtube",
   discord: "mdi:discord",
   website: "mdi:web"
@@ -86,8 +86,8 @@ export default function PartnersPage() {
         </header>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {partners.map((partner) => (
-            <article key={partner.name} className="bg-[#0A0A0A] rounded-2xl p-8 shadow-xl flex flex-col items-center">
-              <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-[#e20074]">
+            <article key={partner.name} className="bg-[#23232b] rounded-2xl p-6 flex flex-col items-center shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]">
+              <div className="relative w-56 h-56 mb-6 rounded-full overflow-hidden border-4 border-[#e20074]">
                 <Image
                   src={partner.image}
                   alt={partner.name + " profile"}
@@ -96,8 +96,8 @@ export default function PartnersPage() {
                   priority
                 />
               </div>
-              <h2 className="text-xl font-bold text-white mb-4 text-center">{partner.name}</h2>
-              <div className="flex flex-wrap justify-center gap-3 mb-2">
+              <h2 className="text-xl font-bold text-white mb-4 mt-2 text-center group-hover:text-[#e20074] transition-colors">{partner.name}</h2>
+              <div className="flex flex-wrap justify-center gap-3 mt-4 mb-6">
                 {Object.entries(partner.social).map(([key, url]) =>
                   url ? (
                     <a
@@ -105,10 +105,11 @@ export default function PartnersPage() {
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#e20074] transition-colors text-2xl"
                       aria-label={key.charAt(0).toUpperCase() + key.slice(1)}
                     >
-                      <Icon icon={socialIcons[key as keyof typeof socialIcons]} />
+                      <div className="w-10 h-10 rounded-full bg-[#e20074] flex items-center justify-center transition-colors duration-200 hover:bg-white group">
+                        <Icon icon={socialIcons[key as keyof typeof socialIcons]} className="text-white text-2xl group-hover:text-[#e20074] transition-colors duration-200" />
+                      </div>
                     </a>
                   ) : null
                 )}

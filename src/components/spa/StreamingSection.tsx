@@ -22,7 +22,7 @@ export default function StreamingSection() {
 
         {/* PowerStreaming Plans */}
         <div className="w-full mb-10">
-          <div className="bg-[#0A0A0A] rounded-lg overflow-hidden relative flex flex-col">
+          <div className="bg-[#23232b] rounded-2xl overflow-hidden relative flex flex-col shadow-lg hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e20074]">
             {/* Toggle inside the card */}
             <div className="flex flex-col items-center justify-center px-4 mb-4 pt-4">
               <div className="flex items-center justify-center mb-2">

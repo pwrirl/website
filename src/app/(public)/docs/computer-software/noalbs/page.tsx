@@ -307,8 +307,134 @@ export default function NoALBSPage() {
               {/* Twitch Configuration */}
               <div>
                 <h3 className="text-xl font-semibold text-[#e20074] mb-4">Twitch Configuration</h3>
-                <div className="bg-[#18181b] text-gray-400 rounded-lg p-8 text-center text-lg font-semibold select-none">
-                  COMING SOON
+                <p className="text-gray-300 mb-4">
+                  Below is a sample configuration for Twitch. <b>Replace <code>username</code> with your Twitch username and <code>password</code> with your OBS WebSocket password</b>. You can copy and paste this JSON into your <code>config.json</code> file.
+                </p>
+                <div className="relative">
+                  <button
+                    onClick={handleCopy}
+                    className="absolute top-2 right-2 z-10 p-2 rounded-full bg-[#23232b] hover:bg-[#e20074] transition-colors"
+                    title="Copy configuration"
+                    aria-label="Copy configuration"
+                  >
+                    <Icon icon={copied ? "mdi:check" : "mdi:content-copy"} className={`text-xl ${copied ? "text-[#e20074]" : "text-gray-300"}`} />
+                  </button>
+                  <pre className="bg-[#18181b] text-gray-200 rounded-lg p-4 overflow-x-auto text-sm mb-4">
+                    {`{
+  "user": {
+    "id": null,
+    "name": "username",
+    "passwordHash": null
+  },
+  "switcher": {
+    "bitrateSwitcherEnabled": true,
+    "onlySwitchWhenStreaming": false,
+    "instantlySwitchOnRecover": true,
+    "autoSwitchNotification": true,
+    "retryAttempts": 5,
+    "triggers": {
+      "low": 450,
+      "rtt": 1500,
+      "offline": 400
+    },
+    "switchingScenes": {
+      "normal": "LIVE",
+      "low": "LOW",
+      "offline": "BRB"
+    },
+    "streamServers": [
+      {
+        "streamServer": {
+          "type": "SrtLiveServer",
+          "statsUrl": "http://username.pwrirl.com:8181/stats",
+          "publisher": "live/stream/feed1"
+        },
+        "name": "PowerIRL",
+        "priority": 0,
+        "overrideScenes": null,
+        "dependsOn": null,
+        "enabled": true
+      },
+      {
+        "streamServer": {
+          "type": "Nginx",
+          "statsUrl": "http://username.pwrirl.com:8080/stat",
+          "application": "live",
+          "key": "feed1"
+        },
+        "name": "PowerIRL",
+        "priority": 1,
+        "overrideScenes": {
+          "normal": "RTMP-LIVE",
+          "low": "RTMP-LOW",
+          "offline": "BRB"
+        },
+        "dependsOn": null,
+        "enabled": true
+      }
+    ]
+  },
+  "software": {
+    "type": "Obs",
+    "host": "localhost",
+    "password": "password",
+    "port": 4456,
+    "collections": {
+      "twitch": {
+        "profile": "twitch",
+        "collection": "twitch_scenes"
+      },
+      "kick": {
+        "profile": "kick",
+        "collection": "kick_scenes"
+      }
+    }
+  },
+  "chat": {
+    "platform": "Twitch",
+    "username": "username",
+    "admins": ["username", "modusername"],
+    "language": "EN",
+    "prefix": "!",
+    "enablePublicCommands": true,
+    "enableModCommands": true,
+    "enableAutoStopStreamOnHostOrRaid": true,
+    "announceRaidOnAutoStop": true,
+    "commands": {
+      "Fix": {
+        "permission": "Mod",
+        "userPermissions": ["username"],
+        "alias": ["f"]
+      },
+      "Switch": {
+        "permission": "Mod",
+        "userPermissions": null,
+        "alias": ["ss"]
+      },
+      "Bitrate": {
+        "permission": null,
+        "userPermissions": null,
+        "alias": ["b"]
+      }
+    }
+  },
+  "optionalScenes": {
+    "starting": "STARTING",
+    "ending": "ENDING",
+    "privacy": "PRIVACY",
+    "refresh": "REFRESH"
+  },
+  "optionalOptions": {
+    "twitchTranscodingCheck": false,
+    "twitchTranscodingRetries": 5,
+    "twitchTranscodingDelaySeconds": 15,
+    "offlineTimeout": null,
+    "recordWhileStreaming": false,
+    "switchToStartingSceneOnStreamStart": false,
+    "switchFromStartingSceneToLiveScene": false
+  }
+}`}
+                  </pre>
                 </div>
               </div>
             </div>
@@ -322,12 +448,17 @@ export default function NoALBSPage() {
                 NOALBS supports chat commands for moderators and users to control certain actions. You can configure which users or mods have access to each command in your <code>config.json</code>.
               </p>
               <ul className="space-y-2 text-gray-300">
-                <li><b>!fix</b> or <b>!f</b>: Runs the fix command. Only users listed in <code>userPermissions</code> (e.g., <code>username</code>) or mods can use this command.</li>
-                <li><b>!switch</b> or <b>!ss</b>: Switches scenes. Only mods can use this command.</li>
-                <li><b>!bitrate</b> or <b>!b</b>: Shows the current bitrate. Anyone can use this command.</li>
+                <li className="p-2 rounded border border-[#e20074]/20 shadow-sm hover:bg-[#e20074]/10 transition-colors"><b>!fix</b> or <b>!f</b>: Runs the fix command. Only users listed in <code>userPermissions</code> (e.g., <code>username</code>) or mods can use this command.</li>
+                <li className="p-2 rounded border border-[#e20074]/20 shadow-sm hover:bg-[#e20074]/10 transition-colors"><b>!switch</b> or <b>!ss</b>: Switches scenes. Only mods can use this command.</li>
+                <li className="p-2 rounded border border-[#e20074]/20 shadow-sm hover:bg-[#e20074]/10 transition-colors"><b>!bitrate</b> or <b>!b</b>: Shows the current bitrate. Anyone can use this command.</li>
+                <li className="p-2 rounded border border-[#e20074]/20 shadow-sm hover:bg-[#e20074]/10 transition-colors"><b>!start</b>: Starts your stream.</li>
+                <li className="p-2 rounded border border-[#e20074]/20 shadow-sm hover:bg-[#e20074]/10 transition-colors"><b>!stop</b>: Stops your stream.</li>
               </ul>
               <p className="text-gray-400 mt-4">
                 <b>Note:</b> <code>userPermissions</code> must be set to the creator's username (or any usernames you want to allow). Any mod listed will be able to make changes with the specified commands. If <code>userPermissions</code> is <code>null</code>, only mods (or everyone, if <code>permission</code> is <code>null</code>) can use the command.
+              </p>
+              <p className="text-gray-400 mt-2">
+                <b>Note:</b> Kick's API does not allow for a response in chat, so while the command works, users won't see a response in chat.
               </p>
             </div>
           </div>
@@ -341,7 +472,8 @@ export default function NoALBSPage() {
                 <li>• Make sure your OBS scenes (LIVE, LOW, BRB, etc.) are set up and named exactly as in your config.</li>
                 <li>• Test scene switching by simulating a network drop or lowering your stream bitrate.</li>
                 <li>• Use the <b>dependsOn</b> field in config for multi-server setups or backup scenes.</li>
-                <li>• For help, visit the <a href="https://github.com/NOALBS/nginx-obs-automatic-low-bitrate-switching" target="_blank" rel="noopener noreferrer" className="text-[#e20074] underline">NOALBS GitHub</a> or join their Discord.</li>
+                <li>• Ensure you are using the correct configuration for your platform (Kick or Twitch) as shown in the configuration sections above.</li>
+                <li>• For help, visit the <a href="https://discord.gg/yourdiscordserver" target="_blank" rel="noopener noreferrer" className="text-[#e20074] underline">PowerIRL Discord</a></li>
               </ul>
             </div>
           </div>

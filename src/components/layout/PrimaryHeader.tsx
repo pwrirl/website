@@ -49,6 +49,7 @@ export default function PrimaryHeader() {
                       className={`${
                         isScrolled ? "h-8" : "h-10"
                       } w-auto transition-all duration-300`}
+                      style={{ width: 'auto' }}
                     />
                   </Link>
                 </div>
@@ -151,11 +152,9 @@ export default function PrimaryHeader() {
             </div>
             {/* Avatar on the far right */}
             <div className="flex items-center hidden lg:block">
-              <a
-                href="https://billing.stripe.com/p/login/cN25mb4HCbBR02k4gg"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Go to user dashboard"
+              <Link
+                href="/login"
+                aria-label="Sign in"
                 className="transition-opacity hover:opacity-80 rounded-full outline-none"
               >
                 <Icon
@@ -164,7 +163,7 @@ export default function PrimaryHeader() {
                   height="38"
                   color="#e20074"
                 />
-              </a>
+              </Link>
             </div>
           </nav>
         </div>

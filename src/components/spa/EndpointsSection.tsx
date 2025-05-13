@@ -1,6 +1,7 @@
 "use client";
 
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 export default function EndpointsSection() {
   return (
@@ -79,9 +80,9 @@ export default function EndpointsSection() {
                 </ul>
               </div>
               <div className="mt-auto">
-                <button className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md text-lg font-bold cursor-pointer">
+                <Link href="/register" className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md text-lg font-bold cursor-pointer flex items-center justify-center">
                   Order Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -144,9 +145,9 @@ export default function EndpointsSection() {
                 </ul>
               </div>
               <div className="mt-auto">
-                <button className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md text-lg font-bold cursor-pointer">
+                <Link href="/register" className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md text-lg font-bold cursor-pointer flex items-center justify-center">
                   Order Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>

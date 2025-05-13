@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 interface PlanFeature {
   text: string;
@@ -222,9 +223,9 @@ export default function ObsSection() {
                       <p className="text-sm text-white mb-4">
                         Servers are typically deployed within 24 hours
                       </p>
-                      <button className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full">
+                      <Link href="/register" className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full flex items-center justify-center">
                         <span className="relative z-10">Order Now</span>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="lg:w-3/5 flex flex-col">
@@ -248,9 +249,9 @@ export default function ObsSection() {
                     <p className="text-sm text-white mb-4 text-center">
                       Servers are typically deployed within 24 hours
                     </p>
-                    <button className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full">
+                    <Link href="/register" className="bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-4 rounded-md text-lg font-bold cursor-pointer w-full flex items-center justify-center">
                       <span className="relative z-10">Order Now</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -299,9 +300,9 @@ export default function ObsSection() {
                     <p className="text-sm text-white mb-4">
                       Servers are typically deployed within 24 hours
                     </p>
-                    <button className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md transition-colors text-lg font-bold cursor-pointer">
+                    <Link href="/register" className="w-full bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] text-white py-5 rounded-md transition-colors text-lg font-bold cursor-pointer flex items-center justify-center">
                       Order Now
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

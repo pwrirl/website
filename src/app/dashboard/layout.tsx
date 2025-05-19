@@ -8,7 +8,7 @@ import Skeleton from "@/components/Skeleton";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   // User state
-  const [user, setUser] = useState<{ username?: string; first_name?: string; last_name?: string; email?: string; avatar?: string } | null>(null);
+  const [user, setUser] = useState<{ first_name?: string; last_name?: string; email?: string; avatar?: string } | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -86,7 +86,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 )}
               </div>
               <span className="font-semibold text-white/90 hidden md:block text-lg">
-                {loading ? <Skeleton width={80} height={20} /> : (user?.username || user?.first_name || "User")}
+                {loading ? <Skeleton width={80} height={20} /> : (user?.first_name || "User")}
               </span>
               <Icon icon="mdi:chevron-down" width="22" height="22" className="text-white/60 group-hover:text-white transition-colors" />
             </button>

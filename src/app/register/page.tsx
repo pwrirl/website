@@ -233,7 +233,7 @@ export default function RegisterPage() {
                     disabled={isSubmitting}
                     className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#e20074] to-[#ff00a0] hover:from-[#d1006a] hover:to-[#e6009c] focus:outline-none focus:ring-0 focus:border-transparent focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all"
                   >
-                    {isSubmitting ? "Processing..." : "Continue to Payment"}
+                    {isSubmitting ? "Creating Account..." : "Create Account"}
                   </button>
                 </div>
               </form>

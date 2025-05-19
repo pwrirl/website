@@ -19,6 +19,8 @@ export default function AccountPage() {
     trovo?: string;
     parti?: string;
     discord?: string;
+    instagram?: string;
+    tiktok?: string;
   } | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -78,6 +80,8 @@ export default function AccountPage() {
         trovo: user.trovo || "",
         parti: user.parti || "",
         discord: user.discord || "",
+        instagram: user.instagram || "",
+        tiktok: user.tiktok || "",
       });
     }
   }, [user]);
@@ -239,6 +243,8 @@ export default function AccountPage() {
       trovo: user?.trovo || "",
       parti: user?.parti || "",
       discord: user?.discord || "",
+      instagram: user?.instagram || "",
+      tiktok: user?.tiktok || "",
     });
     setEditingSocials(true);
     setSocialsError(null);
@@ -255,6 +261,8 @@ export default function AccountPage() {
       trovo: user?.trovo || "",
       parti: user?.parti || "",
       discord: user?.discord || "",
+      instagram: user?.instagram || "",
+      tiktok: user?.tiktok || "",
     });
     setEditingSocials(false);
     setSocialsError(null);
@@ -300,7 +308,7 @@ export default function AccountPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 space-y-10">
+    <div className="lg:max-w-2xl  mx-auto space-y-10">
       {/* User Info Card */}
       <div className="bg-[#23232b] rounded-2xl shadow-2xl p-8 border border-[#353535]/40">
         <div className="flex items-center gap-4 mb-8">
@@ -391,21 +399,21 @@ export default function AccountPage() {
               </div>
             )}
           </div>
-          <div className="flex justify-end gap-3 mt-6">
-            {editingProfile ? (
-              <>
-                <button onClick={handleProfileCancel} className="px-5 py-2 rounded-lg bg-[#353535] text-white/80 font-semibold hover:bg-[#444] transition-all">Cancel</button>
-                <button onClick={handleProfileSave} className="px-5 py-2 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] text-white font-bold hover:from-[#d1006a] hover:to-[#e6009c] transition-all">Save</button>
-              </>
-            ) : (
-              <button onClick={handleProfileEdit} className="px-5 py-2 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] text-white font-bold hover:from-[#d1006a] hover:to-[#e6009c] transition-all">Edit</button>
-            )}
-          </div>
+        </div>
+        <div className="flex justify-end gap-3 mt-6">
+          {editingProfile ? (
+            <>
+              <button onClick={handleProfileCancel} className="px-5 py-2 rounded-lg bg-[#353535] text-white/80 font-semibold hover:bg-[#444] transition-all">Cancel</button>
+              <button onClick={handleProfileSave} className="px-5 py-2 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] text-white font-bold hover:from-[#d1006a] hover:to-[#e6009c] transition-all">Save</button>
+            </>
+          ) : (
+            <button onClick={handleProfileEdit} className="px-5 py-2 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] text-white font-bold hover:from-[#d1006a] hover:to-[#e6009c] transition-all">Edit</button>
+          )}
         </div>
       </div>
 
       {/* Password Card */}
-      <div className="bg-[#23232b] rounded-2xl shadow-2xl p-8 border border-[#353535]/40">
+      <div className="bg-[#23232b] rounded-2xl shadow-2xl p-8 border border-[#353535]/40 mt-10">
         <div className="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <Icon icon="mdi:lock-reset" className="text-[#e20074]" width="24" height="24" />
           Password
@@ -416,7 +424,7 @@ export default function AccountPage() {
         {passwordSuccess && (
           <div className="mb-4 rounded-lg bg-green-500/10 p-3 border border-green-500/20 text-green-400 text-sm">{passwordSuccess}</div>
         )}
-        <form className="space-y-6 max-w-md">
+        <form className="space-y-6">
           <div>
             <label className="text-white/60 text-xs font-semibold mb-1 block">Current Password</label>
             <input
@@ -453,7 +461,7 @@ export default function AccountPage() {
               disabled={!editingPassword}
             />
           </div>
-          <div className="flex justify-end gap-3">
+          <div className="flex justify-end gap-3 mt-6">
             {editingPassword ? (
               <>
                 <button
@@ -477,11 +485,44 @@ export default function AccountPage() {
                 onClick={handlePasswordEdit}
                 className="px-5 py-2 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] text-white font-bold hover:from-[#d1006a] hover:to-[#e6009c] transition-all"
               >
-                Change Password
+                Edit
               </button>
             )}
           </div>
         </form>
+      </div>
+
+      {/* Integrations Card */}
+      <div className="bg-[#23232b] rounded-2xl shadow-2xl p-8 border border-[#353535]/40 mt-10">
+        <div className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <Icon icon="mdi:link-variant" className="text-[#e20074]" width="20" height="20" />
+          Integrations
+        </div>
+        <div className="flex flex-row flex-wrap gap-8 justify-center">
+          {[
+            { name: "twitch", label: "Twitch", icon: "mdi:twitch" },
+            { name: "kick", label: "Kick", icon: "simple-icons:kick" },
+            { name: "youtube", label: "YouTube", icon: "mdi:youtube" },
+            { name: "rumble", label: "Rumble", icon: "simple-icons:rumble" },
+            { name: "x", label: "X", icon: "mdi:twitter" },
+          ].map((integration) => (
+            <div key={integration.name} className="flex flex-col items-center gap-2 min-w-[90px]">
+              <Icon icon={integration.icon} width="36" height="36" className="mb-1" />
+              <div className="font-semibold text-white text-base mb-1">{integration.label}</div>
+              {integrations[integration.name as keyof typeof integrations].connected ? (
+                <div className="text-green-400 font-mono text-xs">Connected as {integrations[integration.name as keyof typeof integrations].username}</div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => handleConnect(integration.label)}
+                  className="px-4 py-1 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] text-white font-bold hover:from-[#d1006a] hover:to-[#e6009c] transition-all text-xs"
+                >
+                  Connect
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Socials Card */}
@@ -507,6 +548,8 @@ export default function AccountPage() {
             { name: "trovo", label: "Trovo", icon: "mdi:link-variant" },
             { name: "parti", label: "Parti", icon: "mdi:party-popper" },
             { name: "discord", label: "Discord", icon: "mdi:discord" },
+            { name: "instagram", label: "Instagram", icon: "mdi:instagram" },
+            { name: "tiktok", label: "TikTok", icon: "simple-icons:tiktok" },
           ].map((social) => (
             <div key={social.name} className="flex items-center gap-3">
               <Icon icon={social.icon} width="24" height="24" className="text-[#e20074]" />
@@ -534,41 +577,6 @@ export default function AccountPage() {
             )}
           </div>
         </form>
-      </div>
-
-      {/* Integrations Card */}
-      <div>
-        <div className="bg-[#23232b] rounded-2xl shadow-2xl p-8 border border-[#353535]/40">
-          <div className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-            <Icon icon="mdi:link-variant" className="text-[#e20074]" width="24" height="24" />
-            Integrations
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {[
-              { name: "twitch", label: "Twitch", icon: "mdi:twitch" },
-              { name: "kick", label: "Kick", icon: "simple-icons:kick" },
-              { name: "youtube", label: "YouTube", icon: "mdi:youtube" },
-              { name: "rumble", label: "Rumble", icon: "simple-icons:rumble" },
-              { name: "x", label: "X", icon: "mdi:twitter" },
-            ].map((integration) => (
-              <div key={integration.name} className="flex flex-col items-center justify-center gap-3 p-4">
-                <Icon icon={integration.icon} width="48" height="48" className="mb-2" />
-                <div className="font-semibold text-white text-lg mb-2">{integration.label}</div>
-                {integrations[integration.name as keyof typeof integrations].connected ? (
-                  <div className="text-green-400 font-mono text-sm">Connected as {integrations[integration.name as keyof typeof integrations].username}</div>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => handleConnect(integration.label)}
-                    className="px-5 py-2 rounded-lg bg-gradient-to-r from-[#e20074] to-[#ff00a0] text-white font-bold hover:from-[#d1006a] hover:to-[#e6009c] transition-all"
-                  >
-                    Connect
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ export async function GET(req: Request) {
       database: process.env.DB_NAME,
     });
     const [rows] = await connection.execute<RowDataPacket[]>(
-      `SELECT u.id, u.first_name, u.last_name, u.email, u.password, u.verified, u.create_date, u.avatar
+      `SELECT u.id, u.first_name, u.last_name, u.email, u.password, u.verified, u.create_date, u.avatar, u.twitch, u.kick, u.youtube, u.rumble, u.x, u.noice, u.trovo, u.parti, u.discord, u.instagram, u.tiktok
        FROM sessions s
        JOIN users u ON s.user_id = u.id
        WHERE s.id = ? AND s.is_active = 1 AND s.expires_at > NOW()

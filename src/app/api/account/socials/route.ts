@@ -12,6 +12,8 @@ const SOCIAL_FIELDS = [
   "trovo",
   "parti",
   "discord",
+  "instagram",
+  "tiktok",
 ];
 
 export async function POST(req: Request) {
